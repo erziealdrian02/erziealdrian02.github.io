@@ -55,3 +55,47 @@ if (
 } else {
   darkToggle.checked = false; // Jika tidak, toggle akan tidak aktif
 }
+
+const texts = [
+  'Fullstack Developer',
+  'Front-end Developer',
+  'Back-end Developer',
+  'UI/UX Designer',
+]; // Tambahkan tulisan lainnya di sini
+const typingElement = document.querySelector('.typing');
+
+let textIndex = 0; // Indeks teks saat ini
+let charIndex = 0; // Indeks karakter saat ini
+let isDeleting = false; // Apakah sedang menghapus teks
+const typingSpeed = 100; // Kecepatan mengetik (ms)
+const deletingSpeed = 50; // Kecepatan menghapus (ms)
+const delayBetweenTexts = 1500; // Jeda sebelum berpindah teks (ms)
+
+function typeText() {
+  const currentText = texts[textIndex]; // Teks yang sedang ditampilkan
+
+  if (isDeleting) {
+    charIndex--; // Menghapus karakter
+  } else {
+    charIndex++; // Mengetik karakter
+  }
+
+  // Perbarui teks pada elemen
+  typingElement.textContent = currentText.slice(0, charIndex);
+
+  if (!isDeleting && charIndex === currentText.length) {
+    // Jika selesai mengetik, tunggu sebentar sebelum menghapus
+    setTimeout(() => (isDeleting = true), delayBetweenTexts);
+  } else if (isDeleting && charIndex === 0) {
+    // Jika selesai menghapus, pindah ke teks berikutnya
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length; // Pindah ke teks berikutnya
+  }
+
+  // Tentukan kecepatan mengetik/hapus
+  const speed = isDeleting ? deletingSpeed : typingSpeed;
+  setTimeout(typeText, speed);
+}
+
+// Mulai animasi mengetik
+typeText();
