@@ -99,3 +99,48 @@ function typeText() {
 
 // Mulai animasi mengetik
 typeText();
+
+function switchTab(tabId) {
+  // Sembunyikan semua tab content
+  document.querySelectorAll('.tab-content > div').forEach((content) => {
+    content.classList.add('hidden');
+    content.removeAttribute('data-tab-active');
+  });
+
+  // Tampilkan tab yang dipilih
+  const selectedTab = document.getElementById(tabId);
+  selectedTab.classList.remove('hidden');
+  selectedTab.setAttribute('data-tab-active', '');
+
+  // Update state button
+  document.querySelectorAll('[role="tab"]').forEach((tab) => {
+    tab.setAttribute('aria-selected', 'false');
+    tab.classList.remove(
+      'border-primary',
+      'dark:border-blue',
+      'text-primary',
+      'dark:text-blue'
+    );
+    tab.classList.add('border-transparent', 'text-gray-500');
+  });
+
+  document
+    .querySelector(`[data-tab="${tabId}"]`)
+    .setAttribute('aria-selected', 'true');
+  document
+    .querySelector(`[data-tab="${tabId}"]`)
+    .classList.remove('border-transparent', 'text-gray-500');
+  document
+    .querySelector(`[data-tab="${tabId}"]`)
+    .classList.add(
+      'border-primary',
+      'dark:border-blue',
+      'text-primary',
+      'dark:text-blue'
+    );
+}
+
+// Set tab pertama sebagai active saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+  switchTab('programming-content');
+});
