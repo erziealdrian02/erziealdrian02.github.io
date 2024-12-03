@@ -1,18 +1,31 @@
 {
-   "name": "-y",
-   "version": "1.0.0",
-   "description": "",
-   "main": "index.js",
-   "scripts": {
-      "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
-   },
-   "author": "",
-   "license": "ISC",
-   "devDependencies": {
-      "prettier-plugin-tailwindcss": "^0.6.9",
-      "tailwindcss": "^3.4.1"
-   },
-   "dependencies": {
-      "@preline/overlay": "^2.5.0"
-   }
+  "name": "porto",
+  "version": "1.0.0",
+  "description": "ini",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
+    "start-dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "author": "erziealdrian02",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.15",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.14.1"
+  }
 }
