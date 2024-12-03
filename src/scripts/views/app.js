@@ -1,22 +1,29 @@
-import DrawerInitiator from '../utils/drawer-initiator';
+import NavInitiator from '../utils/nav-initiator';
+import ScrollInitiator from '../utils/scroll-initiator';
 
 class App {
-  constructor({ button, drawer, content }) {
-    this._button = button;
-    this._drawer = drawer;
+  constructor({ hamburger, navMenu, header, content, toTop }) {
+    this._hamburger = hamburger;
+    this._navMenu = navMenu;
     this._content = content;
+    this._header = header;
+    this._toTop = toTop;
 
     this._initialAppShell();
   }
 
   _initialAppShell() {
-    DrawerInitiator.init({
-      button: this._button,
-      drawer: this._drawer,
+    NavInitiator.init({
+      hamburger: this._hamburger,
+      navMenu: this._navMenu,
       content: this._content,
     });
 
-    // kita bisa menginisiasikan komponen lain bila ada
+    ScrollInitiator.init({
+      header: this._header,
+      fixedNav: this._header.offsetTop,
+      toTop: this._toTop,
+    });
   }
 }
 
