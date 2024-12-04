@@ -4,16 +4,35 @@ import '../styles/js/script.js';
 
 import App from './views/app';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new App({
-    hamburger: document.querySelector('#hamburger'),
-    navMenu: document.querySelector('#nav-menu'),
+const app = new App({
+  // Navbar Hamburger
+  hamburger: document.querySelector('#hamburger'),
+  navMenu: document.querySelector('#nav-menu'),
 
-    header: document.querySelector('header'),
-    toTop: document.querySelector('#to-top'),
+  // To The Top
+  header: document.querySelector('header'),
+  toTop: document.querySelector('#to-top'),
 
-    content: document.querySelector('#mainContent'),
-  });
+  // Tab On Programming side
+  programmingTab: document.querySelector('#programming-tab'),
+  toolsTab: document.querySelector('#tools-tab'),
+  programmingContent: document.querySelector('#programming-content'),
+  toolsContent: document.querySelector('#tools-content'),
 
-  app._initialAppShell();
+  // Dark Mode Toggle
+  darkButton: document.querySelector('#dark-button'),
+  html: document.querySelector('html'),
+
+  // Running Text
+  typingElement: document.querySelector('.typing'),
+
+  content: document.querySelector('#mainContent'),
+});
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
 });
