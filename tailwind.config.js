@@ -18,6 +18,16 @@ module.exports = {
         secondary: '#64748b',
       },
     },
+
+    keyframes: {
+      loop: {
+        '0%': { transform: 'translateX(0)' },
+        '100%': { transform: 'translateX(-50%)' },
+      },
+    },
+    animation: {
+      loop: 'loop 20s linear infinite',
+    },
   },
   plugins: [],
 };
