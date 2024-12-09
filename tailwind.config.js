@@ -24,9 +24,25 @@ module.exports = {
         '0%': { transform: 'translateX(0)' },
         '100%': { transform: 'translateX(-50%)' },
       },
+      bounce: {
+        '0%, 100%': {
+          transform: 'translateY(-25%)',
+          animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+        },
+        '50%': {
+          transform: 'translateY(0)',
+          animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+        },
+      },
+      verticalMove: {
+        '0%, 100%': { transform: 'translateY(-25%)' },
+        '50%': { transform: 'translateY(0)' },
+      },
     },
     animation: {
       loop: 'loop 20s linear infinite',
+      bounce: 'bounce 1s infinite',
+      verticalMove: 'verticalMove 20s ease-in-out infinite',
     },
   },
   plugins: [],

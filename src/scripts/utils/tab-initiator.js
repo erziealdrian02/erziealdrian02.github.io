@@ -37,8 +37,15 @@ const TabInitiator = {
     activeTab.setAttribute('aria-selected', 'true');
     activeTab.classList.add(
       'border-primary',
+      'dark:text-blue',
       'dark:border-blue',
       'text-primary'
+    );
+    activeTab.classList.remove(
+      'hover:border-primary',
+      'hover:dark:text-blue',
+      'hover:dark:border-blue',
+      'hover:text-primary'
     );
     activeTab.classList.remove('border-transparent', 'text-gray-500');
 
@@ -46,8 +53,15 @@ const TabInitiator = {
     inactiveTab.classList.add('border-transparent', 'text-gray-500');
     inactiveTab.classList.remove(
       'border-primary',
+      'dark:text-blue',
       'dark:border-blue',
       'text-primary'
+    );
+    inactiveTab.classList.add(
+      'hover:border-primary',
+      'hover:dark:text-blue',
+      'hover:dark:border-blue',
+      'hover:text-primary'
     );
 
     // Atur konten default sebagai terlihat
@@ -63,8 +77,15 @@ const TabInitiator = {
     activeTab.setAttribute('aria-selected', 'true');
     activeTab.classList.add(
       'border-primary',
+      'dark:text-blue',
       'dark:border-blue',
       'text-primary'
+    );
+    activeTab.classList.remove(
+      'hover:border-primary',
+      'hover:dark:text-blue',
+      'hover:dark:border-blue',
+      'hover:text-primary'
     );
     activeTab.classList.remove('border-transparent', 'text-gray-500');
 
@@ -72,8 +93,15 @@ const TabInitiator = {
     inactiveTab.classList.add('border-transparent', 'text-gray-500');
     inactiveTab.classList.remove(
       'border-primary',
+      'dark:text-blue',
       'dark:border-blue',
       'text-primary'
+    );
+    inactiveTab.classList.add(
+      'hover:border-primary',
+      'hover:dark:text-blue',
+      'hover:dark:border-blue',
+      'hover:text-primary'
     );
 
     // Perbarui konten aktif

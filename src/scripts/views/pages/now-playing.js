@@ -12,14 +12,12 @@ const NowPlaying = {
   async render() {
     return `
       <!-- Hero Section Start -->
-      <section id="Home" class="pt-36 dark:bg-dark">
-        <div class="container object-center" id="home">
-        </div>
+      <section id="home" class="pt-36 pb-48 dark:bg-dark">
       </section>
       <!-- Hero Section End -->
 
       <!-- About Section Start -->
-      <section id="about" class="pt-36 dark:bg-dark">
+      <section id="about" class="pt-44 dark:bg-dark">
       </section>
       <!-- About Section End -->
 
@@ -28,7 +26,7 @@ const NowPlaying = {
       ></div>
 
       <!-- Portofolio Section Start -->
-      <section id="portofolio" class="bg-slate-200 dark:bg-slate-800 pb-12">
+      <section id="portofolio" class="pt-36 bg-slate-200 dark:bg-slate-800 pb-12">
       </section>
       <!-- Portofolio Section End -->
 

@@ -1,4 +1,5 @@
 const createMovieItemTemplate = (home) => `
+    <div class="container object-center" id="home">
       <div class="flex flex-wrap">
         <div class="w-full self-center px-4 lg:w-1/2">
             <h1
@@ -28,21 +29,15 @@ const createMovieItemTemplate = (home) => `
                 >Universitas Indraprasta PGRI</b
             >
             dengan
-            <b class="text-dark dark:text-slate-200"
-                >Jurusan Teknik Informatika</b
-            >. Saya memiliki pemahaman dasar yang kuat konsep
+            <b class="text-dark dark:text-slate-200">Jurusan Teknik Informatika</b>. Saya memiliki pemahaman dasar yang kuat konsep
             <b class="text-dark dark:text-slate-200">informatika</b>,
-            kemahiran dalam bahasa
-            <b class="text-dark dark:text-slate-200">pemrograman</b>
-            , dan pengalaman dalam
+            kemahiran dalam bahasa <b class="text-dark dark:text-slate-200">
+            pemrograman</b>, dan pengalaman dalam
             <b class="text-dark dark:text-slate-200">Pengembangan Web</b>
-            sebagai
-            <b class="text-dark dark:text-slate-200">Front-End Developer</b
-            >,
+            sebagai <b class="text-dark dark:text-slate-200">Front-End Developer</b>,
             <b class="text-dark dark:text-slate-200">Back-end Developer</b>,
             <b class="text-dark dark:text-slate-200">Fullstack Developer</b>
-            maupun
-            <b class="text-dark dark:text-slate-200">UI/UX Designer</b>.
+            maupun <b class="text-dark dark:text-slate-200">UI/UX Designer</b>.
             Saya berpartisipasi secara aktif kegiatan ekstrakurikuler dan
             saya ingin terhubung dengan sesama mahasiswa dan profesional di
             industri.
@@ -54,12 +49,12 @@ const createMovieItemTemplate = (home) => `
             <span class="mr-2">Download CV</span>
             <span>
                 <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-download inline-block"
-                viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-download inline-block animate-bounce"
+                  viewBox="0 0 16 16"
                 >
                 <path
                     d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
@@ -72,7 +67,7 @@ const createMovieItemTemplate = (home) => `
             </a>
         </div>
           <div class="w-full self-end px-4 lg:w-1/2">
-            <div class="relative mt-2 mb-10 lg:mt-9 lg:right-0">
+            <div class="relative mt-2 mb-10 lg:mt-9 lg:right-0 animate-verticalMove">
               <img
                   src="./images/profiles/me2.png"
                   alt="Thats Me"
@@ -222,829 +217,531 @@ const createMovieItemTemplate = (home) => `
             </div>
           </div>
       </div>
-`;
-
-const createAboutTemplate = (about) => `
-    <div class="container">
-        <div class="w-full px-4">
-          <div class="max-w-full mx-auto text-center mb-16">
-            <h2 class="font-bold text-dark text-3xl mb-4 dark:text-white">
-              Bahasa Pemrograman dan Tools
-            </h2>
-            <p class="font-medium text-md text-secondary dark:text-slate-300">
-              Beberapa Bahasa Pemrograman, Framework dan Tools yang saya pernah Gunakan
-            </p>
-          </div>
-        </div>
-    </div>
-
-    <div class="relative overflow-hidden bg-dark p-10 mt-10">
-      <!-- Gradient Overlay -->
-      <div
-        class="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-dark to-transparent opacity-80 pointer-events-none"
-      ></div>
-      <div
-        class="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-dark to-transparent opacity-80 pointer-events-none"
-      ></div>
-
-      <!-- Marquee -->
-      <div class="flex gap-4 animate-loop">
-        <img
-          src="./svg/html-5-svgrepo-com.svg"
-          alt="HTML"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/css-3-svgrepo-com.svg"
-          alt="CSS"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/javascript-svgrepo-com.svg"
-          alt="JavaScript"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/php-svgrepo-com.svg"
-          alt="PHP"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/nodejs-svgrepo-com.svg"
-          alt="NodeJS"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/python-svgrepo-com.svg"
-          alt="Python"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/bootstrap-4-logo-svgrepo-com.svg"
-          alt="Bootstrap"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/tailwind-svgrepo-com.svg"
-          alt="Tailwind"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/laravel-svgrepo-com.svg"
-          alt="Laravel"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/flask-svgrepo-com.svg"
-          alt="FlaskAPI"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <!-- Duplikat untuk looping mulus -->
-        <img
-          src="./svg/html-5-svgrepo-com.svg"
-          alt="HTML"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/css-3-svgrepo-com.svg"
-          alt="CSS"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/javascript-svgrepo-com.svg"
-          alt="JavaScript"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/php-svgrepo-com.svg"
-          alt="PHP"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/nodejs-svgrepo-com.svg"
-          alt="NodeJS"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/python-svgrepo-com.svg"
-          alt="Python"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/bootstrap-4-logo-svgrepo-com.svg"
-          alt="Bootstrap"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/tailwind-svgrepo-com.svg"
-          alt="Tailwind"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/laravel-svgrepo-com.svg"
-          alt="Laravel"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-        <img
-          src="./svg/flask-svgrepo-com.svg"
-          alt="FlaskAPI"
-          class="w-32 bg-slate-200 p-4 rounded-lg hover:scale-110 ease-in-out duration-300 transition"
-        />
-      </div>
     </div>
 `;
 
-const createPortofolioTemplate = (portofolio) => `
-    <div class="container">
-        <div class="w-full px-4">
-            <div class="max-w-full mx-auto text-center mb-16">
-                <h4
-                    class="font-semibold text-lg text-primary dark:text-blue mb-2"
-                >
-                    Portofolio
-                </h4>
-                <h2 class="font-bold text-dark text-3xl mb-4 dark:text-white">
-                    Project Terbaru
-                </h2>
-                <p class="font-medium text-md text-secondary dark:text-slate-300">
-                    Beberapa Project yang saya ikut serta dalam pengerjaannya,
-                    Beberapa program menggunakan Framework Seperti Laravel, NodeJS,
-                    ReactJS, atau FlaskAPI
-                </p>
-            </div>
-        </div>
+const createAboutTemplate = (about) => {
+  // Array berisi informasi tentang bahasa pemrograman dan tools
+  const tools = [
+    {
+      src: './svg/html-5-svgrepo-com.svg',
+      alt: 'HTML',
+      name: 'HTML',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/css-3-svgrepo-com.svg',
+      alt: 'CSS',
+      name: 'CSS',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/javascript-svgrepo-com.svg',
+      alt: 'JavaScript',
+      name: 'JavaScript',
+      level: 'Intermediate',
+    },
+    {
+      src: './svg/php-svgrepo-com.svg',
+      alt: 'PHP',
+      name: 'PHP',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/nodejs-svgrepo-com.svg',
+      alt: 'NodeJS',
+      name: 'Node.js',
+      level: 'Intermediate',
+    },
+    {
+      src: './svg/python-svgrepo-com.svg',
+      alt: 'Python',
+      name: 'Python',
+      level: 'Intermediate',
+    },
+    {
+      src: './svg/bootstrap-4-logo-svgrepo-com.svg',
+      alt: 'Bootstrap',
+      name: 'Bootstrap',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/tailwind-svgrepo-com.svg',
+      alt: 'Tailwind',
+      name: 'Tailwind',
+      level: 'Intermediate',
+    },
+    {
+      src: './svg/laravel-svgrepo-com.svg',
+      alt: 'Laravel',
+      name: 'Laravel',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/flask-svgrepo-com.svg',
+      alt: 'FlaskAPI',
+      name: 'Flask',
+      level: 'Beginner',
+    },
+    {
+      src: './svg/vscode-svgrepo-com.svg',
+      alt: 'VSCode',
+      name: 'VSCode',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/laragon-svgrepo-com.svg',
+      alt: 'Laragon',
+      name: 'Laragon',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/mysql-logo-svgrepo-com.svg',
+      alt: 'MySQL',
+      name: 'MySQL',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/github-142-svgrepo-com.svg',
+      alt: 'GitHub',
+      name: 'GitHub',
+      level: 'Advanced',
+    },
+    {
+      src: './svg/git-svgrepo-com.svg',
+      alt: 'Git',
+      name: 'Git',
+      level: 'Intermediate',
+    },
+    {
+      src: './svg/cpanel-svgrepo-com.svg',
+      alt: 'CPanel',
+      name: 'CPanel',
+      level: 'Beginner',
+    },
+    {
+      src: './svg/linux-svgrepo-com.svg',
+      alt: 'Linux',
+      name: 'Linux',
+      level: 'Intermediate',
+    },
+  ];
 
-        <div class="w-fill px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
-            <div class="mb-12 p-4 md:w-1/2">
-                <div
-                    class="rounded-md shadow-md overflow-hidden hover:scale-105 ease-in-out duration-300 transition"
-                >
-                <img
-                    src="./images/portofolio/404.png"
-                    alt="Gambar Portofolio"
-                    width="w-full"
-                />
-                </div>
-                <h3
-                    class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white"
-                >
-                    Reimbursement Sistem
-                </h3>
-                <p
-                    class="font-medium text-base text-secondary dark:text-slate-300 text-justify"
-                >
-                    Sistem ini mencakup fitur pengajuan uang muka, perjalanan
-                    bisnis, tiket, hotel, dan perjalanan pulang. Sistem juga punya
-                    fitur admin yang dibatasi berdasar lokasi dan departemen. Tugas
-                    admin ialah melihat transaksi, impor/ekspor Excel, dan buat
-                    laporan PDF. Sistem terintegrasi untuk aktivitas bisnis dengan
-                    manajemen terstruktur.
-                </p>
-                <p class="font-bold text-base text-dark dark:text-slate-300">
-                    Spesifikasi:
-                </p>
-                <ul class="list-disc ml-4 text-dark dark:text-slate-300">
-                    <li><b>Bahasa Pemrograman:</b> PHP (Laravel)</li>
-                    <li><b>Database :</b> MySQL</li>
-                    <li><b>Front-end :</b> HTML, CSS, JavaScript</li>
-                    <li><b>Framework/Library:</b> Laravel, Bootstrap</li>
-                </ul>
-            </div>
+  // Menghasilkan HTML untuk setiap item menggunakan map
+  const toolsHTML = tools
+    .map(
+      ({ src, alt, name, level }) => `  
+    <div class="flex flex-col items-center w-48 h-48 p-4 bg-slate-200 rounded-lg hover:scale-110 ease-in-out duration-300 transition">  
+      <img src="${src}" alt="${alt}" class="w-24 h-24" />  
+      <p class="mt-4 text-center font-medium text-lg">${name}</p>  
+      <p class="text-center text-sm text-gray-500">${level}</p>  
+    </div>  
+  `
+    )
+    .join('');
 
-            <div class="mb-12 p-4 md:w-1/2">
-                <div
-                    class="rounded-md shadow-md overflow-hidden hover:scale-105 ease-in-out duration-300 transition"
-                >
-                <img
-                    src="./images/portofolio/404.png"
-                    alt="Gambar Portofolio"
-                    width="w-full"
-                />
-                </div>
-                <h3
-                    class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white"
-                >
-                    Mushroom Scanner
-                </h3>
-                <p
-                    class="font-medium text-base text-secondary dark:text-slate-300 text-justify"
-                >
-                    Proyek ini mengembangkan sistem yang dapat mendeteksi
-                    jenis-jenis jamur yang aman untuk dikonsumsi. Sistem ini
-                    menggunakan teknologi machine learning untuk mengidentifikasi
-                    lebih dari 12 jenis jamur dan menentukan apakah jamur tersebut
-                    dapat dimakan atau tidak.
-                </p>
-                <p class="font-bold text-base text-dark dark:text-slate-300">
-                    Spesifikasi:
-                </p>
-                <ul class="list-disc ml-4 text-dark dark:text-slate-300">
-                    <li>
-                        <b>Bahasa Pemrograman :</b> JavaScript (ReactJS) dan Python
-                        (FlaskAPI)
-                    </li>
-                    <li><b>Database :</b> MySQL</li>
-                    <li><b>Front-end :</b> HTML, CSS, JavaScript</li>
-                    <li><b>Back-end :</b> Python</li>
-                    <li><b>Framework/Library :</b> ReactJS, Tailwind, FlaskAPI</li>
-                </ul>
-            </div>
+  // Template utama
+  return `  
+    <div class="container">  
+      <div class="w-full px-4">  
+        <div class="max-w-full mx-auto text-center mb-16">  
+          <h2 class="font-bold text-dark text-3xl mb-4 dark:text-white">  
+            Bahasa Pemrograman dan Tools  
+          </h2>  
+          <p class="font-medium text-md text-secondary dark:text-slate-300">  
+            Beberapa Bahasa Pemrograman, Framework dan Tools yang saya pernah Gunakan  
+          </p>  
+        </div>  
+      </div>  
+    </div>  
 
-            <div class="mb-12 p-4 md:w-1/2">
-                <div
-                    class="rounded-md shadow-md overflow-hidden hover:scale-105 ease-in-out duration-300 transition"
-                >
-                    <img
-                        src="./images/portofolio/404.png"
-                        alt="Gambar Portofolio"
-                        width="w-full"
-                    />
-                </div>
-                <h3
-                    class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white"
-                >
-                    Weathering With Us
-                </h3>
-                <p
-                    class="font-medium text-base text-secondary dark:text-slate-300 text-justify"
-                >
-                    Proyek ini mengembangkan sistem yang dapat mendeteksi dan
-                    menampilkan prakiraan cuaca di Indonesia hingga 3 hari ke depan.
-                    Sistem ini bekerja secara real-time dan menyajikan informasi
-                    cuaca melalui tampilan peta, memudahkan pengguna untuk melihat
-                    kondisi cuaca hari ini, besok, dan lusa di seluruh wilayah
-                    Indonesia. Yang di mana data yang di ambil merupakan data dari
-                    BMKG.
-                </p>
-                <p class="font-bold text-base text-dark dark:text-slate-300">
-                    Spesifikasi:
-                </p>
-                <ul class="list-disc ml-4 text-dark dark:text-slate-300">
-                    <li><b>Bahasa Pemrograman :</b> PHP (Native)</li>
-                    <li>
-                        <b>API :</b> BMKG API (https://ibnux.github.io/BMKG-importer/)
-                    </li>
-                    <li><b>Front-end :</b> HTML, CSS, JavaScript</li>
-                    <li><b>Framework/Library :</b> Tailwind</li>
-                </ul>
-            </div>
+    <div class="relative overflow-hidden bg-primary dark:bg-blue p-10 mt-10">  
+      <!-- Gradient Overlay -->  
+      <div  
+        class="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-primary dark:from-blue to-transparent opacity-80 pointer-events-none"  
+      ></div>  
+      <div  
+        class="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-primary dark:from-blue to-transparent opacity-80 pointer-events-none"  
+      ></div>  
 
-            <div class="mb-12 p-4 md:w-1/2">
-                <div
-                    class="rounded-md shadow-md overflow-hidden hover:scale-105 ease-in-out duration-300 transition"
-                >
-                    <img
-                        src="./images/portofolio/404.png"
-                        alt="Gambar Portofolio"
-                        width="w-full"
-                    />
-                </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">
-                    SPK Pemilihan Karyawan terbaik
-                </h3>
-                <p class="font-medium text-base text-secondary dark:text-slate-300">
-                    SPK untuk memilih karyawan terbaik berdasar penilaian pimpinan
-                    atas kehadiran, etos kerja, dll. Sistem ini mengidentifikasi
-                    karyawan berkinerja terbaik untuk pertimbangan penghargaan atau
-                    promosi, sehingga proses pemilihan lebih terstruktur dan
-                    objektif.
-                </p>
-                <p class="font-bold text-base text-dark dark:text-slate-300">
-                    Spesifikasi:
-                </p>
-                <ul class="list-disc ml-4 text-dark dark:text-slate-300">
-                    <li><b>Bahasa Pemrograman:</b> PHP (Native)</li>
-                    <li><b>Database :</b> MySQL</li>
-                    <li><b>Front-end :</b> HTML, CSS, JavaScript</li>
-                    <li><b>Framework/Library:</b> Bootstrap</li>
-                </ul>
-            </div>
-        </div>
+      <!-- Marquee -->  
+      <div class="flex gap-6 p-4 min-w-max animate-loop">  
+        ${toolsHTML}  
+      </div>  
+    </div>  
+  `;
+};
 
-        <div class="w-full px-4">
-            <div class="max-w-full mx-auto text-center">
-                <a
-                href="https://github.com/erziealdrian02?tab=repositories"
-                class="block"
-                >
-                <h3
-                    class="font-bold text-xl text-dark dark:text-white hover:text-primary dark:hover:text-blue"
-                >
-                    Lihat Proyek Lainnya di
-                    <svg
-                    class="fill-current inline-block w-5 mb-2"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <title>GitHub</title>
-                    <path
-                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                    />
-                    </svg>
-                    Github
-                </h3>
-                </a>
-            </div>
-        </div>
-    </div>
-`;
+const createPortofolioTemplate = (portofolio) => {
+  // Array berisi informasi tentang proyek
+  const projects = [
+    {
+      image: './images/portofolio/reimburse/reimburse_ca.png',
+      title: 'ERP Reimbursement Sistem',
+      description:
+        'Sistem ini mencakup fitur pengajuan uang muka, perjalanan bisnis, tiket, hotel, dan perjalanan pulang. Sistem juga punya fitur admin yang dibatasi berdasar lokasi dan departemen. Tugas admin ialah melihat transaksi, impor/ekspor Excel, dan buat laporan PDF. Sistem terintegrasi untuk aktivitas bisnis dengan manajemen terstruktur.',
+      specifications: [
+        { label: 'Bahasa Pemrograman', value: 'PHP (Laravel)' },
+        { label: 'Database', value: 'MySQL' },
+        { label: 'Front-end', value: 'HTML, CSS, JavaScript' },
+        { label: 'Framework/Library', value: 'Laravel, Bootstrap' },
+      ],
+    },
+    {
+      image: './images/portofolio/mushroom/mushroom_index.png',
+      title: 'Mushroom Scanner',
+      description:
+        'Proyek ini mengembangkan sistem yang dapat mendeteksi jenis-jenis jamur yang aman untuk dikonsumsi. Sistem ini menggunakan teknologi machine learning untuk mengidentifikasi lebih dari 12 jenis jamur dan menentukan apakah jamur tersebut dapat dimakan atau tidak.',
+      specifications: [
+        {
+          label: 'Bahasa Pemrograman',
+          value: 'JavaScript (ReactJS) dan Python (FlaskAPI)',
+        },
+        { label: 'Database', value: 'MySQL' },
+        { label: 'Front-end', value: 'HTML, CSS, JavaScript' },
+        { label: 'Back-end', value: 'Python' },
+        { label: 'Framework/Library', value: 'ReactJS, Tailwind, FlaskAPI' },
+      ],
+    },
+    {
+      image: './images/portofolio/weather/weather_maps.png',
+      title: 'Weathering With Us',
+      description:
+        'Proyek ini mengembangkan sistem yang dapat mendeteksi dan menampilkan prakiraan cuaca di Indonesia hingga 3 hari ke depan. Sistem ini bekerja secara real-time dan menyajikan informasi cuaca melalui tampilan peta, memudahkan pengguna untuk melihat kondisi cuaca hari ini, besok, dan lusa di seluruh wilayah Indonesia. Yang di mana data yang di ambil merupakan data dari BMKG.',
+      specifications: [
+        { label: 'Bahasa Pemrograman', value: 'PHP (Native)' },
+        {
+          label: 'API',
+          value: 'BMKG API (https://ibnux.github.io/BMKG-importer/)',
+        },
+        { label: 'Front-end', value: 'HTML, CSS, JavaScript' },
+        { label: 'Framework/Library', value: 'Tailwind' },
+      ],
+    },
+    {
+      image: './images/portofolio/spk/karyawan.png',
+      title: 'SPK Pemilihan Karyawan terbaik',
+      description:
+        'SPK untuk memilih karyawan terbaik berdasar penilaian pimpinan atas kehadiran, etos kerja, dll. Sistem ini mengidentifikasi karyawan berkinerja terbaik untuk pertimbangan penghargaan atau promosi, sehingga proses pemilihan lebih terstruktur dan objektif.',
+      specifications: [
+        { label: 'Bahasa Pemrograman', value: 'PHP (Native)' },
+        { label: 'Database', value: 'MySQL' },
+        { label: 'Front-end', value: 'HTML, CSS, JavaScript' },
+        { label: 'Framework/Library', value: 'Bootstrap' },
+      ],
+    },
+  ];
 
-const createProgrammingTemplate = (programming) => `
-    <div class="container">
-        <div class="w-full px-4">
-          <div class="w-full mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">
-              Programming
-            </h4>
-            <h2
-              class="font-bold text-white text-3xl mb-4 lg:text-4xl dark:text-dark"
-            >
-              Bahasa Pemrograman dan Tools
-            </h2>
-            <p
-              class="font-medium text-md text-secondary md:text-lg dark:text-slate-800"
-            >
-              Beberapa Bahasa Pemrograman dan Tools yang di gunakan
-            </p>
-          </div>
-        </div>
+  // Menghasilkan HTML untuk setiap proyek menggunakan map
+  const projectsHTML = projects
+    .map(
+      ({ image, title, description, specifications }) => `  
+    <div class="mb-12 p-4 md:w-1/2">  
+      <div class="rounded-md shadow-md overflow-hidden hover:scale-105 ease-in-out duration-300 transition">  
+        <img src="${image}" alt="Gambar Portofolio" class="w-full h-48 object-cover"/>  
+      </div>  
+      <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">  
+        ${title}  
+      </h3>  
+      <p class="font-medium text-base text-secondary dark:text-slate-300 text-justify">  
+        ${description}  
+      </p>  
+      <p class="font-bold text-base text-dark dark:text-slate-300">  
+        Spesifikasi:  
+      </p>  
+      <ul class="list-disc ml-4 text-dark dark:text-slate-300">  
+        ${specifications
+          .map(
+            (spec) => `  
+          <li><b>${spec.label}:</b> ${spec.value}</li>  
+        `
+          )
+          .join('')}  
+      </ul>  
+    </div>  
+  `
+    )
+    .join('');
 
-        <!-- Tab Navigation Buttons -->
-        <div class="w-full px-4">
-          <div
-            class="max-w-[70%] mx-auto bg-slate-300 dark:bg-slate-800 rounded-lg p-4"
-          >
-            <!-- Tab Navigation - Centered -->
-            <div
-              class="flex justify-center bg-slate-800 dark:bg-slate-300 rounded-lg mb-4"
-              role="tablist"
-            >
-              <button
-                class="px-4 py-2 font-medium border-b-2 border-primary dark:border-blue text-primary"
-                id="programming-tab"
-                data-tab="programming-content"
-                role="tab"
-                aria-selected="true"
-              >
-                Bahasa Pemrograman
-              </button>
-              <button
-                class="px-4 py-2 font-medium border-b-2 border-transparent text-primary"
-                id="tools-tab"
-                data-tab="tools-content"
-                role="tab"
-                aria-selected="false"
-              >
-                Tools
-              </button>
-            </div>
+  // Template utama
+  return `  
+    <div class="container">  
+      <div class="w-full px-4">  
+        <div class="max-w-full mx-auto text-center mb-16">  
+          <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">  
+            Portofolio  
+          </h4>  
+          <h2 class="font-bold text-dark text-3xl mb-4 dark:text-white">  
+            Project Terbaru  
+          </h2>  
+          <p class="font-medium text-md text-secondary dark:text-slate-300">  
+            Beberapa Project yang saya ikut serta dalam pengerjaannya, Beberapa program menggunakan Framework Seperti Laravel, NodeJS, ReactJS, atau FlaskAPI  
+          </p>  
+        </div>  
+      </div>  
 
-            <!-- Tab Content -->
-            <div class="tab-content p-4">
-              <div
-                id="programming-content"
-                class="hidden transition-opacity duration-150 ease-linear data-[tab-active]:block"
-                role="tabpanel"
-              >
-                <div
-                  class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center"
-                >
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/html-5-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    HTML
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/css-3-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    CSS
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/javascript-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    JavaScript
-                  </p>
-                  <p
-                    href="#"
-                    class="w-full-[100px] text-dark dark:text-white font-bold text-center w-full py-1 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/php-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    PHP
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/nodejs-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    NodeJS
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/python-svgrepo-com.svg"
-                      alt=""
-                      class="w-full"
-                    />
-                    Python
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/bootstrap-4-logo-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    Bootstrap
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/tailwind-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    Tailwind
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/laravel-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    Laravel
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/flask-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    FlaskAPI
-                  </p>
-                </div>
-              </div>
+      <div class="w-fill px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">  
+        ${projectsHTML}  
+      </div>  
 
-              <div
-                id="tools-content"
-                class="hidden transition-opacity duration-150 ease-linear data-[tab-active]:block"
-                role="tabpanel"
-              >
-                <div
-                  class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center"
-                >
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-400"
-                  >
-                    <img
-                      src="./svg/vscode-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    VSCode
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/laragon-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    Laragon
-                  </p>
-                  <p
-                    href="#"
-                    class="w-full-[100px] text-dark dark:text-white font-bold text-center w-full py-1 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/mysql-logo-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    MySQL
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/github-142-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    GitHub
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/git-svgrepo-com.svg"
-                      alt=""
-                      class="w-full"
-                    />
-                    Git
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/cpanel-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    CPanel
-                  </p>
-                  <p
-                    href="#"
-                    class="text-dark dark:text-white font-bold text-center w-full py-2 dark:opacity-100 transition duration-500 hover:grayscale hover:opacity-100 bg-gray-400 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-600"
-                  >
-                    <img
-                      src="./svg/linux-svgrepo-com.svg"
-                      alt=""
-                      class="w-4/5 ml-3 mb-4 mt-1"
-                    />
-                    Linux
-                  </p>
-                  <div class="w-full h-[148px] opacity-0">
-                    <!-- Kotak kosong 1 -->
-                  </div>
-                  <div class="w-full h-[213px] opacity-0">
-                    <!-- Kotak kosong 2 -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-`;
+      <div class="w-full px-4">  
+        <div class="max-w-full mx-auto text-center">  
+          <a  
+            href="https://github.com/erziealdrian02?tab=repositories"  
+            class="block"  
+          >  
+            <h3 class="font-bold text-xl text-dark dark:text-white hover:text-primary dark:hover:text-blue">  
+              Lihat Proyek Lainnya di  
+              <svg class="fill-current inline-block w-5 mb-2" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">  
+                <title>GitHub</title>  
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />  
+              </svg>  
+              GitHub  
+            </h3>  
+          </a>  
+        </div>  
+      </div>  
+    </div>  
+  `;
+};
 
-const createSertifikatTemplate = (sertifikat) => `
-    <div class="container">
-        <div class="w-full px-4">
-            <div class="w-full mx-auto text-center mb-16">
-            <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">
-                Sertifikasi
-            </h4>
-            <h2
-                class="font-bold text-black text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
-            >
-                Sertifikat
-            </h2>
-            <p
-                class="font-medium text-md text-secondary md:text-lg dark:text-slate-200"
-            >
-                Beberapa Sertifikat yang saya peroleh Sertfikat Softskill maupun
-                Hardskill
-            </p>
-            </div>
-        </div>
+const createProgrammingTemplate = (programming) => {
+  // Array untuk pengalaman kerja
+  const workExperience = [
+    {
+      logo: './images/company/kpn.jpg',
+      companyName: 'KPN Corp',
+      position: 'Fullstack Developer Intern',
+      duration: 'July 2024 - Sekarang',
+      description:
+        'Bertanggung jawab membantu tim developer mengembangkan website internal perusahaan dengan membangun program berstandar OOP. Bekerja sama menggunakan GitHub untuk kolaborasi tim dan menyelesaikan proyek tepat waktu, serta mempresentasikan hasil program kepada pengguna dan melakukan revisi sesuai kebutuhan.',
+    },
+    {
+      logo: './images/company/Designer.jpeg',
+      companyName: 'Full Stack Developer Freelance',
+      position: '',
+      duration: 'Jan 2020 - Sekarang',
+      description:
+        'Membangun program secara mandiri sesuai kebutuhan klien dan berinteraksi untuk menjelaskan solusi teknis. Menyelesaikan masalah pengguna dengan pendekatan problem-solving yang efektif, menyusun dokumentasi teknis, serta memberikan dukungan pasca-pengembangan. Mengelola proyek dari perencanaan hingga implementasi dengan fokus pada kualitas dan efisiensi.',
+    },
+    {
+      logo: './images/company/daunbiru.jpeg',
+      companyName: 'PT. Daun Biru Engineering',
+      position: 'Junior Developer Intern',
+      duration: 'Desember 2018 - Maret 2019',
+      description:
+        'Mendapatkan pengalaman praktis dalam pengembangan web dan sertifikat kompetensi, sambil bertanggung jawab atas website internal perusahaan menggunakan Framework CodeIgniter dan meningkatkan kemampuan pemrograman.',
+    },
+  ];
 
-        <div class="flex flex-wrap -mx-4">
-            <div class="w-full px-4 lg:w-1/2 xl:w-1/3 mb-3">
-                <div
-                    class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 flex flex-col h-full"
-                >
-                    <img
-                    src="https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="programming"
-                    class="w-full"
-                    />
-                    <div class="py-8 px-6 flex flex-col flex-grow">
-                    <h3>
-                        <a
-                        href="#"
-                        class="block mb-3 font-semibold text-xl text-dark hover:text-primary dark:text-blue dark:text-white"
-                        >
-                        Belajar Machine Learning untuk Pemula
-                        </a>
-                    </h3>
-                    <p
-                        class="font-medium text-base text-secondary mb-6 text-justify"
-                    >
-                        Program ini mencakup pengolahan data, supervised dan
-                        unsupervised learning, Support Vector Machine (SVM),
-                        clustering dengan k-means, serta dasar-dasar machine learning
-                        seperti overfitting dan model selection. Selain itu, peserta
-                        akan mempelajari neural network, termasuk multi-layer
-                        perceptron dan convolutional neural network, serta penggunaan
-                        TensorFlow untuk pengembangan proyek machine learning.
-                    </p>
-                    <!-- Tambahkan mt-auto di tombol agar selalu di bawah -->
-                    <a
-                        href=""
-                        class="w-1/2 font-medium text-white bg-primary dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80 mt-auto"
-                    >
-                        Lihat Sertifikat
-                    </a>
-                    </div>
-                </div>
-            </div>
+  // Array untuk akademi
+  const academies = [
+    {
+      logo: './images/academy/unindra.jpg',
+      institution: 'Universitas Indraprasta PGRI',
+      location: 'Jakarta Timur, Indonesia',
+      duration: 'Agustus 2020 - October 2024',
+      degree: 'Sarjana Teknik Informatika, 3.39',
+    },
+    {
+      logo: './images/academy/kampusmerdeka.jpg',
+      institution:
+        'Program Studi Independen Bersertifikat Angkatan 4 (SIB 2023)',
+      location: '',
+      duration: 'Februari - July 2023',
+      degree: 'Pengembang Front-End Web dan Back-End, 88.22',
+    },
+    {
+      logo: './images/academy/fatahillah.png',
+      institution: 'SMK Fatahillah Cielungsi',
+      location: 'Kab. Bogor, Indonesia',
+      duration: 'Juni 2017 - October 2020',
+      degree: 'Rekayasa Perangkat Lunak, 81.00',
+    },
+  ];
 
-            <div class="w-full px-4 lg:w-1/2 xl:w-1/3 mb-3">
-                <div
-                    class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 flex flex-col h-full"
-                >
-                    <img
-                    src="https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="programming"
-                    class="w-full"
-                    />
-                    <div class="py-8 px-6 flex flex-col flex-grow">
-                    <h3>
-                        <a
-                        href="#"
-                        class="block mb-3 font-semibold text-xl text-dark hover:text-primary dark:text-blue dark:text-white"
-                        >
-                        Menjadi Front-End Web Developer Expert
-                        </a>
-                    </h3>
-                    <p
-                        class="font-medium text-base text-secondary mb-6 text-justify"
-                    >
-                        Program ini mencakup pembuatan website optimal dengan
-                        pendekatan mobile-first, aksesibilitas web, penulisan
-                        JavaScript <b>clean code</b>, pengembangan Progressive Web
-                        Apps, automation testing, optimasi performa web, dan penerapan
-                        CI/CD untuk otomatisasi testing dan deployment.
-                    </p>
-                    <!-- Tambahkan mt-auto di tombol agar selalu di bawah -->
-                    <a
-                        href=""
-                        class="w-1/2 font-medium text-white bg-primary dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80 mt-auto"
-                    >
-                        Lihat Sertifikat
-                    </a>
-                    </div>
-                </div>
-            </div>
+  // Menghasilkan HTML untuk pengalaman kerja
+  const workExperienceHTML = workExperience
+    .map(
+      ({ logo, companyName, position, duration, description }) => `  
+    <div class="bg-gray-200 dark:bg-gray-600 rounded-md p-6 shadow-lg mb-4">  
+      <div class="flex flex-wrap lg:flex-nowrap items-center space-x-6">  
+        <div class="w-full lg:w-1/5 flex justify-center">  
+          <img src="${logo}" alt="Logo Perusahaan" class="mb-4 lg:mb-0 w-28 h-28 rounded-full shadow-md scale-100" />  
+        </div>  
+        <div class="w-4/5">  
+          <div class="flex flex-wrap justify-between">  
+            <h1 class="text-center text-lg font-bold text-primary dark:text-blue">  
+              ${companyName} ${
+        position
+          ? `<span class="text-sm text-base font-normal text-secondary dark:text-slate-400">- ${position}</span>`
+          : ''
+      }  
+            </h1>  
+            <h2 class="text-center text-sm text-gray-600 dark:text-gray-300 inline-block mt-1">${duration}</h2>  
+          </div>  
+          <p class="text-gray-700 dark:text-gray-200 text-sm text-justify">${description}</p>  
+        </div>  
+      </div>  
+    </div>  
+  `
+    )
+    .join('');
 
-            <div class="w-full px-4 lg:w-1/2 xl:w-1/3 mb-3">
-                <div
-                    class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 flex flex-col h-full"
-                >
-                    <img
-                    src="https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="programming"
-                    class="w-full"
-                    />
-                    <div class="py-8 px-6 flex flex-col flex-grow">
-                    <h3>
-                        <a
-                        href="#"
-                        class="block mb-3 font-semibold text-xl text-dark hover:text-primary dark:text-blue dark:text-white"
-                        >
-                        Belajar Dasar Git dengan GitHub
-                        </a>
-                    </h3>
-                    <p
-                        class="font-medium text-base text-secondary mb-6 text-justify"
-                    >
-                        Program ini menjelaskan Git dan GitHub serta manfaatnya dalam
-                        pengelolaan kode. Peserta akan mempelajari dasar-dasar Git,
-                        termasuk membuat repository, commit, dan checkout, diikuti
-                        dengan studi kasus. Materi juga mencakup branching, merging,
-                        penyelesaian konflik, dan kolaborasi tim melalui forking,
-                        squashing changes, dan code reviews. Selain itu, peserta akan
-                        belajar menangani pull request dan membuat README yang menarik
-                        di GitHub sebagai portofolio profesional.
-                    </p>
-                    <!-- Tambahkan mt-auto di tombol agar selalu di bawah -->
-                    <a
-                        href=""
-                        class="w-1/2 font-medium text-white bg-primary dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80 mt-auto"
-                    >
-                        Lihat Sertifikat
-                    </a>
-                    </div>
-                </div>
-            </div>
+  // Menghasilkan HTML untuk akademi
+  const academiesHTML = academies
+    .map(
+      ({ logo, institution, location, duration, degree }) => `  
+    <div class="bg-gray-200 dark:bg-gray-600 rounded-md p-6 shadow-lg mb-4">  
+      <div class="flex flex-wrap lg:flex-nowrap items-center space-x-6">  
+        <div class="w-full lg:w-1/5 flex justify-center">  
+          <img src="${logo}" alt="Logo Kampus" class="w-28 h-28 rounded-full shadow-md scale-100 bg-white" />  
+        </div>  
+        <div class="w-4/5">  
+          <div class="flex flex-wrap justify-center lg:justify-between">  
+            <h1 class="text-center text-lg font-bold text-primary dark:text-blue">${institution}  
+              ${
+                location
+                  ? `<span class="text-sm text-base font-normal text-secondary dark:text-slate-400">- ${location}</span>`
+                  : ''
+              }  
+            </h1>  
+            <h2 class="text-center text-xs text-gray-600 dark:text-gray-300 inline-block mt-1">${duration}</h2>  
+            <h2 class="text-center text-normal text-gray-600 dark:text-gray-300 mt-1">${degree}</h2>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  `
+    )
+    .join('');
 
-            <div class="w-full px-4 lg:w-1/2 xl:w-1/3 mb-3">
-                <div
-                    class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 flex flex-col h-full"
-                >
-                    <img
-                    src="https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="programming"
-                    class="w-full"
-                    />
-                    <div class="py-8 px-6 flex flex-col flex-grow">
-                    <h3>
-                        <a
-                        href="#"
-                        class="block mb-3 font-semibold text-xl text-dark hover:text-primary dark:text-blue dark:text-white"
-                        >
-                        Merancang UI & UX Website bagi Desainer Pemula
-                        </a>
-                    </h3>
-                    <p
-                        class="font-medium text-base text-secondary mb-6 text-justify"
-                    >
-                        Program ini mencakup penentuan teknik elisitasi kebutuhan,
-                        penyusunan dokumentasi spesifikasi perangkat lunak, serta
-                        perancangan kebutuhan fungsional dan non-fungsional. Peserta
-                        juga akan belajar merancang antarmuka pengguna (UI) yang
-                        intuitif dan pengalaman pengguna (UX) yang optimal, dengan
-                        fokus pada alur interaksi, kemudahan penggunaan, dan kepuasan
-                        pengguna.
-                    </p>
-                    <!-- Tambahkan mt-auto di tombol agar selalu di bawah -->
-                    <a
-                        href=""
-                        class="w-1/2 font-medium text-white bg-primary dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80 mt-auto"
-                    >
-                        Lihat Sertifikat
-                    </a>
-                    </div>
-                </div>
-            </div>
+  // Menghasilkan HTML penuh
+  return `  
+    <div class="container">  
+      <div class="w-full px-4">  
+        <div class="w-full mx-auto text-center mb-16">  
+          <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">Programming</h4>  
+          <h2 class="font-bold text-white text-3xl mb-4 lg:text-4xl dark:text-dark">Pengalaman Kerja dan</h2>  
+          <p class="font-medium text-md text-secondary md:text-lg dark:text-slate-800">Beberapa Bahasa Pemrograman dan Tools yang di gunakan</p>  
+        </div>  
+      </div>  
 
-            <div class="w-full px-4 lg:w-1/2 xl:w-1/3 mb-3">
-                <div
-                    class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 flex flex-col h-full"
-                >
-                    <img
-                    src="https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="programming"
-                    class="w-full"
-                    />
-                    <div class="py-8 px-6 flex flex-col flex-grow">
-                    <h3>
-                        <a
-                        href="#"
-                        class="block mb-3 font-semibold text-xl text-dark hover:text-primary dark:text-blue dark:text-white"
-                        >
-                        Mempelajari Taktik Komunikasi Untuk Bicara Publik bagi Calon
-                        Hubungan Masyarakat
-                        </a>
-                    </h3>
-                    <p
-                        class="font-medium text-base text-secondary mb-6 text-justify"
-                    >
-                        Menyusun taktik komunikasi melibatkan perencanaan strategi
-                        untuk menyampaikan pesan secara efektif kepada audiens yang
-                        tepat. Ini mencakup pemilihan saluran komunikasi, format
-                        pesan, serta pengaturan waktu dan frekuensi komunikasi. Taktik
-                        juga harus disesuaikan dengan karakteristik audiens dan tujuan
-                        komunikasi, baik untuk tim internal, klien, atau publik.
-                    </p>
-                    <!-- Tambahkan mt-auto di tombol agar selalu di bawah -->
-                    <a
-                        href=""
-                        class="w-1/2 font-medium text-white bg-primary dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80 mt-auto"
-                    >
-                        Lihat Sertifikat
-                    </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-`;
+      <!-- Tab Navigation Buttons -->  
+      <div class="w-full px-4">  
+        <div class="max-w-[70%] mx-auto bg-slate-300 dark:bg-slate-800 rounded-lg p-4">  
+          <div class="flex justify-center bg-slate-800 dark:bg-slate-300 rounded-lg mb-4" role="tablist">  
+            <button class="px-4 py-2 font-medium border-b-4 border-primary dark:border-blue text-primary ease-in-out duration-300 transition hover:border-primary hover:dark:text-blue hover:dark:border-blue hover:text-primary"  
+                    id="programming-tab" data-tab="programming-content" role="tab" aria-selected="true">Pengalaman</button>  
+            <button class="px-4 py-2 ml-3 font-medium border-b-4 border-transparent text-gray-500 ease-in-out duration-300 transition hover:border-primary hover:dark:text-blue hover:dark:border-blue hover:text-primary"  
+                    id="tools-tab" data-tab="tools-content" role="tab" aria-selected="false">Akademi</button>  
+          </div>  
+
+          <!-- Tab Content -->  
+          <div class="tab-content p-4">  
+            <div id="programming-content" class="hidden transition-opacity duration-150 ease-linear" role="tabpanel">  
+              ${workExperienceHTML}  
+            </div>  
+
+            <div id="tools-content" class="hidden transition-opacity duration-150 ease-linear" role="tabpanel">  
+              ${academiesHTML}  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  `;
+};
+
+const createSertifikatTemplate = (sertifikat) => {
+  // Array untuk sertifikat
+  const sertifikatList = [
+    {
+      image:
+        'https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      title: 'Belajar Machine Learning untuk Pemula',
+      description:
+        'Program ini mencakup pengolahan data, supervised dan unsupervised learning, Support Vector Machine (SVM), clustering dengan k-means, serta dasar-dasar machine learning seperti overfitting dan model selection. Selain itu, peserta akan mempelajari neural network, termasuk multi-layer perceptron dan convolutional neural network, serta penggunaan TensorFlow untuk pengembangan proyek machine learning.',
+      link: '#',
+    },
+    {
+      image:
+        'https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      title: 'Menjadi Front-End Web Developer Expert',
+      description:
+        'Program ini mencakup pembuatan website optimal dengan pendekatan mobile-first, aksesibilitas web, penulisan JavaScript clean code, pengembangan Progressive Web Apps, automation testing, optimasi performa web, dan penerapan CI/CD untuk otomatisasi testing dan deployment.',
+      link: '#',
+    },
+    {
+      image:
+        'https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      title: 'Belajar Dasar Git dengan GitHub',
+      description:
+        'Program ini menjelaskan Git dan GitHub serta manfaatnya dalam pengelolaan kode. Peserta akan mempelajari dasar-dasar Git, termasuk membuat repository, commit, dan checkout, diikuti dengan studi kasus. Materi juga mencakup branching, merging, penyelesaian konflik, dan kolaborasi tim melalui forking, squashing changes, dan code reviews. Selain itu, peserta akan belajar menangani pull request dan membuat README yang menarik di GitHub sebagai portofolio profesional.',
+      link: '#',
+    },
+    {
+      image:
+        'https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      title: 'Merancang UI & UX Website bagi Desainer Pemula',
+      description:
+        'Program ini mencakup penentuan teknik elisitasi kebutuhan, penyusunan dokumentasi spesifikasi perangkat lunak, serta perancangan kebutuhan fungsional dan non-fungsional. Peserta juga akan belajar merancang antarmuka pengguna (UI) yang intuitif dan pengalaman pengguna (UX) yang optimal, dengan fokus pada alur interaksi, kemudahan penggunaan, dan kepuasan pengguna.',
+      link: '#',
+    },
+    {
+      image:
+        'https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      title:
+        'Mempelajari Taktik Komunikasi Untuk Bicara Publik bagi Calon Hubungan Masyarakat',
+      description:
+        'Menyusun taktik komunikasi melibatkan perencanaan strategi untuk menyampaikan pesan secara efektif kepada audiens yang tepat. Ini mencakup pemilihan saluran komunikasi, format pesan, serta pengaturan waktu dan frekuensi komunikasi. Taktik juga harus disesuaikan dengan karakteristik audiens dan tujuan komunikasi, baik untuk tim internal, klien, atau publik.',
+      link: '#',
+    },
+  ];
+
+  // Menghasilkan HTML untuk setiap sertifikat
+  const sertifikatHTML = sertifikatList
+    .map(
+      ({ image, title, description, link }) => `  
+    <div class="w-full px-4 lg:w-1/2 xl:w-1/3 mb-3">  
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 flex flex-col h-full">  
+        <img src="${image}" alt="programming" class="w-full" />  
+        <div class="py-8 px-6 flex flex-col flex-grow">  
+          <h3>  
+            <a href="${link}" class="block mb-3 font-semibold text-xl text-dark hover:text-primary dark:text-blue dark:text-white">  
+              ${title}  
+            </a>  
+          </h3>  
+          <p class="font-medium text-base text-secondary mb-6 text-justify">  
+            ${description}  
+          </p>  
+          <a href="${link}" class="w-1/2 font-medium text-white bg-primary dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80 mt-auto">  
+            Lihat Sertifikat  
+          </a>  
+        </div>  
+      </div>  
+    </div>  
+  `
+    )
+    .join('');
+
+  // Template utama
+  return `  
+    <div class="container">  
+      <div class="w-full px-4">  
+        <div class="w-full mx-auto text-center mb-16">  
+          <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">Sertifikasi</h4>  
+          <h2 class="font-bold text-black text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Sertifikat</h2>  
+          <p class="font-medium text-md text-secondary md:text-lg dark:text-slate-200">Beberapa Sertifikat yang saya peroleh Sertifikat Softskill maupun Hardskill</p>  
+        </div>  
+      </div>  
+
+      <div class="flex flex-wrap -mx-4">  
+        ${sertifikatHTML}  
+      </div>  
+    </div>  
+  `;
+};
 
 const createContactTemplate = (contact) => `
     <div class="container">
