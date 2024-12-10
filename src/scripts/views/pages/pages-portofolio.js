@@ -1,14 +1,12 @@
 import RunningTextInitiator from '../../utils/runningText-initiator';
 import TabInitiator from '../../utils/tab-initiator';
 
-import {
-  createMovieItemTemplate,
-  createAboutTemplate,
-  createPortofolioTemplate,
-  createProgrammingTemplate,
-  createSertifikatTemplate,
-  createContactTemplate,
-} from '../templates/template-creator';
+import { createProfileTemplate } from '../templates/template-profile';
+import { createToolsTemplate } from '../templates/template-tools';
+import { createPortofolioTemplate } from '../templates/template-portofolio';
+import { createExperienceTemplate } from '../templates/template-experience';
+import { createSertifikatTemplate } from '../templates/template-certificate';
+import { createContactTemplate } from '../templates/template-contact';
 
 const NowPlaying = {
   async render() {
@@ -18,10 +16,10 @@ const NowPlaying = {
       </section>
       <!-- Hero Section End -->
 
-      <!-- About Section Start -->
-      <section id="about" class="pt-44 dark:bg-dark">
+      <!-- Tools Section Start -->
+      <section id="tools" class="pt-44 dark:bg-dark">
       </section>
-      <!-- About Section End -->
+      <!-- Tools Section End -->
 
       <div
         class="pt-36 pb-16 bg-[url('./img/bg-about.svg')] dark:bg-[url('./img/bg-about-dark.svg')]"
@@ -32,10 +30,10 @@ const NowPlaying = {
       </section>
       <!-- Portofolio Section End -->
 
-      <!-- Programming Section Start -->
-      <section id="programming" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
+      <!-- Experience Section Start -->
+      <section id="experience" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
       </section>
-      <!-- Programming Section End -->
+      <!-- Experience Section End -->
 
       <!-- sertifikat Section Start -->
       <section id="sertifikat" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">  
@@ -50,25 +48,25 @@ const NowPlaying = {
   },
 
   async afterRender() {
-    const moviesContainer = document.querySelector('#home');
-    const aboutContainer = document.querySelector('#about');
+    const profileContainer = document.querySelector('#home');
+    const toolsContainer = document.querySelector('#tools');
     const portofolioContainer = document.querySelector('#portofolio');
-    const programmingContainer = document.querySelector('#programming');
+    const experienceContainer = document.querySelector('#experience');
     const sertifikatContainer = document.querySelector('#sertifikat');
     const contactContainer = document.querySelector('#contact');
 
     // Misalkan kita langsung menggunakan template
-    const movieItemTemplate = createMovieItemTemplate();
-    const aboutTemplate = createAboutTemplate();
+    const profileTemplate = createProfileTemplate();
+    const toolsTemplate = createToolsTemplate();
     const portofolioTemplate = createPortofolioTemplate();
-    const programmingTemplate = createProgrammingTemplate();
+    const experienceTemplate = createExperienceTemplate();
     const sertifikatTemplate = createSertifikatTemplate();
     const contactTemplate = createContactTemplate();
 
-    moviesContainer.innerHTML += movieItemTemplate;
-    aboutContainer.innerHTML += aboutTemplate;
+    profileContainer.innerHTML += profileTemplate;
+    toolsContainer.innerHTML += toolsTemplate;
     portofolioContainer.innerHTML += portofolioTemplate;
-    programmingContainer.innerHTML += programmingTemplate;
+    experienceContainer.innerHTML += experienceTemplate;
     sertifikatContainer.innerHTML += sertifikatTemplate;
     contactContainer.innerHTML += contactTemplate;
 

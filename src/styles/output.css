@@ -2095,6 +2095,11 @@ video {
     flex-direction: row;
   }
 
+  .md\:object-center {
+    -o-object-position: center;
+       object-position: center;
+  }
+
   .md\:text-left {
     text-align: left;
   }
@@ -2156,6 +2161,10 @@ video {
     display: none;
   }
 
+  .lg\:h-\[380px\] {
+    height: 380px;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -2186,6 +2195,11 @@ video {
 
   .lg\:bg-transparent {
     background-color: transparent;
+  }
+
+  .lg\:object-center {
+    -o-object-position: center;
+       object-position: center;
   }
 
   .lg\:pt-10 {
@@ -2244,5 +2258,10 @@ video {
 
   .xl\:w-10\/12 {
     width: 83.333333%;
+  }
+
+  .xl\:object-center {
+    -o-object-position: center;
+       object-position: center;
   }
 }

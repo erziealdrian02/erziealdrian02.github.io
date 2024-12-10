@@ -1,4 +1,4 @@
-const createProgrammingTemplate = (programming) => {
+const createExperienceTemplate = (programming) => {
   // Array untuk pengalaman kerja
   const workExperience = [
     {
@@ -146,4 +146,4 @@ const createProgrammingTemplate = (programming) => {
     `;
 };
 
-export { createProgrammingTemplate };
+export { createExperienceTemplate };

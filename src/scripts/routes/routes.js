@@ -1,12 +1,11 @@
-import NowPlaying from '../views/pages/now-playing';
+import Portofolio from '../views/pages/pages-portofolio';
 import Upcoming from '../views/pages/upcoming';
 // import Detail from '../views/pages/detail';
 
 const routes = {
-  '/': NowPlaying, // default page
-  '/now-playing': NowPlaying,
+  '/': Portofolio, // default page
+  '/now-playing': Portofolio,
   '/upcoming': Upcoming,
-  // '/detail/:id': Detail,
 };
 
 export default routes;
