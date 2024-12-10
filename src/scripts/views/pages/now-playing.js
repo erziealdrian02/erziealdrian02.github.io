@@ -1,12 +1,14 @@
 import RunningTextInitiator from '../../utils/runningText-initiator';
 import TabInitiator from '../../utils/tab-initiator';
 
-import { createMovieItemTemplate } from '../templates/template-creator';
-import { createAboutTemplate } from '../templates/template-creator';
-import { createPortofolioTemplate } from '../templates/template-creator';
-import { createProgrammingTemplate } from '../templates/template-creator';
-import { createSertifikatTemplate } from '../templates/template-creator';
-import { createContactTemplate } from '../templates/template-creator';
+import {
+  createMovieItemTemplate,
+  createAboutTemplate,
+  createPortofolioTemplate,
+  createProgrammingTemplate,
+  createSertifikatTemplate,
+  createContactTemplate,
+} from '../templates/template-creator';
 
 const NowPlaying = {
   async render() {
