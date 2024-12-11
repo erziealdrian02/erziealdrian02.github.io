@@ -1,4 +1,5 @@
 {
+  "homepage": "https://erziealdrian02.github.io/erzie-profile/",
   "name": "porto",
   "version": "1.0.0",
   "description": "ini",
@@ -7,7 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
     "start-dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "server": "node src/scripts/globals/server.js",
+    "build": "webpack --config webpack.prod.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "erziealdrian02",
   "license": "ISC",
@@ -17,6 +21,7 @@
     "babel-loader": "^9.2.1",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.2.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.15",
@@ -26,6 +31,10 @@
     "webpack-merge": "^6.0.1"
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16",
     "regenerator-runtime": "^0.14.1"
   }
 }

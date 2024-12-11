@@ -8,7 +8,7 @@ import { createExperienceTemplate } from '../templates/template-experience';
 import { createSertifikatTemplate } from '../templates/template-certificate';
 import { createContactTemplate } from '../templates/template-contact';
 
-const NowPlaying = {
+const PortofolioPage = {
   async render() {
     return `
       <!-- Hero Section Start -->
@@ -88,4 +88,4 @@ const NowPlaying = {
   },
 };
 
-export default NowPlaying;
+export default PortofolioPage;
