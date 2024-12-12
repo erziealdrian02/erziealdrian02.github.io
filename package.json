@@ -11,7 +11,7 @@
     "server": "node src/scripts/globals/server.js",
     "build": "webpack --config webpack.prod.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "author": "erziealdrian02",
   "license": "ISC",
