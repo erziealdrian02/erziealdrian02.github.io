@@ -10,7 +10,7 @@ module.exports = {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/erzie-profile/',
+    publicPath: '/',
   },
   module: {
     rules: [
