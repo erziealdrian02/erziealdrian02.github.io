@@ -47,6 +47,15 @@ const createSertifikatTemplate = (sertifikat) => {
         'Menyusun taktik komunikasi melibatkan perencanaan strategi untuk menyampaikan pesan secara efektif kepada audiens yang tepat. Ini mencakup pemilihan saluran komunikasi, format pesan, serta pengaturan waktu dan frekuensi komunikasi. Taktik juga harus disesuaikan dengan karakteristik audiens dan tujuan komunikasi, baik untuk tim internal, klien, atau publik.',
       link: 'https://app.karier.mu/sertifikat/cHJvZ3JhbV91c2VyLTEyMTI5NDIx?prakerja',
     },
+    {
+      image: './images/certificates/FlutterIntermediate.png',
+      logo: './images/certificates/logo/dicoding.png',
+      logoDesc: 'Dicoding Indonesia',
+      title: 'Belajar Pengembangan Aplikasi Flutter Intermediate',
+      description:
+        'Kelas ini ditujukan untuk Flutter developer yang ingin menguasai komponen widget dan fitur tingkat lanjut dalam pengembangan aplikasi. Materi meliputi Advanced Navigation dengan Navigator 2.0, pengelolaan media, lokalisasi dan aksesibilitas, pengembangan aplikasi desktop, penggunaan widget tingkat lanjut, pembuatan kode otomatis, integrasi peta dan lokasi, serta pengelolaan varian aplikasi. Dengan kelas ini, peserta dapat membangun aplikasi Flutter yang lebih kompleks dan fungsional.',
+      link: 'https://www.dicoding.com/certificates/4EXGKY72DZRL',
+    },
   ];
 
   // Menghasilkan HTML untuk setiap sertifikat

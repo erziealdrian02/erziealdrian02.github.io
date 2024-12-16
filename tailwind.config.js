@@ -35,7 +35,7 @@ module.exports = {
         },
       },
       verticalMove: {
-        '0%, 100%': { transform: 'translateY(-25%)' },
+        '0%, 100%': { transform: 'translateY(-10%)' },
         '50%': { transform: 'translateY(0)' },
       },
     },

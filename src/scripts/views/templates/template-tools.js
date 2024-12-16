@@ -109,8 +109,8 @@ const createToolsTemplate = (about) => {
   const toolsHTML = tools
     .map(
       ({ src, alt, name, level }) => `  
-      <div class="flex flex-col items-center w-48 h-48 p-4 bg-slate-200 rounded-lg hover:scale-110 ease-in-out duration-300 transition">  
-        <img src="${src}" alt="${alt}" class="w-24 h-24" />  
+      <div class="flex flex-col items-center w-30 lg:w-48 h-30 lg:h-48 p-4 bg-slate-200 rounded-lg hover:scale-110 ease-in-out duration-300 transition">  
+        <img src="${src}" alt="${alt}" class="w-14 h-14 lg:w-24 lg:h-24" />  
         <p class="mt-4 text-center font-medium text-lg">${name}</p>  
         <p class="text-center text-sm text-gray-500">${level}</p>  
       </div>  
@@ -133,7 +133,7 @@ const createToolsTemplate = (about) => {
         </div>  
       </div>  
   
-      <div class="relative overflow-hidden bg-primary dark:bg-blue p-10 mt-10">  
+      <div class="relative overflow-hidden bg-primary dark:bg-blue p-2 lg:p-10 mt-10">  
         <!-- Gradient Overlay -->  
         <div  
           class="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-primary dark:from-blue to-transparent opacity-80 pointer-events-none"  

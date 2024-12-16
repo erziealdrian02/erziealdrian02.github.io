@@ -145,7 +145,7 @@ const createProfileTemplate = (home) => {
             </a>
         </div>
           <div class="w-full self-end px-4 lg:w-1/2">
-            <div class="relative mt-2 mb-10 lg:mt-9 lg:right-0 animate-verticalMove">
+            <div class="relative mt-10 mb-10 lg:mt-9 lg:right-0 animate-verticalMove">
               <img
                   src="./images/profiles/me2.png"
                   alt="Thats Me"
