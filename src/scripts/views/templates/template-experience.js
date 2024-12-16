@@ -122,7 +122,7 @@ const createExperienceTemplate = (programming) => {
   
         <!-- Tab Navigation Buttons -->  
         <div class="w-full lg:px-4">  
-          <div class="max-w-[100%] mx-auto bg-slate-300 dark:bg-slate-800 rounded-lg p-4">  
+          <div class="max-w-[100%] lg:max-w-[80%] mx-auto bg-slate-300 dark:bg-slate-800 rounded-lg p-4">  
             <div class="flex justify-center bg-slate-800 dark:bg-slate-300 rounded-lg mb-4" role="tablist">  
               <button class="px-4 py-2 font-medium border-b-4 border-primary dark:border-blue text-primary ease-in-out duration-300 transition hover:border-primary hover:dark:text-blue hover:dark:border-blue hover:text-primary"  
                       id="programming-tab" data-tab="programming-content" role="tab" aria-selected="true">Pengalaman</button>  
