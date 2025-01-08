@@ -147,16 +147,16 @@ const createProfileTemplate = (home) => {
           <div class="w-full self-end px-4 lg:w-1/2">
             <div class="relative mt-10 mb-10 lg:mt-9 lg:right-0 animate-verticalMove">
               <img
-                  src="./images/profiles/me2.png"
+                  src="./images/profiles/me_ilustration.png"
                   alt="Thats Me"
-                  class="max-w-full h-[300px] mx-auto relative z-10"
+                  class="max-w-full h-[420px] mx-auto relative z-10"
               />
               <span
                   class="absolute bottom-1 top-[1.5px] left-1/2 -translate-x-1/2 md:scale-125"
               >
                   <svg
-                  widht="400"
-                  height="320"
+                  widht="420"
+                  height="430"
                   viewBox="0 0 200 200"
                   xmlns="http://www.w3.org/2000/svg"
                   >

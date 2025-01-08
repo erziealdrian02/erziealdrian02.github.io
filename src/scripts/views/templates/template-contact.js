@@ -104,9 +104,9 @@ const createContactTemplate = (contact) => {
                 Kirimkan saya Pesan
               </h2>
             </div>
-
-            <form
-              action="/send-email"
+            
+            <form 
+              id="email-form" 
               class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg"
             >
               <div class="w-full px-4 mb-8">
