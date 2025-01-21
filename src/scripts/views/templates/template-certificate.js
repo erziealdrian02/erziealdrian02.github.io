@@ -84,7 +84,7 @@ const createSertifikatTemplate = (sertifikat) => {
                 <h3>
                   <a
                     href="${link}"
-                    class="block mb-3 font-semibold text-xl text-dark hover:text-primary dark:text-blue dark:text-white line-clamp-2"
+                    class="block mb-3 font-semibold text-xl text-dark hover:text-primaryLight dark:text-blue dark:text-white line-clamp-2"
                   >
                     ${title}
                   </a>
@@ -99,7 +99,7 @@ const createSertifikatTemplate = (sertifikat) => {
                   </p>
                   <a
                     href="${link}"
-                    class="w-1/2 font-medium text-white bg-primary dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80"
+                    class="w-1/2 font-medium text-white bg-primaryLight dark:bg-blue py-3 px-4 rounded-lg hover:opacity-80"
                   >
                     Lihat Sertifikat
                   </a>
@@ -116,7 +116,7 @@ const createSertifikatTemplate = (sertifikat) => {
       <div class="container">  
         <div class="w-full px-4">  
           <div class="w-full mx-auto text-center mb-16">  
-            <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">Sertifikasi</h4>  
+            <h4 class="font-semibold text-lg text-primaryLight dark:text-blue mb-2">Sertifikasi</h4>  
             <h2 class="font-bold text-black text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Sertifikat</h2>  
             <p class="font-medium text-md text-secondary md:text-lg dark:text-slate-200">Beberapa Sertifikat yang saya peroleh Sertifikat Softskill maupun Hardskill</p>  
           </div>  

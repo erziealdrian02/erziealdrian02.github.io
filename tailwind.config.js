@@ -16,6 +16,18 @@ module.exports = {
         blue: '#0ea5e9',
         dark: '#0f172a',
         secondary: '#64748b',
+
+        textLight: '#0d0b14',
+        backgroundLight: '#faf9fd',
+        primaryLight: '#14b8a6',
+        secondaryLight: '#9b81e7',
+        accentLight: '#744cec',
+
+        textDark: '#e9e9f1',
+        backgroundDark: '#010104',
+        primaryDark: '#9192de',
+        secondaryDark: '#522183',
+        accentDark: '#a04acf',
       },
     },
 

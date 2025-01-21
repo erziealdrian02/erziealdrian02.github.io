@@ -94,7 +94,7 @@ const createPortofolioTemplate = (portofolio) => {
       <div class="container">  
         <div class="w-full px-4">  
           <div class="max-w-full mx-auto text-center mb-16">  
-            <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">  
+            <h4 class="font-semibold text-lg text-primaryLight dark:text-blue mb-2">  
               Portofolio  
             </h4>  
             <h2 class="font-bold text-dark text-3xl mb-4 dark:text-white">  
@@ -116,7 +116,7 @@ const createPortofolioTemplate = (portofolio) => {
               href="https://github.com/erziealdrian02?tab=repositories"  
               class="block"  
             >  
-              <h3 class="font-bold text-xl text-dark dark:text-white hover:text-primary dark:hover:text-blue">  
+              <h3 class="font-bold text-xl text-dark dark:text-white hover:text-primaryLight dark:hover:text-blue">  
                 Lihat Proyek Lainnya di  
                 <svg class="fill-current inline-block w-5 mb-2" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">  
                   <title>GitHub</title>  

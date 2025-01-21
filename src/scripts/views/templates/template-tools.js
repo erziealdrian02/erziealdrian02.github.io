@@ -133,13 +133,13 @@ const createToolsTemplate = (about) => {
         </div>  
       </div>  
   
-      <div class="relative overflow-hidden bg-primary dark:bg-blue p-2 lg:p-10 mt-10">  
+      <div class="relative overflow-hidden bg-primaryLight dark:bg-blue p-2 lg:p-10 mt-10">  
         <!-- Gradient Overlay -->  
         <div  
-          class="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-primary dark:from-blue to-transparent opacity-80 pointer-events-none"  
+          class="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-primaryLight dark:from-blue to-transparent opacity-80 pointer-events-none"  
         ></div>  
         <div  
-          class="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-primary dark:from-blue to-transparent opacity-80 pointer-events-none"  
+          class="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-primaryLight dark:from-blue to-transparent opacity-80 pointer-events-none"  
         ></div>  
   
         <!-- Marquee -->  

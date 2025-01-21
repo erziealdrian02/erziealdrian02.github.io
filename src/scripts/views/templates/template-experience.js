@@ -64,10 +64,10 @@ const createExperienceTemplate = (programming) => {
           </div>  
           <div class="w-4/5">  
             <div class="flex flex-wrap justify-between">  
-              <h1 class="text-center text-lg font-bold text-primary dark:text-blue">  
+              <h1 class="text-center text-lg font-bold text-primaryLight dark:text-blue">  
                 ${companyName} ${
         position
-          ? `<span class="text-sm text-base font-normal text-secondary dark:text-slate-400">- ${position}</span>`
+          ? `<span class="text-base font-normal text-secondary dark:text-slate-400">- ${position}</span>`
           : ''
       }  
               </h1>  
@@ -92,10 +92,10 @@ const createExperienceTemplate = (programming) => {
           </div>  
           <div class="w-4/5">  
             <div class="flex flex-wrap justify-center lg:justify-between">  
-              <h1 class="text-center text-lg font-bold text-primary dark:text-blue">${institution}  
+              <h1 class="text-center text-lg font-bold text-primaryLight dark:text-blue">${institution}  
                 ${
                   location
-                    ? `<span class="text-sm text-base font-normal text-secondary dark:text-slate-400">- ${location}</span>`
+                    ? `<span class="text-base font-normal text-secondary dark:text-slate-400">- ${location}</span>`
                     : ''
                 }  
               </h1>  
@@ -114,7 +114,7 @@ const createExperienceTemplate = (programming) => {
       <div class="container">  
         <div class="w-full px-4">  
           <div class="w-full mx-auto text-center mb-16">  
-            <h4 class="font-semibold text-lg text-primary dark:text-blue mb-2">Programming</h4>  
+            <h4 class="font-semibold text-lg text-primaryLight dark:text-blue mb-2">Programming</h4>  
             <h2 class="font-bold text-white text-3xl mb-4 lg:text-4xl dark:text-dark">Pengalaman Kerja dan</h2>  
             <p class="font-medium text-md text-secondary md:text-lg dark:text-slate-800">Beberapa Bahasa Pemrograman dan Tools yang di gunakan</p>  
           </div>  
@@ -124,9 +124,9 @@ const createExperienceTemplate = (programming) => {
         <div class="w-full lg:px-4">  
           <div class="max-w-[100%] lg:max-w-[80%] mx-auto bg-slate-300 dark:bg-slate-800 rounded-lg p-4">  
             <div class="flex justify-center bg-slate-800 dark:bg-slate-300 rounded-lg mb-4" role="tablist">  
-              <button class="px-4 py-2 font-medium border-b-4 border-primary dark:border-blue text-primary ease-in-out duration-300 transition hover:border-primary hover:dark:text-blue hover:dark:border-blue hover:text-primary"  
+              <button class="px-4 py-2 font-medium border-b-4 border-primaryLight dark:border-blue text-primaryLight ease-in-out duration-300 transition hover:border-primaryLight hover:dark:text-blue hover:dark:border-blue hover:text-primaryLight"  
                       id="programming-tab" data-tab="programming-content" role="tab" aria-selected="true">Pengalaman</button>  
-              <button class="px-4 py-2 ml-3 font-medium border-b-4 border-transparent text-gray-500 ease-in-out duration-300 transition hover:border-primary hover:dark:text-blue hover:dark:border-blue hover:text-primary"  
+              <button class="px-4 py-2 ml-3 font-medium border-b-4 border-transparent text-gray-500 ease-in-out duration-300 transition hover:border-primaryLight hover:dark:text-blue hover:dark:border-blue hover:text-primaryLight"  
                       id="tools-tab" data-tab="tools-content" role="tab" aria-selected="false">Akademi</button>  
             </div>  
   

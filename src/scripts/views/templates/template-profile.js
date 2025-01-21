@@ -2,12 +2,12 @@
 const createProfileTemplate = (home) => {
   const profileList = [
     {
-      id: 'whatsapp',
-      title: 'WhatsApp',
+      id: 'discord',
+      title: 'Discord',
       path: `<path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z"
             />`,
-      link: 'https://wa.me/+6281281480122',
+      link: 'https://discord.com/users/521972197825445888',
     },
     {
       id: 'instagram',
@@ -58,7 +58,7 @@ const createProfileTemplate = (home) => {
           id="${id}"
           href="${link}"
           target="_blank"
-          class="w-12 h-12 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-secondary hover:border-primary hover:bg-primary dark:hover:bg-blue hover:text-white hover:scale-125 ease-in-out duration-300 transition"
+          class="w-12 h-12 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-secondary hover:border-primaryLight hover:bg-primaryLight dark:hover:bg-blue hover:text-white hover:scale-125 ease-in-out duration-300 transition"
         >
           <svg
             class="fill-current dark:fill-slate-300"
@@ -80,12 +80,12 @@ const createProfileTemplate = (home) => {
       <div class="flex flex-wrap">
         <div class="w-full self-center px-4 lg:w-1/2">
             <h1
-            class="text-xl font-semibold text-slate-800 dark:text-white bg-gradient-to-r from-primary dark:from-blue rounded-lg md:text-xl w-3/4 px-5 p-2 mb-4"
+            class="text-xl font-semibold text-slate-800 dark:text-white bg-gradient-to-r from-primaryLight dark:from-blue rounded-lg md:text-xl w-3/4 px-5 p-2 mb-4"
             >
             Selamat datang di Portofolio ku
             </h1>
             <h1
-            class="text-base font-semibold text-primary dark:text-blue md:text-xl"
+            class="text-base font-semibold text-primaryLight dark:text-blue md:text-xl"
             >
             <span
                 class="block font-bold text-dark text-4xl mt-1 lg:text-[40px] dark:text-white"
@@ -121,7 +121,7 @@ const createProfileTemplate = (home) => {
             </p>
             <a
               href="./documents/resume/Muhamad Erzie Aldrian Nugraha-resume.pdf"
-              class="text-base font-semibold text-white bg-primary dark:bg-blue py-3 px-8 rounded-full hover:shadow-lg hover:bg-slate-600 hover:opacity-80 transition duration-300 ease-in-out"
+              class="text-base font-semibold text-white bg-primaryLight dark:bg-blue py-3 px-8 rounded-full hover:shadow-lg hover:bg-slate-600 hover:opacity-80 transition duration-300 ease-in-out"
               download
             >
             <span class="mr-2">Download CV</span>
@@ -161,7 +161,7 @@ const createProfileTemplate = (home) => {
                   xmlns="http://www.w3.org/2000/svg"
                   >
                   <path
-                      class="fill-primary dark:fill-blue"
+                      class="fill-primaryLight dark:fill-blue"
                       d="M49.8,-57.7C60.6,-50.2,62.7,-30.8,62.4,-13.8C62.1,3.3,59.3,18,53.4,33.3C47.5,48.7,38.4,64.7,25.6,68.6C12.7,72.6,-3.9,64.5,-18.6,56.7C-33.3,49,-46,41.4,-57.1,29.4C-68.3,17.5,-77.9,1,-74.4,-12.2C-71,-25.4,-54.6,-35.4,-40,-42.2C-25.4,-49,-12.7,-52.5,3.4,-56.6C19.5,-60.6,39,-65.1,49.8,-57.7Z"
                       transform="translate(100 100)"
                   />
