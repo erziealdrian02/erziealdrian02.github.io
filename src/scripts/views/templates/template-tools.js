@@ -105,6 +105,22 @@ const createToolsTemplate = (about) => {
     },
   ];
 
+  const currentHash = window.location.hash; // Mendapatkan hash dari lokasi saat ini
+  const isEnglish = currentHash === '#/en'; // Memeriksa apakah hash adalah '#/en'
+  const isJapanese = currentHash === '#/jp'; // Memeriksa apakah hash adalah '#/jp'
+
+  const toolsMessage = isEnglish
+    ? `Programming Language and Tools`
+    : isJapanese
+    ? `プログラミング言語およびツール`
+    : `Bahasa Pemrograman dan Tools`;
+
+  const description = isEnglish
+    ? `Programming Languages, Frameworks and Tools that I used in the past`
+    : isJapanese
+    ? `私が使ったプログラミング言語、フレームワーク、ツール`
+    : `Beberapa Bahasa Pemrograman, Framework dan Tools yang saya pernah Gunakan`;
+
   // Menghasilkan HTML untuk setiap item menggunakan map
   const toolsHTML = tools
     .map(
@@ -124,10 +140,10 @@ const createToolsTemplate = (about) => {
         <div class="w-full px-4">  
           <div class="max-w-full mx-auto text-center mb-16">  
             <h2 class="font-bold text-dark text-3xl mb-4 dark:text-white">  
-              Bahasa Pemrograman dan Tools  
+              ${toolsMessage}
             </h2>  
             <p class="font-medium text-md text-secondary dark:text-slate-300">  
-              Beberapa Bahasa Pemrograman, Framework dan Tools yang saya pernah Gunakan  
+              ${description}
             </p>  
           </div>  
         </div>  

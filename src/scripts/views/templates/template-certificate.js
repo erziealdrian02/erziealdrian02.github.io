@@ -1,4 +1,8 @@
 const createSertifikatTemplate = (sertifikat) => {
+  const currentHash = window.location.hash; // Mendapatkan hash dari lokasi saat ini
+  const isEnglish = currentHash === '#/en'; // Memeriksa apakah hash adalah '#/en'
+  const isJapanese = currentHash === '#/jp'; // Memeriksa apakah hash adalah '#/jp'
+
   // Array untuk sertifikat
   const sertifikatList = [
     {
@@ -84,7 +88,7 @@ const createSertifikatTemplate = (sertifikat) => {
                 <h3>
                   <a
                     href="${link}"
-                    class="block mb-3 font-semibold text-xl text-dark hover:text-primaryLight dark:text-blue dark:text-white line-clamp-2"
+                    class="block mb-3 font-semibold text-xl text-dark hover:text-primaryLight dark:text-blue line-clamp-2"
                   >
                     ${title}
                   </a>

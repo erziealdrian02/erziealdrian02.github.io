@@ -17,8 +17,32 @@
         document.documentElement.classList.remove('dark'); // Jika tidak, toggle akan tidak aktif
       }
     </script>
+    <script>
+      // Fungsi untuk mengupdate teks dan href berdasarkan rute
+      function updateLinkText() {
+        const linkElement = document.getElementById('languageLink');
+        const currentHash = window.location.hash; // Mendapatkan hash dari lokasi saat ini
 
-    <title>My Portofolioa</title>
+        if (currentHash === '#/en') {
+          linkElement.textContent = 'EN'; // Ubah teks menjadi 'EN' jika hash-nya '#/en'
+          linkElement.href = '#/jp'; // Ubah href menjadi '#/jp'
+        } else if (currentHash === '#/jp') {
+          linkElement.textContent = 'JP'; // Ubah teks menjadi 'JP' jika hash-nya '#/jp'
+          linkElement.href = '#/'; // Ubah href menjadi '#/'
+        } else {
+          linkElement.textContent = 'ID'; // Ubah teks menjadi 'ID' jika hash-nya '/ (kosong)' atau '#/'
+          linkElement.href = '#/en'; // Ubah href menjadi '#/en'
+        }
+      }
+
+      // Memanggil fungsi saat halaman dimuat
+      window.onload = updateLinkText;
+
+      // Memanggil fungsi saat hash berubah
+      window.onhashchange = updateLinkText;
+    </script>
+
+    <title>My Portofolio</title>
   </head>
   <body>
     <!-- Header Start -->
@@ -59,42 +83,42 @@
                 <li class="group">
                   <a
                     href="#home"
-                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue dark:text-white flex"
+                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue flex"
                     >Beranda</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#tools"
-                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue dark:text-white flex"
+                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue flex"
                     >Tools</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#portofolio"
-                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue dark:text-white flex"
+                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue flex"
                     >Portofolio</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#experience"
-                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue dark:text-white flex"
+                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue flex"
                     >Pengalaman</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#sertifikat"
-                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue dark:text-white flex"
+                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue flex"
                     >Sertifikat</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#contact"
-                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue dark:text-white flex"
+                    class="text-base text-dark py-2 mx-8 group-hover:text-primary dark:group-hover:text-blue dark:text-blue flex"
                     >Contact</a
                   >
                 </li>
@@ -121,13 +145,15 @@
                       </svg>
                     </button>
 
-                    <button
+                    <a
+                      id="languageLink"
+                      href="#/en"
                       class="w-9 h-9 mr-3 rounded-full flex font-bold dark:text-slate-300 justify-center items-center border border-slate-400 dark:border-slate-300 text-secondary hover:border-primary dark:hover:border-blue hover:bg-primary dark:hover:bg-blue hover:text-white"
                     >
                       ID
                       <!-- EN -->
                       <!-- JP -->
-                    </button>
+                    </a>
                   </div>
                 </li>
               </ul>

@@ -51,6 +51,65 @@ const createProfileTemplate = (home) => {
     },
   ];
 
+  const currentHash = window.location.hash;
+  const isEnglish = currentHash === '#/en';
+  const isJapanese = currentHash === '#/jp';
+
+  const welcomeMessage = isEnglish
+    ? 'Welcome to my Portfolio'
+    : isJapanese
+    ? '私のポートフォリオへようこそ'
+    : 'Selamat datang di Portofolio ku';
+
+  const nameMessage = 'Muhamad Erzie Aldrian Nugraha';
+
+  const description = isEnglish
+    ? `I am a Fresh Graduate from   
+      <b class="text-dark dark:text-slate-200">Indraprasta PGRI University</b>   
+      with a degree in   
+      <b class="text-dark dark:text-slate-200">Computer Engineering</b>.   
+      I have a strong foundational understanding of   
+      <b class="text-dark dark:text-slate-200">informatics</b>,   
+      proficiency in   
+      <b class="text-dark dark:text-slate-200">programming languages</b>,   
+      and experience in   
+      <b class="text-dark dark:text-slate-200">Web Development</b>   
+      as a <b class="text-dark dark:text-slate-200">Front-End Developer</b>,   
+      <b class="text-dark dark:text-slate-200">Back-end Developer</b>,   
+      <b class="text-dark dark:text-slate-200">Fullstack Developer</b>,   
+      and <b class="text-dark dark:text-slate-200">UI/UX Designer</b>.   
+      I actively participate in extracurricular activities and   
+      I want to connect with fellow students and professionals in the industry.`
+    : isJapanese
+    ? `私はインドラプラスタPGRI大学の  
+      <b class="text-dark dark:text-slate-200">情報工学</b>の学位を持つ  
+      新卒です。  
+      <b class="text-dark dark:text-slate-200">情報学</b>の基礎的な理解があり、  
+      <b class="text-dark dark:text-slate-200">プログラミング言語</b>に精通し、  
+      <b class="text-dark dark:text-slate-200">ウェブ開発</b>の経験があります。  
+      <b class="text-dark dark:text-slate-200">フロントエンド開発者</b>、  
+      <b class="text-dark dark:text-slate-200">バックエンド開発者</b>、  
+      <b class="text-dark dark:text-slate-200">フルスタック開発者</b>、  
+      および <b class="text-dark dark:text-slate-200">UI/UXデザイナー</b>として。  
+      私は課外活動に積極的に参加しており、  
+      業界の他の学生や専門家とつながりたいと思っています。`
+    : `Saya adalah Fresh Graduate dari   
+      <b class="text-dark dark:text-slate-200">Universitas Indraprasta PGRI</b>   
+      dengan Jurusan   
+      <b class="text-dark dark:text-slate-200">Teknik Informatika</b>.   
+      Saya memiliki pemahaman dasar yang kuat konsep   
+      <b class="text-dark dark:text-slate-200">informatika</b>,   
+      kemahiran dalam bahasa   
+      <b class="text-dark dark:text-slate-200">pemrograman</b>,   
+      dan pengalaman dalam   
+      <b class="text-dark dark:text-slate-200">Pengembangan Web</b>   
+      sebagai <b class="text-dark dark:text-slate-200">Front-End Developer</b>,   
+      <b class="text-dark dark:text-slate-200">Back-end Developer</b>,   
+      <b class="text-dark dark:text-slate-200">Fullstack Developer</b>   
+      maupun <b class="text-dark dark:text-slate-200">UI/UX Designer</b>.   
+      Saya berpartisipasi secara aktif dalam kegiatan ekstrakurikuler dan   
+      saya ingin terhubung dengan sesama mahasiswa dan profesional di industri.`;
+
   const profileHTML = profileList
     .map(
       ({ id, title, path, link }) => `  
@@ -79,46 +138,21 @@ const createProfileTemplate = (home) => {
     <div class="container object-center" id="home">
       <div class="flex flex-wrap">
         <div class="w-full self-center px-4 lg:w-1/2">
-            <h1
-            class="text-xl font-semibold text-slate-800 dark:text-white bg-gradient-to-r from-primaryLight dark:from-blue rounded-lg md:text-xl w-3/4 px-5 p-2 mb-4"
-            >
-            Selamat datang di Portofolio ku
-            </h1>
-            <h1
-            class="text-base font-semibold text-primaryLight dark:text-blue md:text-xl"
-            >
-            <span
-                class="block font-bold text-dark text-4xl mt-1 lg:text-[40px] dark:text-white"
-                >Muhamad Erzie Aldrian Nugraha</span
-            >
-            </h1>
-            <h2
-            class="font-medium text-secondary text-xl mt-1 mb-5 lg:text-3xl dark:text-slate-400"
-            >
-            <span class="text-dark dark:text-white typing"></span>
-            </h2>
+            <h1 class="text-xl font-semibold text-slate-800 dark:text-white bg-gradient-to-r from-primaryLight dark:from-blue rounded-lg md:text-xl w-3/4 px-5 p-2 mb-4">  
+              ${welcomeMessage}  
+            </h1>  
+            <h1 class="text-base font-semibold text-primaryLight dark:text-blue md:text-xl">  
+              <span class="block font-bold text-dark text-4xl mt-1 lg:text-[40px] dark:text-white">  
+                ${nameMessage}  
+              </span>  
+            </h1>  
+            <h2 class="font-medium text-secondary text-xl mt-1 mb-5 lg:text-3xl dark:text-slate-400">  
+              <span class="text-dark dark:text-white typing"></span>  
+            </h2>  
 
-            <p
-            class="font-medium text-base text-justify text-secondary dark:text-slate-400 max-w-xl lg:text-lg mb-10"
-            >
-            Saya adalah Fresh Graduate dari
-            <b class="text-dark dark:text-slate-200"
-                >Universitas Indraprasta PGRI</b
-            >
-            dengan
-            <b class="text-dark dark:text-slate-200">Jurusan Teknik Informatika</b>. Saya memiliki pemahaman dasar yang kuat konsep
-            <b class="text-dark dark:text-slate-200">informatika</b>,
-            kemahiran dalam bahasa <b class="text-dark dark:text-slate-200">
-            pemrograman</b>, dan pengalaman dalam
-            <b class="text-dark dark:text-slate-200">Pengembangan Web</b>
-            sebagai <b class="text-dark dark:text-slate-200">Front-End Developer</b>,
-            <b class="text-dark dark:text-slate-200">Back-end Developer</b>,
-            <b class="text-dark dark:text-slate-200">Fullstack Developer</b>
-            maupun <b class="text-dark dark:text-slate-200">UI/UX Designer</b>.
-            Saya berpartisipasi secara aktif kegiatan ekstrakurikuler dan
-            saya ingin terhubung dengan sesama mahasiswa dan profesional di
-            industri.
-            </p>
+            <p class="font-medium text-base text-justify text-secondary dark:text-slate-400 max-w-xl lg:text-lg mb-10">  
+              ${description}  
+            </p>  
             <a
               href="./documents/resume/Muhamad Erzie Aldrian Nugraha-resume.pdf"
               class="text-base font-semibold text-white bg-primaryLight dark:bg-blue py-3 px-8 rounded-full hover:shadow-lg hover:bg-slate-600 hover:opacity-80 transition duration-300 ease-in-out"
