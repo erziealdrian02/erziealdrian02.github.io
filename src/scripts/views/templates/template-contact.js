@@ -1,4 +1,8 @@
 const createContactTemplate = (contact) => {
+  const currentHash = window.location.hash; // Mendapatkan hash dari lokasi saat ini
+  const isEnglish = currentHash === '#/en'; // Memeriksa apakah hash adalah '#/en'
+  const isJapanese = currentHash === '#/jp'; // Memeriksa apakah hash adalah '#/jp'
+
   // Array untuk Contact
   const contactList = [
     {
@@ -51,6 +55,68 @@ const createContactTemplate = (contact) => {
     },
   ];
 
+  const getContactLanguage = (contact) => {
+    return {
+      title: isEnglish
+        ? contact.title.en
+        : isJapanese
+        ? contact.title.jp
+        : contact.title.id,
+      description: isEnglish
+        ? contact.description.en
+        : isJapanese
+        ? contact.description.jp
+        : contact.description.id,
+    };
+  };
+
+  const headerText = {
+    contact: {
+      en: 'Contact',
+      jp: '連絡先',
+      id: 'Contact',
+    },
+    label: {
+      en: 'Contact Us',
+      jp: 'お問い合わせ',
+      id: 'Hubungi Kami',
+    },
+    labelButton: {
+      en: 'Send Me a Message',
+      jp: 'メッセージを送る',
+      id: 'Kirimkan saya Pesan',
+    },
+    button: {
+      en: 'Send Message',
+      jp: 'メッセージ送信',
+      id: 'Kirimkan Pesan',
+    },
+    labelKolaborasi: {
+      en: 'Collaboration',
+      jp: 'コラボレーション',
+      id: 'Kolaborasi',
+    },
+    descriptionKolaborasi: {
+      en: 'I am very open to collaborating and committed to giving my best to support the vision and mission of the team in the future. With a passion for continuous learning and seeking new experiences, I strive to grow and make meaningful contributions.',
+      jp: '私はコラボレーションを行うことに非常にオープンであり、今後のチームのビジョンとミッションを支援するために最善を尽くすことを約束します。新しい経験を学び、求める情熱を持ちながら、成長し、意義ある貢献を提供するよう努めています',
+      id: 'Saya sangat terbuka untuk melakukan kolaborasi dan berkomitmen untuk memberikan yang terbaik demi mendukung visi dan misi tim yang akan datang. Dengan semangat untuk terus belajar dan mencari pengalaman baru, saya berusaha untuk berkembang dan memberikan kontribusi yang berarti.',
+    },
+    labelMedsos: {
+      en: 'My Social Media',
+      jp: '私のソーシャルメディア',
+      id: 'Media Sosial saya',
+    },
+    descriptionMedsos: {
+      en: 'Or you can visit some of the platforms I use',
+      jp: 'または私が使用しているいくつかのプラットフォームを訪問できます',
+      id: 'Atau bisa mengunjungi beberapa Platform yang saya gunakan',
+    },
+  };
+
+  const getCurrentLanguageText = (textObj) => {
+    return isEnglish ? textObj.en : isJapanese ? textObj.jp : textObj.id;
+  };
+
   const contactHTML = contactList
     .map(
       ({ id, title, path, link }) => `  
@@ -84,123 +150,132 @@ const createContactTemplate = (contact) => {
               <h4
                 class="font-semibold text-lg text-primaryLight dark:text-blue mb-2"
               >
-                Contact
+              ${getCurrentLanguageText(headerText.contact)}
               </h4>
               <h2
                 class="font-bold text-black text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
               >
-                Hubungi Kami
+              ${getCurrentLanguageText(headerText.label)}
               </h2>
             </div>
           </div>
         </div>
 
         <div class="flex flex-wrap">
+          <div class="w-full self-center px-4 lg:w-full hidden lg:block">
+            <div class="max-w-full mx-auto text-center mb-10">
+              <h2 class="font-bold text-dark text-2xl mb-4 dark:text-blue text-center">
+                ${getCurrentLanguageText(headerText.labelButton)}
+              </h2>
+              <div class="flex justify-center">
+                <a
+                  href="mailto:erzie.aldrian02@gmail.com"
+                  class="group relative flex items-center gap-1 px-8 py-3 border-4 border-transparent text-lg font-semibold text-blue shadow-[0_0_0_2px] shadow-blue rounded-full cursor-pointer overflow-hidden transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-[0_0_0_12px_transparent] hover:text-white hover:rounded-xl active:scale-95 active:shadow-[0_0_0_4px] active:shadow-blue"
+                >
+                  <!-- Panah Kanan -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="absolute w-6 fill-blue right-4 transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:right-[-25%] group-hover:fill-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                    ></path>
+                  </svg>
+
+                  <!-- Teks -->
+                  <span
+                    class="relative z-10 transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-3 group-hover:text-white mr-4"
+                  >
+                  ${getCurrentLanguageText(headerText.button)}
+                  </span>
+
+                  <!-- Efek Lingkaran -->
+                  <span
+                    class="absolute top-1/2 left-1/2 w-5 h-5 bg-blue rounded-full opacity-0 transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:w-[220px] group-hover:h-[220px] group-hover:opacity-100 -translate-x-1/2 -translate-y-1/2"
+                  ></span>
+
+                  <!-- Panah Kiri -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="z-10 absolute w-6 fill-white left-[-25%] transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:left-4 group-hover:fill-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
           <div class="w-full self-center px-4 lg:w-1/2">
             <div class="max-w-full mx-auto text-center mb-10">
-              <h2
-                class="font-bold text-dark text-2xl mb-4 dark:text-blue text-left"
-              >
-                Kirimkan saya Pesan
+              <h2 class="font-bold text-dark text-2xl mb-4 dark:text-blue text-center">
+              ${getCurrentLanguageText(headerText.labelKolaborasi)}
               </h2>
+              <p
+                class="font-medium text-center text-md text-secondary dark:text-slate-300"
+              >
+              ${getCurrentLanguageText(headerText.descriptionKolaborasi)}
+              </p>
             </div>
-            
-            <form 
-              id="email-form" 
-              class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg"
-            >
-              <div class="w-full px-4 mb-8">
-                <label
-                  for="subject"
-                  class="text-base text-primaryLight dark:text-blue font-bold"
-                  >Subject</label
-                >
-                <input
-                  type="text"
-                  id="subject"
-                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primaryLight focus:ring-1 focus:border-primaryLight"
-                />
-              </div>
 
-              <div class="w-full px-4 mb-8">
-                <label
-                  for="email"
-                  class="text-base text-primaryLight dark:text-blue font-bold"
-                  >E-mail</label
+            <div class="flex justify-center mt-5 lg:hidden">
+              <a
+                href="mailto:erzie.aldrian02@gmail.com"
+                class="group relative flex items-center gap-1 px-8 py-3 border-4 border-transparent text-lg font-semibold text-blue shadow-[0_0_0_2px] shadow-blue rounded-full cursor-pointer overflow-hidden transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-[0_0_0_12px_transparent] hover:text-white hover:rounded-xl active:scale-95 active:shadow-[0_0_0_4px] active:shadow-blue"
+              >
+                <!-- Panah Kanan -->
+                <svg
+                  viewBox="0 0 24 24"
+                  class="absolute w-6 fill-blue right-4 transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:right-[-25%] group-hover:fill-white"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                <input
-                  type="text"
-                  id="email"
-                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primaryLight focus:ring-1 focus:border-primaryLight"
-                />
-              </div>
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                  ></path>
+                </svg>
 
-              <div class="w-full px-4 mb-8">
-                <label
-                  for="message"
-                  class="text-base text-primaryLight dark:text-blue font-bold"
-                  >Pesan</label
+                <!-- Teks -->
+                <span
+                  class="relative z-10 transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-3 group-hover:text-white mr-4"
                 >
-                <textarea
-                  type="text"
-                  id="message"
-                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primaryLight focus:ring-1 focus:border-primaryLight h-32"
-                ></textarea>
-              </div>
-              <div class="w-full">
-                <button
-                  class="text-base font-semibold text-white bg-primaryLight dark:bg-blue py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500"
+                  Kirim Pesan
+                </span>
+
+                <!-- Efek Lingkaran -->
+                <span
+                  class="absolute top-1/2 left-1/2 w-5 h-5 bg-blue rounded-full opacity-0 transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:w-[220px] group-hover:h-[220px] group-hover:opacity-100 -translate-x-1/2 -translate-y-1/2"
+                ></span>
+
+                <!-- Panah Kiri -->
+                <svg
+                  viewBox="0 0 24 24"
+                  class="z-10 absolute w-6 fill-white left-[-25%] transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:left-4 group-hover:fill-white"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Kirim
-                </button>
-              </div>
-            </form>
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
           </div>
+
           <div class="w-full self-center px-4 lg:w-1/2">
-            <div class="mb-10 flex flex-col md:flex-row items-center">
-              <!-- Menambahkan flex untuk mengatur layout secara responsif -->
-              <div class="w-1/2 mb-10 text-center md:text-left mt-4 lg:mt-0">
-                <!-- Mengubah untuk responsif dan menambahkan teks rata kiri di layar yang lebih besar -->
-                <h2 class="font-bold text-dark text-2xl mb-4 dark:text-blue">
-                  Kolaborasi
-                </h2>
-                <p
-                  class="font-medium text-md text-secondary dark:text-slate-300 text-justify"
-                >
-                  Saya sangat terbuka untuk melakukan kolaborasi dan berkomitmen
-                  untuk memberikan yang terbaik demi mendukung visi dan misi tim
-                  yang akan datang. Dengan semangat untuk terus belajar dan
-                  mencari pengalaman baru, saya berusaha untuk berkembang dan
-                  memberikan kontribusi yang berarti.
-                </p>
-              </div>
-              <div class="w-1/2 scale-x-[-1]">
-                <!-- Gambar bersebelahan dengan teks -->
-                <img
-                  src="./images/profiles/ilustration.png"
-                  alt="profiles"
-                  class="mx-auto md:mx-0 w-3/4"
-                />
-                <!-- Penambahan mx-auto untuk menjaga agar gambar center di layar kecil -->
-              </div>
-            </div>
             <div class="mb-10">
               <div class="max-w-full mx-auto text-center mb-3">
-                <h2
-                  class="font-bold text-left text-dark text-2xl mb-4 dark:text-blue"
-                >
-                  Media Sosial saya
+                <h2 class="font-bold text-dark text-2xl mb-4 dark:text-blue">
+                ${getCurrentLanguageText(headerText.labelMedsos)}
                 </h2>
-                <p
-                  class="font-medium text-left text-md text-secondary dark:text-slate-300"
-                >
-                  Atau bisa mengunjungi beberapa Platform yang saya gunakan
+                <p class="font-medium text-md text-secondary dark:text-slate-300">
+                ${getCurrentLanguageText(headerText.descriptionMedsos)}
                 </p>
               </div>
 
-              <div class="flex justify-start items-center">
-                ${contactHTML}  
-              </div>
+            <div class="flex justify-center items-center">${contactHTML}</div>
             </div>
           </div>
         </div>
