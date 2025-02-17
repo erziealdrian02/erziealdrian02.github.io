@@ -1,5 +1,9 @@
 // const createMovieItemTemplate = (home) => `
 const createProfileTemplate = (home) => {
+  const currentHash = window.location.hash; // Mendapatkan hash dari lokasi saat ini
+  const isEnglish = currentHash === '#/en'; // Memeriksa apakah hash adalah '#/en'
+  const isJapanese = currentHash === '#/jp';
+
   const profileList = [
     {
       id: 'discord',
@@ -51,20 +55,44 @@ const createProfileTemplate = (home) => {
     },
   ];
 
-  const currentHash = window.location.hash;
-  const isEnglish = currentHash === '#/en';
-  const isJapanese = currentHash === '#/jp';
+  const getProfileLanguage = (profile) => {
+    return {
+      welcomeMessage: isEnglish
+        ? profile.welcomeMessage.en
+        : isJapanese
+        ? profile.welcomeMessage.jp
+        : profile.welcomeMessage.id,
+      nameMessage: isEnglish
+        ? profile.nameMessage.en
+        : isJapanese
+        ? profile.nameMessage.jp
+        : profile.nameMessage.id,
+      description: isEnglish
+        ? profile.description.en
+        : isJapanese
+        ? profile.description.jp
+        : profile.description.id,
+      cvDownload: isEnglish
+        ? profile.cvDownload.en
+        : isJapanese
+        ? profile.cvDownload.jp
+        : profile.cvDownload.id,
+    };
+  };
 
-  const welcomeMessage = isEnglish
-    ? 'Welcome to my Portfolio'
-    : isJapanese
-    ? '私のポートフォリオへようこそ'
-    : 'Selamat datang di Portofolio ku';
-
-  const nameMessage = 'Muhamad Erzie Aldrian Nugraha';
-
-  const description = isEnglish
-    ? `I am a Fresh Graduate from   
+  const headerText = {
+    welcomeMessage: {
+      en: 'Welcome to my Portfolio',
+      jp: '私のポートフォリオへようこそ',
+      id: 'Selamat datang di Portofolio ku',
+    },
+    nameMessage: {
+      en: 'Erzie Aldrian Nugraha',
+      jp: 'Erzie Aldrian Nugraha',
+      id: 'Erzie Aldrian Nugraha',
+    },
+    description: {
+      en: `I am a Fresh Graduate from   
       <b class="text-dark dark:text-slate-200">Indraprasta PGRI University</b>   
       with a degree in   
       <b class="text-dark dark:text-slate-200">Computer Engineering</b>.   
@@ -79,9 +107,8 @@ const createProfileTemplate = (home) => {
       <b class="text-dark dark:text-slate-200">Fullstack Developer</b>,   
       and <b class="text-dark dark:text-slate-200">UI/UX Designer</b>.   
       I actively participate in extracurricular activities and   
-      I want to connect with fellow students and professionals in the industry.`
-    : isJapanese
-    ? `私はインドラプラスタPGRI大学の  
+      I want to connect with fellow students and professionals in the industry.`,
+      jp: `私はインドラプラスタPGRI大学の  
       <b class="text-dark dark:text-slate-200">情報工学</b>の学位を持つ  
       新卒です。  
       <b class="text-dark dark:text-slate-200">情報学</b>の基礎的な理解があり、  
@@ -92,8 +119,8 @@ const createProfileTemplate = (home) => {
       <b class="text-dark dark:text-slate-200">フルスタック開発者</b>、  
       および <b class="text-dark dark:text-slate-200">UI/UXデザイナー</b>として。  
       私は課外活動に積極的に参加しており、  
-      業界の他の学生や専門家とつながりたいと思っています。`
-    : `Saya adalah Fresh Graduate dari   
+      業界の他の学生や専門家とつながりたいと思っています。`,
+      id: `Saya adalah Fresh Graduate dari   
       <b class="text-dark dark:text-slate-200">Universitas Indraprasta PGRI</b>   
       dengan Jurusan   
       <b class="text-dark dark:text-slate-200">Teknik Informatika</b>.   
@@ -108,7 +135,18 @@ const createProfileTemplate = (home) => {
       <b class="text-dark dark:text-slate-200">Fullstack Developer</b>   
       maupun <b class="text-dark dark:text-slate-200">UI/UX Designer</b>.   
       Saya berpartisipasi secara aktif dalam kegiatan ekstrakurikuler dan   
-      saya ingin terhubung dengan sesama mahasiswa dan profesional di industri.`;
+      saya ingin terhubung dengan sesama mahasiswa dan profesional di industri.`,
+    },
+    cvDownload: {
+      en: './documents/resume/Eng - Muhamad Erzie Aldrian Nugraha-resume.pdf',
+      jp: './documents/resume/JP - Muhamad Erzie Aldrian Nugraha-resume.pdf',
+      id: './documents/resume/ID - Muhamad Erzie Aldrian Nugraha-resume.pdf',
+    },
+  };
+
+  const getCurrentLanguageText = (textObj) => {
+    return isEnglish ? textObj.en : isJapanese ? textObj.jp : textObj.id;
+  };
 
   const profileHTML = profileList
     .map(
@@ -139,11 +177,11 @@ const createProfileTemplate = (home) => {
       <div class="flex flex-wrap">
         <div class="w-full self-center px-4 lg:w-1/2">
             <h1 class="text-xl font-semibold text-slate-800 dark:text-white bg-gradient-to-r from-primaryLight dark:from-blue rounded-lg md:text-xl w-3/4 px-5 p-2 mb-4">  
-              ${welcomeMessage}  
+            ${getCurrentLanguageText(headerText.welcomeMessage)}
             </h1>  
             <h1 class="text-base font-semibold text-primaryLight dark:text-blue md:text-xl">  
               <span class="block font-bold text-dark text-4xl mt-1 lg:text-[40px] dark:text-white">  
-                ${nameMessage}  
+              ${getCurrentLanguageText(headerText.nameMessage)}
               </span>  
             </h1>  
             <h2 class="font-medium text-secondary text-xl mt-1 mb-5 lg:text-3xl dark:text-slate-400">  
@@ -151,10 +189,10 @@ const createProfileTemplate = (home) => {
             </h2>  
 
             <p class="font-medium text-base text-justify text-secondary dark:text-slate-400 max-w-xl lg:text-lg mb-10">  
-              ${description}  
+            ${getCurrentLanguageText(headerText.description)}
             </p>  
             <a
-              href="./documents/resume/Muhamad Erzie Aldrian Nugraha-resume.pdf"
+              href="${getCurrentLanguageText(headerText.cvDownload)}"
               class="text-base font-semibold text-white bg-primaryLight dark:bg-blue py-3 px-8 rounded-full hover:shadow-lg hover:bg-slate-600 hover:opacity-80 transition duration-300 ease-in-out"
               download
             >
