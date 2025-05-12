@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "tools": "Alat",
+    "portfolio": "Portofolio",
+    "experience": "Pengalaman",
+    "certificates": "Sertifikat",
+    "contact": "Kontak",
+    "hire_me": "Pekerjakan Saya"
+  },
+  "hero": {
+    "greeting": "Halo, Saya",
+    "name": "Muhamad Erzie Aldrian Nugraha",
+    "roles": [
+      "Full Stack Developer",
+      "UI/UX Designer",
+      "Front-end Developer",
+      "Back-end Developer",
+      "Mobile App Developer"
+    ],
+    "download_cv": "Unduh CV",
+    "explore": "Jelajahi Karya Saya"
+  },
+  "tools": {
+    "title": "Peralatan Saya",
+    "subtitle": "Teknologi yang saya gunakan",
+    "mastery_levels": {
+      "basic": "Dasar",
+      "intermediate": "Menengah",
+      "expert": "Ahli"
+    }
+  },
+  "portfolio": {
+    "title": "Portofolio",
+    "subtitle": "Lihat karya terbaru saya",
+    "filters": {
+      "all": "Semua",
+      "ui_ux": "Desain UI/UX",
+      "documentation": "Dokumentasi",
+      "programming": "Pemrograman",
+      "mobile": "Aplikasi Mobile"
+    },
+    "view_project": "Lihat Proyek",
+    "visit_site": "Kunjungi Situs",
+    "view_code": "Lihat Kode"
+  },
+  "experience": {
+    "title": "Pengalaman & Pendidikan",
+    "subtitle": "Perjalanan profesional saya",
+    "work": "Pengalaman Kerja",
+    "education": "Pendidikan",
+    "present": "Sekarang",
+    "view_details": "Lihat Detail"
+  },
+  "certificates": {
+    "title": "Sertifikat",
+    "subtitle": "Prestasi dan kualifikasi saya",
+    "view_certificate": "Lihat Sertifikat"
+  },
+  "contact": {
+    "title": "Hubungi Saya",
+    "subtitle": "Mari bekerja sama",
+    "form": {
+      "name": "Nama Lengkap",
+      "email": "Alamat Email",
+      "message": "Pesan Anda",
+      "send": "Kirim Pesan"
+    },
+    "success": "Pesan berhasil dikirim!",
+    "error": "Terjadi kesalahan saat mengirim pesan Anda."
+  },
+  "footer": {
+    "rights": "Semua hak dilindungi",
+    "made_with": "Dibuat dengan"
+  }
+}
