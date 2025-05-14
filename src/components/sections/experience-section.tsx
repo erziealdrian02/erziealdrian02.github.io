@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { useTranslation } from '@/hooks/use-translation';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useTranslation } from "@/hooks/use-translation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from '@/components/ui/dialog';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { cn } from '@/lib/utils';
-import { Calendar, GraduationCap, Briefcase } from 'lucide-react';
-import Image from 'next/image';
+} from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
+import { Calendar, GraduationCap, Briefcase } from "lucide-react";
+import Image from "next/image";
 
 type Experience = {
   id: string;
@@ -23,7 +23,7 @@ type Experience = {
   organization: string;
   period: string;
   description: string;
-  type: 'work' | 'education';
+  type: "work" | "education";
   logo: string;
   details: string;
   images?: string[];
@@ -31,7 +31,7 @@ type Experience = {
 
 export default function ExperienceSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { t } = useTranslation();
   const [selectedExperience, setSelectedExperience] =
     useState<Experience | null>(null);
@@ -39,82 +39,86 @@ export default function ExperienceSection() {
 
   const experiences: Experience[] = [
     {
-      id: 'exp-1',
-      title: 'Full Stack Developer',
-      organization: 'Tech Solutions Inc.',
-      period: '2021 - Present',
+      id: "exp-1",
+      title: "Automation Tester",
+      organization: "KPN Corp.",
+      period: "2025 - Present",
       description:
-        'Developing and maintaining web applications using React, Node.js, and PostgreSQL.',
-      type: 'work',
-      logo: '/placeholder.svg?height=100&width=100',
+        "Assisted the development team in building the company’s internal web applications using Object-Oriented Programming standards. Collaborated through GitHub, ensured timely project delivery, presented results to users, and applied necessary revisions.",
+      type: "work",
+      logo: "/images/company/kpn-ano.jpg",
       details:
-        'As a Full Stack Developer at Tech Solutions Inc., I am responsible for designing, developing, and maintaining web applications for various clients. I work with a team of developers to create scalable and efficient solutions using modern technologies.\n\nKey Responsibilities:\n- Developing front-end applications using React and Next.js\n- Building back-end services with Node.js and Express\n- Database design and management with PostgreSQL\n- Implementing authentication and authorization systems\n- Collaborating with designers and product managers\n- Code reviews and mentoring junior developers',
+        "As a Full Stack Developer Intern, I was responsible for assisting the development of the company’s internal ERP system, focusing on building robust and scalable web applications using Object-Oriented Programming (OOP) principles. I collaborated closely with the team via GitHub for version control and code collaboration to ensure efficient and streamlined workflows. \n\nOne of the main projects I worked on was the development of the Human Capital Information System (HCIS), which is part of the company’s ERP suite. This project involved handling employee management modules, leave and reimbursement systems, approval workflows, and automated notifications. Throughout the project, I actively contributed to both frontend and backend development and ensured data consistency across multiple systems. \n\nIn addition to development, I was also involved in documenting the system architecture, user guides, and deployment steps to maintain clear and accessible project documentation for future use. I worked directly with end-users to demonstrate the applications, gather feedback, and make necessary adjustments based on their input. \n\nKey Responsibilities:\n- Developed internal web-based ERP systems using OOP-based PHP (Laravel).\n- Collaborated with the team using GitHub for version control and code integration.\n- Built and maintained core modules such as employee records, approval workflows, leave requests, reimbursements, and more.\n- Presented application demos to stakeholders and revised functionalities based on user feedback.\n- Documented the development process, including technical guides, module breakdowns, and user manuals.\n- Participated in planning and debugging sessions to ensure smooth and efficient system performance.",
       images: [
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
+        "/placeholder.svg?height=400&width=600",
+        "/placeholder.svg?height=400&width=600",
       ],
     },
     {
-      id: 'exp-2',
-      title: 'UI/UX Designer',
-      organization: 'Creative Agency',
-      period: '2019 - 2021',
+      id: "exp-2",
+      title: "Full Stack Developer Intern",
+      organization: "KPN Corp.",
+      period: "2024 - 2025",
       description:
-        'Designed user interfaces and experiences for mobile and web applications.',
-      type: 'work',
-      logo: '/placeholder.svg?height=100&width=100',
+        "Assisted the development team in building the company’s internal web applications using Object-Oriented Programming standards. Collaborated through GitHub, ensured timely project delivery, presented results to users, and applied necessary revisions.",
+      type: "work",
+      logo: "/images/company/kpn-ano.jpg",
       details:
-        'As a UI/UX Designer at Creative Agency, I was responsible for creating user-centered designs for various digital products. I worked closely with clients to understand their needs and translate them into intuitive and visually appealing interfaces.\n\nKey Responsibilities:\n- Creating wireframes and prototypes using Figma and Adobe XD\n- Conducting user research and usability testing\n- Developing design systems and style guides\n- Collaborating with developers to ensure design implementation\n- Presenting design concepts to clients\n- Iterating designs based on feedback',
+        "As a Full Stack Developer Intern, I was responsible for assisting the development of the company’s internal ERP system, focusing on building robust and scalable web applications using Object-Oriented Programming (OOP) principles. I collaborated closely with the team via GitHub for version control and code collaboration to ensure efficient and streamlined workflows. \n\nOne of the main projects I worked on was the development of the Human Capital Information System (HCIS), which is part of the company’s ERP suite. This project involved handling employee management modules, leave and reimbursement systems, approval workflows, and automated notifications. Throughout the project, I actively contributed to both frontend and backend development and ensured data consistency across multiple systems. \n\nIn addition to development, I was also involved in documenting the system architecture, user guides, and deployment steps to maintain clear and accessible project documentation for future use. I worked directly with end-users to demonstrate the applications, gather feedback, and make necessary adjustments based on their input. \n\nKey Responsibilities:\n- Developed internal web-based ERP systems using OOP-based PHP (Laravel).\n- Collaborated with the team using GitHub for version control and code integration.\n- Built and maintained core modules such as employee records, approval workflows, leave requests, reimbursements, and more.\n- Presented application demos to stakeholders and revised functionalities based on user feedback.\n- Documented the development process, including technical guides, module breakdowns, and user manuals.\n- Participated in planning and debugging sessions to ensure smooth and efficient system performance.",
       images: [
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
+        "/images/company/photo-kp/kp1.jpg",
+        "/images/company/photo-kp/kp2.jpg",
+        "/images/company/photo-kp/kpn3.jpg",
       ],
     },
     {
-      id: 'exp-3',
-      title: 'Front-end Developer',
-      organization: 'Web Studio',
-      period: '2018 - 2019',
+      id: "exp-3",
+      title: "Bachelor of Informatics Engineering",
+      organization: "Universitas Indraprasta PGRI",
+      period: "2020 - 2024",
       description:
-        'Developed responsive websites and web applications using HTML, CSS, and JavaScript.',
-      type: 'work',
-      logo: '/placeholder.svg?height=100&width=100',
+        "Graduated on time in November 2024 with a strong foundation in software development, databases, and system analysis.",
+      type: "education",
+      logo: "/images/academy/unindra.jpg",
       details:
-        'As a Front-end Developer at Web Studio, I was responsible for implementing responsive and interactive user interfaces for websites and web applications. I worked with a team of designers and back-end developers to create seamless user experiences.\n\nKey Responsibilities:\n- Developing responsive websites using HTML, CSS, and JavaScript\n- Implementing designs from Figma and Adobe XD\n- Optimizing websites for performance and accessibility\n- Testing and debugging across different browsers and devices\n- Collaborating with back-end developers to integrate APIs\n- Implementing animations and interactive elements',
+        "I completed my Bachelor's degree in Computer Science at Universitas Indraprasta PGRI, specializing in Teknik Informatika. During my studies, I gained a strong foundation in programming, algorithms, data structures, and software engineering principles. \n\nKey Achievements:\n- Graduated with a GPA of 3.39\n- Completed a final project on developing a machine learning for detection weather in indonesia\n- Participate in various trainings bootcamp and seminars",
       images: [
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
+        "/images/academy/photo-unindra/un1.jpg",
+        "/images/academy/photo-unindra/un2.jpg",
+        "/images/academy/photo-unindra/un3.jpg",
       ],
     },
     {
-      id: 'edu-1',
-      title: 'Bachelor of Computer Science',
-      organization: 'Universitas Indraprasta PGRI',
-      period: '2014 - 2018',
-      description: 'Teknik Informatika, GPA: 3.39',
-      type: 'education',
-      logo: '/placeholder.svg?height=100&width=100',
+      id: "exp-4",
+      title: "Web Developer Intern",
+      organization: "Daun Biru",
+      period: "2018 - 2019",
+      description:
+        "Gained hands-on experience in web development by working on internal company projects using the CodeIgniter framework, while also earning a certificate of competence and enhancing practical programming skills.",
+      type: "work",
+      logo: "/images/company/daunbiru.jpeg",
       details:
-        "I completed my Bachelor's degree in Computer Science at Universitas Indraprasta PGRI, specializing in Teknik Informatika. During my studies, I gained a strong foundation in programming, algorithms, data structures, and software engineering principles.\n\nKey Achievements:\n- Graduated with a GPA of 3.39\n- Completed a final project on developing a mobile application for campus navigation\n- Participated in various coding competitions and hackathons\n- Served as a teaching assistant for Programming Fundamentals course\n- Member of the Computer Science Student Association",
+        "As a participant in a professional training program, I was assigned to work on the company’s internal web-based systems using the CodeIgniter framework. This opportunity allowed me to gain valuable hands-on experience in full stack web development and significantly improve my practical programming skills.\n\nDuring the program, I contributed to the development of a company project called Suportivo, which serves as a centralized platform for internal task management, user access control, and operational tracking. I was actively involved in both frontend and backend development processes, ensuring seamless integration and performance.\n\nIn addition to development tasks, I documented the entire workflow and system features — including technical architecture, module descriptions, and user instructions — to support future scalability and maintenance. I collaborated with mentors and team members for regular code reviews and participated in discussions to enhance system functionality.\n\nKey Responsibilities:\n- Developed modules for the internal company system using PHP and the CodeIgniter framework.\n- Participated in frontend and backend coding, debugging, and system integration.\n- Delivered a working prototype for a company-use application (Suportivo).\n- Maintained source code on GitHub and followed version control best practices.",
       images: [
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
+        // "/placeholder.svg?height=400&width=600",
+        // "/placeholder.svg?height=400&width=600",
       ],
     },
     {
-      id: 'edu-2',
-      title: 'Software Engineering',
-      organization: 'SMK Fatahillah',
-      period: '2011 - 2014',
+      id: "edu-5",
+      title: "Software Engineering",
+      organization: "SMK Fatahillah",
+      period: "2017 - 2020",
       description:
-        'Focused on software development and computer science fundamentals.',
-      type: 'education',
-      logo: '/placeholder.svg?height=100&width=100',
+        "Focused on software development and computer science fundamentals.",
+      type: "education",
+      logo: "/images/academy/fatahillah.png",
       details:
-        'I studied Software Engineering at SMK Fatahillah, where I gained practical skills in programming, web development, and database management. The vocational program provided me with hands-on experience and prepared me for a career in the tech industry.\n\nKey Achievements:\n- Completed various software development projects\n- Participated in regional programming competitions\n- Internship at a local software company\n- Developed a school management system as a final project\n- Graduated with honors',
+        "I studied Software Engineering at SMK Fatahillah, where I gained practical skills in programming, web development, and database management. The vocational program provided me with hands-on experience and prepared me for a career in the tech industry.\n\nKey Achievements:\n- Completed various software development projects\n- Participated in regional programming competitions\n- Internship at a local software company\n- Developed a library management system as a final project",
       images: [
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
+        "/images/academy/photo-fatahillah/fat1.jpg",
+        "/images/academy/photo-fatahillah/fat2.jpg",
+        "/images/academy/photo-fatahillah/fat3.jpg",
       ],
     },
   ];
@@ -138,9 +142,9 @@ export default function ExperienceSection() {
           className="mb-16 text-center"
         >
           <h2 className="mb-2 text-3xl font-bold sm:text-4xl md:text-5xl">
-            {t('experience.title')}
+            {t("experience.title")}
           </h2>
-          <p className="text-muted-foreground">{t('experience.subtitle')}</p>
+          <p className="text-muted-foreground">{t("experience.subtitle")}</p>
         </motion.div>
 
         <Tabs defaultValue="all" className="w-full">
@@ -148,11 +152,11 @@ export default function ExperienceSection() {
             <TabsTrigger value="all">All</TabsTrigger>
             <TabsTrigger value="work">
               <Briefcase className="mr-2 h-4 w-4" />
-              {t('experience.work')}
+              {t("experience.work")}
             </TabsTrigger>
             <TabsTrigger value="education">
               <GraduationCap className="mr-2 h-4 w-4" />
-              {t('experience.education')}
+              {t("experience.education")}
             </TabsTrigger>
           </TabsList>
 
@@ -165,7 +169,7 @@ export default function ExperienceSection() {
 
           <TabsContent value="work" className="mt-0">
             <Timeline
-              experiences={experiences.filter((exp) => exp.type === 'work')}
+              experiences={experiences.filter((exp) => exp.type === "work")}
               onOpenExperience={handleOpenExperience}
             />
           </TabsContent>
@@ -173,7 +177,7 @@ export default function ExperienceSection() {
           <TabsContent value="education" className="mt-0">
             <Timeline
               experiences={experiences.filter(
-                (exp) => exp.type === 'education'
+                (exp) => exp.type === "education"
               )}
               onOpenExperience={handleOpenExperience}
             />
@@ -205,7 +209,7 @@ export default function ExperienceSection() {
                 <div className="flex items-center gap-4">
                   <div className="relative h-16 w-16 overflow-hidden rounded-full">
                     <Image
-                      src={selectedExperience.logo || '/placeholder.svg'}
+                      src={selectedExperience.logo || "/placeholder.svg"}
                       alt={selectedExperience.organization}
                       fill
                       className="object-cover"
@@ -239,7 +243,7 @@ export default function ExperienceSection() {
                             className="relative aspect-video w-full overflow-hidden rounded-lg"
                           >
                             <Image
-                              src={img || '/placeholder.svg'}
+                              src={img || "/placeholder.svg"}
                               alt={`${selectedExperience.title} image ${
                                 index + 1
                               }`}
@@ -280,19 +284,19 @@ function Timeline({ experiences, onOpenExperience }: TimelineProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={cn(
-              'relative flex flex-col items-center md:flex-row',
+              "relative flex flex-col items-center md:flex-row",
               index % 2 === 0
-                ? 'md:flex-row'
-                : 'md:flex-row-reverse md:text-right'
+                ? "md:flex-row"
+                : "md:flex-row-reverse md:text-right"
             )}
           >
             <div
               className={cn(
-                'absolute left-1/2 top-0 flex h-10 w-10 -translate-x-1/2 transform items-center justify-center rounded-full border bg-background md:relative md:left-auto md:translate-x-0',
-                index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'
+                "absolute left-1/2 top-0 flex h-10 w-10 -translate-x-1/2 transform items-center justify-center rounded-full border bg-background md:relative md:left-auto md:translate-x-0",
+                index % 2 === 0 ? "md:mr-8" : "md:ml-8"
               )}
             >
-              {experience.type === 'work' ? (
+              {experience.type === "work" ? (
                 <Briefcase className="h-5 w-5 text-primary" />
               ) : (
                 <GraduationCap className="h-5 w-5 text-primary" />
@@ -301,8 +305,8 @@ function Timeline({ experiences, onOpenExperience }: TimelineProps) {
 
             <Card
               className={cn(
-                'mt-5 w-full md:mt-0 md:w-[calc(50%-2rem)]',
-                index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'
+                "mt-5 w-full md:mt-0 md:w-[calc(50%-2rem)]",
+                index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
               )}
             >
               <CardContent className="p-6">
@@ -315,7 +319,7 @@ function Timeline({ experiences, onOpenExperience }: TimelineProps) {
                       {experience.organization}
                     </p>
                   </div>
-                  <div className="flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                  <div className="flex items-center gap-1 whitespace-nowrap rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
                     <Calendar className="h-3 w-3" />
                     <span>{experience.period}</span>
                   </div>
@@ -328,7 +332,7 @@ function Timeline({ experiences, onOpenExperience }: TimelineProps) {
                   variant="outline"
                   size="sm"
                 >
-                  {t('experience.view_details')}
+                  {t("experience.view_details")}
                 </Button>
               </CardContent>
             </Card>
