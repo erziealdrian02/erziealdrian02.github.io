@@ -147,7 +147,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="rounded-lg border bg-background/80 p-6 backdrop-blur-sm"
+            className="rounded-lg border-2 border-primary/20 bg-background/80 p-6 backdrop-blur-sm"
           >
             <h3 className="mb-4 text-2xl font-bold">Send a Message</h3>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
