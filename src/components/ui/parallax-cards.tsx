@@ -85,7 +85,7 @@ export function ParallaxCard({
   return (
     <motion.div
       className={cn(
-        'group relative h-[280px] cursor-pointer overflow-hidden rounded-xl border bg-background p-1 transition-all duration-200 hover:shadow-xl',
+        'group relative h-[280px] cursor-pointer overflow-hidden rounded-xl border-2 border-primary/20 bg-background p-1 transition-all duration-200 hover:shadow-xl',
         className
       )}
       onMouseEnter={onMouseEnter}
