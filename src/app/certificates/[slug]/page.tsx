@@ -1,43 +1,36 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, Download, Printer } from 'lucide-react';
-import Image from 'next/image';
+import { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Download, Printer, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { getCertificateBySlug, Certificate } from "@/lib/certificate-data";
 
 export default function CertificatePage() {
   const params = useParams();
   const router = useRouter();
-  const [certificate, setCertificate] = useState<{
-    title: string;
-    issuer: string;
-    date: string;
-    image: string;
-  } | null>(null);
+  const [certificate, setCertificate] = useState<Certificate | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // In a real application, you would fetch the certificate data from an API
-    // For this example, we'll simulate a fetch with setTimeout
-    const slug = params.slug ?? 'default-slug';
+    // Get the slug from params
+    const slug = params.slug as string;
 
-    setTimeout(() => {
-      // Mock data based on the slug
-      const mockCertificate = {
-        title: slug
-          .toString()
-          .split('-')
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(' '),
-        issuer: 'Certificate Issuer',
-        date: '2022',
-        image: '/placeholder.svg?height=800&width=1200',
-      };
-
-      setCertificate(mockCertificate);
+    if (!slug) {
       setLoading(false);
-    }, 500);
+      return;
+    }
+
+    // Get certificate data from our shared store
+    const certData = getCertificateBySlug(slug);
+
+    if (certData) {
+      setCertificate(certData);
+    }
+
+    setLoading(false);
   }, [params.slug]);
 
   const handlePrint = () => {
@@ -53,14 +46,14 @@ export default function CertificatePage() {
         </Button>
 
         <div className="flex gap-2 print:hidden">
-          <Button variant="outline" onClick={handlePrint}>
+          {/* <Button variant="outline" onClick={handlePrint}>
             <Printer className="mr-2 h-4 w-4" />
             Print
           </Button>
           <Button>
             <Download className="mr-2 h-4 w-4" />
             Download
-          </Button>
+          </Button> */}
         </div>
       </div>
 
@@ -78,13 +71,18 @@ export default function CertificatePage() {
           </div>
 
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border shadow-lg">
-            <Image
-              src={certificate.image || '/placeholder.svg'}
-              alt={certificate.title}
-              fill
-              className="object-contain"
-              priority
-            />
+            <Link
+              target="_blank"
+              href="https://www.dicoding.com/certificates/GRX5OJGOVP0M"
+            >
+              <Image
+                src={certificate.image || "/placeholder.svg"}
+                alt={certificate.title}
+                fill
+                className="object-contain"
+                priority
+              />
+            </Link>
           </div>
         </div>
       ) : (
@@ -93,7 +91,7 @@ export default function CertificatePage() {
           <p className="mb-6 text-muted-foreground">
             The certificate you are looking for does not exist.
           </p>
-          <Button onClick={() => router.push('/#certificates')}>
+          <Button onClick={() => router.push("/#certificates")}>
             View All Certificates
           </Button>
         </div>

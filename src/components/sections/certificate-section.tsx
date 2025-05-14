@@ -1,78 +1,19 @@
-'use client';
+"use client";
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { useTranslation } from '@/hooks/use-translation';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Award, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-
-type Certificate = {
-  id: string;
-  title: string;
-  issuer: string;
-  date: string;
-  image: string;
-  link: string;
-};
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useTranslation } from "@/hooks/use-translation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Award, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { certificates } from "@/lib/certificate-data";
 
 export default function CertificateSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { t } = useTranslation();
-
-  const certificates: Certificate[] = [
-    {
-      id: "cert-1",
-      title: "Belajar Machine Learning untuk Pemula",
-      issuer: "Dicoding",
-      date: "2022",
-      image: "/images/academy/photo-unindra/un1.jpg",
-      link: "/certificates/front-end-web-development",
-    },
-    {
-      id: "cert-2",
-      title: "React.js Fundamentals",
-      issuer: "MySkill",
-      date: "2021",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/certificates/react-js-fundamentals",
-    },
-    {
-      id: "cert-3",
-      title: "UI/UX Design Principles",
-      issuer: "Coursera",
-      date: "2021",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/certificates/ui-ux-design-principles",
-    },
-    {
-      id: "cert-4",
-      title: "Mobile App Development",
-      issuer: "Udemy",
-      date: "2020",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/certificates/mobile-app-development",
-    },
-    {
-      id: "cert-5",
-      title: "Database Management",
-      issuer: "Dicoding",
-      date: "2020",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/certificates/database-management",
-    },
-    {
-      id: "cert-6",
-      title: "Cloud Computing Basics",
-      issuer: "MySkill",
-      date: "2019",
-      image: "/placeholder.svg?height=400&width=600",
-      link: "/certificates/cloud-computing-basics",
-    },
-  ];
 
   return (
     <section
@@ -88,9 +29,9 @@ export default function CertificateSection() {
           className="mb-16 text-center"
         >
           <h2 className="mb-2 text-3xl font-bold sm:text-4xl md:text-5xl">
-            {t('certificates.title')}
+            {t("certificates.title")}
           </h2>
-          <p className="text-muted-foreground">{t('certificates.subtitle')}</p>
+          <p className="text-muted-foreground">{t("certificates.subtitle")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -105,7 +46,7 @@ export default function CertificateSection() {
               <Card className="overflow-hidden">
                 <div className="relative aspect-video w-full overflow-hidden">
                   <Image
-                    src={certificate.image || '/placeholder.svg'}
+                    src={certificate.image || "/placeholder.svg"}
                     alt={certificate.title}
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
@@ -129,7 +70,7 @@ export default function CertificateSection() {
                   <Button variant="default" className="w-full" asChild>
                     <Link href={certificate.link}>
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      {t('certificates.view_certificate')}
+                      {t("certificates.view_certificate")}
                     </Link>
                   </Button>
                 </CardContent>
