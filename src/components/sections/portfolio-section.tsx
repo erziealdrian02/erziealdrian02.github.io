@@ -123,9 +123,8 @@ export default function PortfolioSection() {
       link: 'https://weatherwithus.neutracode.my.id/',
       gallery: [
         '/images/portofolio/wenime/homepage.png',
-        '/images/portofolio/weather/weather_maps.png',
-        '/images/portofolio/weather/weather_province.png',
-        '/images/portofolio/weather/weather_index.png',
+        '/images/portofolio/wenime/DetailAnime.png',
+        '/images/portofolio/wenime/animeList.png',
       ],
     },
     // {
