@@ -41,7 +41,7 @@ export default function PortfolioSection() {
       id: 'project-1',
       title: 'ERP Reimbursement System',
       description:
-        'HCIS-KPN (Human Capital Information System - KPN) adalah sebuah modul dari sistem ERP (Enterprise Resource Planning) yang dirancang khusus untuk membantu perusahaan dalam mengelola berbagai aspek sumber daya manusia. Proyek ini mencakup fitur-fitur seperti Bussiness Trip, Cash Advanced, Medical Reimbursement, Pengajuan Ticket, Pengajuan Hotel, dan proses administratif lainnya yang terkait dengan HR. Sistem ini bertujuan untuk meningkatkan efisiensi dan transparansi dalam pengelolaan SDM di lingkungan organisasi.',
+        'HCIS-KPN (Human Capital Information System - KPN) is a module of the ERP (Enterprise Resource Planning) system specifically designed to assist companies in managing various aspects of human resources. The project includes features such as Business Trip, Cash Advanced, Medical Reimbursement, Ticket Submission, Hotel Submission, and other administrative processes related to HR. The system aims to improve efficiency and transparency in HR management within the organization',
       category: 'programming',
       image: '/images/portofolio/reimburse/bg-wallpaper.png',
       technologies: [
@@ -64,7 +64,7 @@ export default function PortfolioSection() {
       id: 'project-2',
       title: 'Fleet Management System',
       description:
-        'Fleet Management System adalah modul dari sistem ERP (Enterprise Resource Planning) yang dirancang untuk membantu perusahaan dalam mengelola armada kendaraan mereka secara efisien. Sistem ini mencakup fitur-fitur seperti manajemen kendaraan, penjadwalan pemeliharaan, pelacakan lokasi, dan pengelolaan pengemudi. Tujuannya adalah untuk meningkatkan efisiensi operasional, mengurangi biaya operasional, dan memastikan kepatuhan terhadap peraturan yang berlaku.',
+        'Fleet Management System is a module of an ERP (Enterprise Resource Planning) system designed to assist companies in managing their vehicle fleet efficiently. The system includes features such as vehicle management, maintenance scheduling, location tracking, and driver management. The goal is to improve operational efficiency, reduce operational costs, and ensure regulatory compliance.',
       category: 'programming',
       image: '/images/portofolio/fleetmanagement/bg-wallpaper.jpg',
       technologies: [
@@ -88,7 +88,7 @@ export default function PortfolioSection() {
       id: 'project-3',
       title: 'Weather With Us',
       description:
-        'Weather With Us adalah aplikasi web yang dirancang untuk menyajikan informasi cuaca secara interaktif dan terstruktur berdasarkan wilayah administratif di Indonesia, seperti provinsi, kabupaten, kecamatan, dan desa. Proyek ini bertujuan untuk memberikan data cuaca yang akurat dan mudah diakses bagi pengguna, dengan tampilan visual yang informatif dan navigasi yang intuitif.',
+        'Weather With Us is a web application designed to present weather information in an interactive and structured manner based on administrative regions in Indonesia, such as provinces, districts, sub-districts and villages. The project aims to provide accurate and easily accessible weather data for users, with informative visual displays and intuitive navigation.',
       category: 'programming',
       image: '/images/portofolio/weather/bg-wallpaper.png',
       technologies: [
@@ -101,6 +101,28 @@ export default function PortfolioSection() {
       link: 'https://weatherwithus.neutracode.my.id/',
       gallery: [
         '/images/portofolio/weather/weather_detail.png',
+        '/images/portofolio/weather/weather_maps.png',
+        '/images/portofolio/weather/weather_province.png',
+        '/images/portofolio/weather/weather_index.png',
+      ],
+    },
+    {
+      id: 'project-4',
+      title: 'WeNime',
+      description:
+        'Anime Stream is a web application designed to provide users with anime streaming services. The project allows users to browse, search, and watch various anime titles online. With a user-friendly and responsive interface, the app aims to provide a convenient and accessible anime viewing experience.',
+      category: 'programming',
+      image: '/images/portofolio/wenime/bg-wallpaper.png',
+      technologies: [
+        'React.js',
+        'Tailwind CSS',
+        'Vite',
+        'React Router',
+        'TypeScript',
+      ],
+      link: 'https://weatherwithus.neutracode.my.id/',
+      gallery: [
+        '/images/portofolio/wenime/homepage.png',
         '/images/portofolio/weather/weather_maps.png',
         '/images/portofolio/weather/weather_province.png',
         '/images/portofolio/weather/weather_index.png',
