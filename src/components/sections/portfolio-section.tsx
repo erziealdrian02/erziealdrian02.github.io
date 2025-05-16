@@ -144,7 +144,7 @@ export default function PortfolioSection() {
         'React Router',
         'TypeScript',
       ],
-      link: 'https://weatherwithus.neutracode.my.id/',
+      link: 'http://wenimewatch.vercel.app/',
       gallery: [
         '/images/portofolio/wenime/homepage.png',
         '/images/portofolio/wenime/DetailAnime.png',
