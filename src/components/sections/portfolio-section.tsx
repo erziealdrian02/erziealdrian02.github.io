@@ -21,7 +21,7 @@ type Project = {
   id: string;
   title: string;
   description: string;
-  category: 'ui_ux' | 'documentation' | 'programming' | 'mobile';
+  category: 'ui_ux' | 'documentation' | 'web_developer' | 'mobile';
   image: string;
   technologies: string[];
   link?: string;
@@ -42,7 +42,7 @@ export default function PortfolioSection() {
       title: 'ERP Reimbursement System',
       description:
         'HCIS-KPN (Human Capital Information System - KPN) is a module of the ERP (Enterprise Resource Planning) system specifically designed to assist companies in managing various aspects of human resources. The project includes features such as Business Trip, Cash Advanced, Medical Reimbursement, Ticket Submission, Hotel Submission, and other administrative processes related to HR. The system aims to improve efficiency and transparency in HR management within the organization',
-      category: 'programming',
+      category: 'web_developer',
       image: '/images/portofolio/reimburse/bg-wallpaper.png',
       technologies: [
         'Laravel',
@@ -65,7 +65,7 @@ export default function PortfolioSection() {
       title: 'Fleet Management System',
       description:
         'Fleet Management System is a module of an ERP (Enterprise Resource Planning) system designed to assist companies in managing their vehicle fleet efficiently. The system includes features such as vehicle management, maintenance scheduling, location tracking, and driver management. The goal is to improve operational efficiency, reduce operational costs, and ensure regulatory compliance.',
-      category: 'programming',
+      category: 'web_developer',
       image: '/images/portofolio/fleetmanagement/bg-wallpaper.jpg',
       technologies: [
         'Laravel',
@@ -89,7 +89,7 @@ export default function PortfolioSection() {
       title: 'Weather With Us',
       description:
         'Weather With Us is a web application designed to present weather information in an interactive and structured manner based on administrative regions in Indonesia, such as provinces, districts, sub-districts and villages. The project aims to provide accurate and easily accessible weather data for users, with informative visual displays and intuitive navigation.',
-      category: 'programming',
+      category: 'web_developer',
       image: '/images/portofolio/weather/bg-wallpaper.png',
       technologies: [
         'PHP',
@@ -107,11 +107,35 @@ export default function PortfolioSection() {
       ],
     },
     {
-      id: 'project-',
+      id: 'project-4',
+      title: 'Dev on Demand',
+      description:
+        'DevOnDemand-System is a web-based ERP system designed for dynamic management of outsourcing services. It supports the management of clients, projects, employees, assignments, and activities with a real-time approach as well as audit log and data export capabilities.',
+      category: 'web_developer',
+      image: '/images/portofolio/devondemands/bg-wallpaper.png',
+      technologies: [
+        'Laravel',
+        'Inertia.js',
+        'Vue.js',
+        'Tailwind CSS',
+        'SweetAlert2',
+        'Laravel Excel',
+        'UUID, JSON, Enum',
+      ],
+      // link: 'https://weatherwithus.neutracode.my.id/',
+      gallery: [
+        '/images/portofolio/devondemands/dashboardpage.png',
+        '/images/portofolio/devondemands/clientpage.png',
+        '/images/portofolio/devondemands/skillpage.png',
+        '/images/portofolio/devondemands/loginpage.png',
+      ],
+    },
+    {
+      id: 'project-5',
       title: 'WeNime',
       description:
         'Anime Stream is a web application designed to provide users with anime streaming services. The project allows users to browse, search, and watch various anime titles online. With a user-friendly and responsive interface, the app aims to provide a convenient and accessible anime viewing experience.',
-      category: 'programming',
+      category: 'web_developer',
       image: '/images/portofolio/wenime/bg-wallpaper.png',
       technologies: [
         'React.js',
@@ -233,8 +257,8 @@ export default function PortfolioSection() {
             <TabsTrigger value="documentation">
               {t('portfolio.filters.documentation')}
             </TabsTrigger>
-            <TabsTrigger value="programming">
-              {t('portfolio.filters.programming')}
+            <TabsTrigger value="web_developer">
+              {t('portfolio.filters.web_developer')}
             </TabsTrigger>
             <TabsTrigger value="mobile">
               {t('portfolio.filters.mobile')}
@@ -262,9 +286,9 @@ export default function PortfolioSection() {
             />
           </TabsContent>
 
-          <TabsContent value="programming" className="mt-0">
+          <TabsContent value="web_developer" className="mt-0">
             <ProjectGrid
-              projects={projects.filter((p) => p.category === 'programming')}
+              projects={projects.filter((p) => p.category === 'web_developer')}
               onOpenProject={handleOpenProject}
             />
           </TabsContent>
@@ -407,7 +431,7 @@ function ProjectGrid({ projects, onOpenProject }: ProjectGridProps) {
                     // {
                     //   'bg-purple-500': project.category === 'ui_ux',
                     //   'bg-blue-500': project.category === 'documentation',
-                    //   'bg-green-500': project.category === 'programming',
+                    //   'bg-green-500': project.category === 'web_developer',
                     //   'bg-orange-500': project.category === 'mobile',
                     // }
                   )}
