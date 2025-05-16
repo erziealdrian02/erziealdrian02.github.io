@@ -107,7 +107,7 @@ export default function PortfolioSection() {
       ],
     },
     {
-      id: 'project-4',
+      id: 'project-',
       title: 'WeNime',
       description:
         'Anime Stream is a web application designed to provide users with anime streaming services. The project allows users to browse, search, and watch various anime titles online. With a user-friendly and responsive interface, the app aims to provide a convenient and accessible anime viewing experience.',
