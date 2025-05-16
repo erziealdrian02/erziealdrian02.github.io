@@ -190,7 +190,12 @@ export default function ContactSection() {
                   disabled={isSubmitting}
                 />
               </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                className="w-full"
+                disabled={true}
+                //  disabled={isSubmitting}
+              >
                 {isSubmitting ? (
                   <>
                     <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
