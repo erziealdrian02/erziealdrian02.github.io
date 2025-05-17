@@ -87,7 +87,10 @@ export default function HeroSection() {
 
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
             <Button className="group" asChild>
-              <a href="/cv.pdf" download>
+              <a
+                href="/resume/Muhamad Erzie Aldrian Nugraha-resume.pdf"
+                download
+              >
                 <Download className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-1" />
                 {t('hero.download_cv')}
               </a>

@@ -66,9 +66,10 @@ export default function ExperienceSection() {
       details:
         'As a Full Stack Developer Intern, I was responsible for assisting the development of the company’s internal ERP system, focusing on building robust and scalable web applications using Object-Oriented Programming (OOP) principles. I collaborated closely with the team via GitHub for version control and code collaboration to ensure efficient and streamlined workflows. \n\nOne of the main projects I worked on was the development of the Human Capital Information System (HCIS), which is part of the company’s ERP suite. This project involved handling employee management modules, leave and reimbursement systems, approval workflows, and automated notifications. Throughout the project, I actively contributed to both frontend and backend development and ensured data consistency across multiple systems. \n\nIn addition to development, I was also involved in documenting the system architecture, user guides, and deployment steps to maintain clear and accessible project documentation for future use. I worked directly with end-users to demonstrate the applications, gather feedback, and make necessary adjustments based on their input. \n\nKey Responsibilities:\n- Developed internal web-based ERP systems using OOP-based PHP (Laravel).\n- Collaborated with the team using GitHub for version control and code integration.\n- Built and maintained core modules such as employee records, approval workflows, leave requests, reimbursements, and more.\n- Presented application demos to stakeholders and revised functionalities based on user feedback.\n- Documented the development process, including technical guides, module breakdowns, and user manuals.\n- Participated in planning and debugging sessions to ensure smooth and efficient system performance.',
       images: [
-        '/images/company/photo-kpn/kp1.jpg',
-        '/images/company/photo-kpn/kp2.jpg',
+        '/images/company/photo-kpn/kpn1.jpg',
+        '/images/company/photo-kpn/kpn2.jpg',
         '/images/company/photo-kpn/kpn3.jpg',
+        '/images/company/photo-kpn/kpn4.jpg',
       ],
     },
     {

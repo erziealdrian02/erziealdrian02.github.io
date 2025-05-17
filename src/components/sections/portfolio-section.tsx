@@ -45,7 +45,7 @@ export default function PortfolioSection() {
       description:
         'HCIS-KPN (Human Capital Information System - KPN) is a module of the ERP (Enterprise Resource Planning) system specifically designed to assist companies in managing various aspects of human resources. The project includes features such as Business Trip, Cash Advanced, Medical Reimbursement, Ticket Submission, Hotel Submission, and other administrative processes related to HR. The system aims to improve efficiency and transparency in HR management within the organization',
       category: 'web_developer',
-      image: '/images/portofolio/reimburse/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/reimburse/bg-wallpaper.png',
       technologies: [
         'Laravel',
         'MySQL',
@@ -56,10 +56,10 @@ export default function PortfolioSection() {
       ],
       link: 'https://erpreimburse.neutracode.my.id/',
       gallery: [
-        '/images/portofolio/reimburse/login.png',
-        '/images/portofolio/reimburse/listca.png',
-        '/images/portofolio/reimburse/listbtadmin.png',
-        '/images/portofolio/reimburse/formdoc.png',
+        '/images/portofolio/webdevelopment/reimburse/login.png',
+        '/images/portofolio/webdevelopment/reimburse/listca.png',
+        '/images/portofolio/webdevelopment/reimburse/listbtadmin.png',
+        '/images/portofolio/webdevelopment/reimburse/formdoc.png',
       ],
       platform: 'web',
     },
@@ -69,7 +69,8 @@ export default function PortfolioSection() {
       description:
         'Fleet Management System is a module of an ERP (Enterprise Resource Planning) system designed to assist companies in managing their vehicle fleet efficiently. The system includes features such as vehicle management, maintenance scheduling, location tracking, and driver management. The goal is to improve operational efficiency, reduce operational costs, and ensure regulatory compliance.',
       category: 'web_developer',
-      image: '/images/portofolio/fleetmanagement/bg-wallpaper.jpg',
+      image:
+        '/images/portofolio/webdevelopment/fleetmanagement/bg-wallpaper.jpg',
       technologies: [
         'Laravel',
         'MySQL',
@@ -81,10 +82,10 @@ export default function PortfolioSection() {
       ],
       link: 'https://fleetmanagementsystem.neutracode.my.id/',
       gallery: [
-        '/images/portofolio/fleetmanagement/listtrips.png',
-        '/images/portofolio/fleetmanagement/gpsform.png',
-        '/images/portofolio/fleetmanagement/listpart.png',
-        '/images/portofolio/fleetmanagement/forminput.png',
+        '/images/portofolio/webdevelopment/fleetmanagement/listtrips.png',
+        '/images/portofolio/webdevelopment/fleetmanagement/gpsform.png',
+        '/images/portofolio/webdevelopment/fleetmanagement/listpart.png',
+        '/images/portofolio/webdevelopment/fleetmanagement/forminput.png',
       ],
       platform: 'web',
     },
@@ -94,7 +95,7 @@ export default function PortfolioSection() {
       description:
         'Weather With Us is a web application designed to present weather information in an interactive and structured manner based on administrative regions in Indonesia, such as provinces, districts, sub-districts and villages. The project aims to provide accurate and easily accessible weather data for users, with informative visual displays and intuitive navigation.',
       category: 'web_developer',
-      image: '/images/portofolio/weather/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/weather/bg-wallpaper.png',
       technologies: [
         'PHP',
         'Tailwind CSS',
@@ -104,10 +105,10 @@ export default function PortfolioSection() {
       ],
       link: 'https://weatherwithus.neutracode.my.id/',
       gallery: [
-        '/images/portofolio/weather/weather_detail.png',
-        '/images/portofolio/weather/weather_maps.png',
-        '/images/portofolio/weather/weather_province.png',
-        '/images/portofolio/weather/weather_index.png',
+        '/images/portofolio/webdevelopment/weather/weather_detail.png',
+        '/images/portofolio/webdevelopment/weather/weather_maps.png',
+        '/images/portofolio/webdevelopment/weather/weather_province.png',
+        '/images/portofolio/webdevelopment/weather/weather_index.png',
       ],
       platform: 'web',
     },
@@ -117,7 +118,7 @@ export default function PortfolioSection() {
       description:
         'DevOnDemand-System is a web-based ERP system designed for dynamic management of outsourcing services. It supports the management of clients, projects, employees, assignments, and activities with a real-time approach as well as audit log and data export capabilities.',
       category: 'web_developer',
-      image: '/images/portofolio/devondemands/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/devondemands/bg-wallpaper.png',
       technologies: [
         'Laravel',
         'Inertia.js',
@@ -129,10 +130,10 @@ export default function PortfolioSection() {
       ],
       github: 'https://github.com/erziealdrian02/DevOnDemand-System',
       gallery: [
-        '/images/portofolio/devondemands/dashboardpage.png',
-        '/images/portofolio/devondemands/clientpage.png',
-        '/images/portofolio/devondemands/skillpage.png',
-        '/images/portofolio/devondemands/loginpage.png',
+        '/images/portofolio/webdevelopment/devondemands/dashboardpage.png',
+        '/images/portofolio/webdevelopment/devondemands/clientpage.png',
+        '/images/portofolio/webdevelopment/devondemands/skillpage.png',
+        '/images/portofolio/webdevelopment/devondemands/loginpage.png',
       ],
       platform: 'web',
     },
@@ -142,7 +143,7 @@ export default function PortfolioSection() {
       description:
         'Anime Stream is a web application designed to provide users with anime streaming services. The project allows users to browse, search, and watch various anime titles online. With a user-friendly and responsive interface, the app aims to provide a convenient and accessible anime viewing experience.',
       category: 'web_developer',
-      image: '/images/portofolio/wenime/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/wenime/bg-wallpaper.png',
       technologies: [
         'React.js',
         'Tailwind CSS',
@@ -152,9 +153,9 @@ export default function PortfolioSection() {
       ],
       link: 'http://wenimewatch.vercel.app/',
       gallery: [
-        '/images/portofolio/wenime/homepage.png',
-        '/images/portofolio/wenime/DetailAnime.png',
-        '/images/portofolio/wenime/animeList.png',
+        '/images/portofolio/webdevelopment/wenime/homepage.png',
+        '/images/portofolio/webdevelopment/wenime/DetailAnime.png',
+        '/images/portofolio/webdevelopment/wenime/animeList.png',
       ],
       platform: 'web',
     },
