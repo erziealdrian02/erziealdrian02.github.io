@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 import { Download, ArrowDown } from 'lucide-react';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
+import { FlipWords } from '@/components/ui/flip-words';
 import { SpotlightBackground } from '@/components/ui/spotlight-background';
 import Image from 'next/image';
 
@@ -81,8 +82,13 @@ export default function HeroSection() {
             </h1>
           </div>
 
+          <div className="mb-8 text-xl font-medium sm:text-2xl md:text-3xl">
+            I'm a{' '}
+            <FlipWords words={roles} className="text-center md:text-left" />
+          </div>
+
           <div className="mb-8 h-12">
-            <TypewriterEffect words={words} />
+            {/* <TypewriterEffect words={words} /> */}
           </div>
 
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
