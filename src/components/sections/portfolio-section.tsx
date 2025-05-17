@@ -14,7 +14,7 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Figma } from 'lucide-react';
 import Image from 'next/image';
 
 type Project = {
@@ -26,7 +26,9 @@ type Project = {
   technologies: string[];
   link?: string;
   github?: string;
+  figma?: string;
   gallery: string[];
+  platform: string;
 };
 
 export default function PortfolioSection() {
@@ -59,6 +61,7 @@ export default function PortfolioSection() {
         '/images/portofolio/reimburse/listbtadmin.png',
         '/images/portofolio/reimburse/formdoc.png',
       ],
+      platform: 'web',
     },
     {
       id: 'project-2',
@@ -83,6 +86,7 @@ export default function PortfolioSection() {
         '/images/portofolio/fleetmanagement/listpart.png',
         '/images/portofolio/fleetmanagement/forminput.png',
       ],
+      platform: 'web',
     },
     {
       id: 'project-3',
@@ -105,6 +109,7 @@ export default function PortfolioSection() {
         '/images/portofolio/weather/weather_province.png',
         '/images/portofolio/weather/weather_index.png',
       ],
+      platform: 'web',
     },
     {
       id: 'project-4',
@@ -122,13 +127,14 @@ export default function PortfolioSection() {
         'Laravel Excel',
         'UUID, JSON, Enum',
       ],
-      // link: 'https://weatherwithus.neutracode.my.id/',
+      github: 'https://github.com/erziealdrian02/DevOnDemand-System',
       gallery: [
         '/images/portofolio/devondemands/dashboardpage.png',
         '/images/portofolio/devondemands/clientpage.png',
         '/images/portofolio/devondemands/skillpage.png',
         '/images/portofolio/devondemands/loginpage.png',
       ],
+      platform: 'web',
     },
     {
       id: 'project-5',
@@ -150,6 +156,7 @@ export default function PortfolioSection() {
         '/images/portofolio/wenime/DetailAnime.png',
         '/images/portofolio/wenime/animeList.png',
       ],
+      platform: 'web',
     },
     {
       id: 'project-6',
@@ -159,12 +166,14 @@ export default function PortfolioSection() {
       category: 'ui_ux',
       image: '/images/portofolio/uiux/healthcare/bg-wallpaper.png',
       technologies: ['Figma'],
-      link: 'http://wenimewatch.vercel.app/',
+      figma:
+        'https://www.figma.com/design/1ZFCzFOG7TcQPh5knh4Cha/Health-Care-Design-App?node-id=0-1&p=f&t=iazweqrCOarjeTeQ-0',
       gallery: [
         '/images/portofolio/uiux/healthcare/Beranda.png',
         '/images/portofolio/uiux/healthcare/Hospitals.png',
         '/images/portofolio/uiux/healthcare/profile.png',
       ],
+      platform: 'mobile',
     },
     {
       id: 'project-7',
@@ -174,12 +183,14 @@ export default function PortfolioSection() {
       category: 'ui_ux',
       image: '/images/portofolio/uiux/sayuranku/bg-wallpaper.jpg',
       technologies: ['Figma'],
-      link: 'http://wenimewatch.vercel.app/',
+      figma:
+        'https://www.figma.com/design/wtbsVIpntuViOUJ2xJNI3I/Untitled?node-id=0-1&p=f&t=u1ztWLLxrjWFL27F-0',
       gallery: [
         '/images/portofolio/uiux/sayuranku/detail_pesanan_page.png',
         '/images/portofolio/uiux/sayuranku/detail_page.png',
         '/images/portofolio/uiux/sayuranku/product_page.png',
       ],
+      platform: 'mobile',
     },
     {
       id: 'project-8',
@@ -189,12 +200,14 @@ export default function PortfolioSection() {
       category: 'ui_ux',
       image: '/images/portofolio/uiux/petshop/bg-wallpaper.png',
       technologies: ['Figma'],
-      link: 'http://wenimewatch.vercel.app/',
+      figma:
+        'https://www.figma.com/design/ozqlWPX4Crh7iYv2cIyAwd/Remedial_Yusnita?node-id=0-1&p=f&t=4OqGNc3EBD1Q2QDv-0',
       gallery: [
-        '/images/portofolio/uiux/petshop/bg-wallpaper.png',
-        '/images/portofolio/uiux/petshop/bg-wallpaper.png',
-        '/images/portofolio/uiux/petshop/bg-wallpaper.png',
+        '/images/portofolio/uiux/petshop/detail_page.png',
+        '/images/portofolio/uiux/petshop/landing_page.png',
+        '/images/portofolio/uiux/petshop/order_page.png',
       ],
+      platform: 'mobile',
     },
     // {
     //   id: 'project-2',
@@ -398,7 +411,11 @@ export default function PortfolioSection() {
                             index + 1
                           }`}
                           fill
-                          className="object-cover"
+                          className={
+                            selectedProject.platform === 'mobile'
+                              ? 'object-contain'
+                              : 'object-cover'
+                          }
                         />
                       </div>
                     ))}
@@ -426,6 +443,22 @@ export default function PortfolioSection() {
                         rel="noopener noreferrer"
                       >
                         <Github className="mr-2 h-4 w-4" />
+                        {t('portfolio.view_code')}
+                      </a>
+                    </Button>
+                  )}
+                  {selectedProject.figma && (
+                    <Button
+                      variant="ghost"
+                      className="bg-gradient-to-r from-[#F24E1E] via-[#A259FF] to-[#1ABCFE] text-white hover:opacity-90 transition-all"
+                      asChild
+                    >
+                      <a
+                        href={selectedProject.figma}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Figma className="mr-2 h-4 w-4" />
                         {t('portfolio.view_code')}
                       </a>
                     </Button>
