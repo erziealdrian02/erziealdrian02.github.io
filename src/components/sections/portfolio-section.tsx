@@ -151,6 +151,51 @@ export default function PortfolioSection() {
         '/images/portofolio/wenime/animeList.png',
       ],
     },
+    {
+      id: 'project-6',
+      title: 'Healthcare App Design Layout',
+      description:
+        'Health Care Design App adalah rancangan UI/UX untuk aplikasi mobile layanan kesehatan yang mencakup fitur seperti pencarian rumah sakit, konsultasi dokter online, pesan/inbox dengan dokter, notifikasi, profil pengguna, dan keranjang untuk pemesanan layanan. Aplikasi ini dirancang untuk mempermudah pengguna dalam mengakses layanan medis secara digital.',
+      category: 'ui_ux',
+      image: '/images/portofolio/uiux/healthcare/bg-wallpaper.png',
+      technologies: ['Figma'],
+      link: 'http://wenimewatch.vercel.app/',
+      gallery: [
+        '/images/portofolio/uiux/healthcare/Beranda.png',
+        '/images/portofolio/uiux/healthcare/Hospitals.png',
+        '/images/portofolio/uiux/healthcare/profile.png',
+      ],
+    },
+    {
+      id: 'project-7',
+      title: 'Sayuranku App Design Layout',
+      description:
+        'Sayuranku adalah aplikasi mobile e-commerce yang memudahkan pengguna memesan sayur, buah, dan kebutuhan dapur secara online. Aplikasi ini mencakup fitur autentikasi (login/register), katalog produk, detail produk, daftar favorit, keranjang belanja, checkout, pelacakan pesanan, dan pengelolaan profil pengguna — semuanya dirancang untuk memberikan pengalaman belanja yang praktis dan personal.',
+      category: 'ui_ux',
+      image: '/images/portofolio/uiux/sayuranku/bg-wallpaper.jpg',
+      technologies: ['Figma'],
+      link: 'http://wenimewatch.vercel.app/',
+      gallery: [
+        '/images/portofolio/uiux/sayuranku/detail_pesanan_page.png',
+        '/images/portofolio/uiux/sayuranku/detail_page.png',
+        '/images/portofolio/uiux/sayuranku/product_page.png',
+      ],
+    },
+    {
+      id: 'project-8',
+      title: 'Petstore App Design Layout',
+      description:
+        'Aplikasi ini adalah platform e-commerce mobile bernama Nekostore, yang dirancang untuk memudahkan pengguna membeli berbagai kebutuhan hewan peliharaan seperti makanan, aksesoris, dan produk perawatan. Fitur-fitur utama mencakup autentikasi pengguna (login/register), halaman beranda dengan katalog produk, detail produk, keranjang belanja, checkout, riwayat pesanan, favorit, serta profil pengguna. Desain aplikasinya mengikuti pola UI/UX modern dengan navigasi intuitif.',
+      category: 'ui_ux',
+      image: '/images/portofolio/uiux/petshop/bg-wallpaper.png',
+      technologies: ['Figma'],
+      link: 'http://wenimewatch.vercel.app/',
+      gallery: [
+        '/images/portofolio/uiux/petshop/bg-wallpaper.png',
+        '/images/portofolio/uiux/petshop/bg-wallpaper.png',
+        '/images/portofolio/uiux/petshop/bg-wallpaper.png',
+      ],
+    },
     // {
     //   id: 'project-2',
     //   title: 'E-Commerce Dashboard',
