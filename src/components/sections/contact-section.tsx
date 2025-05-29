@@ -26,19 +26,80 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const formData = new FormData(e.currentTarget);
+      const data = {
+        name: formData.get('name') as string,
+        email: formData.get('email') as string,
+        message: formData.get('message') as string,
+      };
 
-    // In a real application, you would send the form data to an API
-    // For this example, we'll just show a success toast
-    toast({
-      title: t('contact.success'),
-      description: "I'll get back to you as soon as possible.",
-    });
+      console.log('Sending data:', data);
 
-    // Reset the form
-    formRef.current?.reset();
-    setIsSubmitting(false);
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      console.log('Response status:', response.status);
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Success result:', result);
+
+        toast({
+          title: t('contact.success'),
+          description:
+            "Your message has been sent successfully! I'll get back to you as soon as possible.",
+        });
+        formRef.current?.reset();
+      } else {
+        const errorData = await response.json();
+        console.error('Error response:', errorData);
+
+        // Show more detailed error message
+        const errorMessage = errorData.details
+          ? `${errorData.error}: ${errorData.details}`
+          : errorData.error || 'Failed to send message';
+
+        throw new Error(errorMessage);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+
+      // Show user-friendly error message based on error type
+      let userMessage = 'Failed to send message. Please try again later.';
+
+      const errorMessage =
+        typeof error === 'object' &&
+        error !== null &&
+        'message' in error &&
+        typeof (error as { message: unknown }).message === 'string'
+          ? (error as { message: string }).message
+          : '';
+
+      if (errorMessage.includes('Invalid login')) {
+        userMessage =
+          'Email service configuration error. Please contact the site administrator.';
+      } else if (
+        errorMessage.includes('network') ||
+        errorMessage.includes('fetch')
+      ) {
+        userMessage =
+          'Network error. Please check your connection and try again.';
+      }
+
+      toast({
+        title: 'Error',
+        description: userMessage,
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -151,6 +212,7 @@ export default function ContactSection() {
               <div className="flex flex-wrap gap-3">
                 {socialLinks.map((link) => (
                   <a
+                    key={link.name}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -225,12 +287,7 @@ export default function ContactSection() {
                   disabled={isSubmitting}
                 />
               </div>
-              <Button
-                type="submit"
-                className="w-full"
-                disabled={true}
-                //  disabled={isSubmitting}
-              >
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <>
                     <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
