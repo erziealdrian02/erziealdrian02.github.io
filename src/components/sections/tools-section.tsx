@@ -24,57 +24,57 @@ export default function ToolsSection() {
 
   const tools: Tool[] = [
     {
-      name: 'React',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      name: 'HTML5',
+      logo: '/svg/html-5-svgrepo-com.svg',
       category: 'frontend',
       level: 'expert',
       description: 'A JavaScript library for building user interfaces',
     },
     {
-      name: 'Next.js',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+      name: 'CSS3',
+      logo: '/svg/css-3-svgrepo-com.svg',
       category: 'frontend',
       level: 'expert',
-      description: 'The React framework for production',
+      description: 'A JavaScript library for building user interfaces',
     },
     {
-      name: 'TailwindCSS',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      name: 'JavaScript',
+      logo: '/svg/javascript-svgrepo-com.svg',
       category: 'frontend',
       level: 'expert',
-      description: 'A utility-first CSS framework',
-    },
-    {
-      name: 'Figma',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
-      category: 'frontend',
-      level: 'intermediate',
-      description: 'A design tool for UI/UX design',
+      description: 'A JavaScript library for building user interfaces',
     },
     {
       name: 'PHP',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg',
+      logo: '/svg/php-svgrepo-com.svg',
       category: 'backend',
       level: 'expert',
-      description: 'A popular general-purpose scripting language',
+      description: 'A JavaScript library for building user interfaces',
+    },
+    {
+      name: 'Python',
+      logo: '/svg/python-svgrepo-com.svg',
+      category: 'backend',
+      level: 'intermediate',
+      description: 'A JavaScript library for building user interfaces',
     },
     {
       name: 'Laravel',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg',
+      logo: '/svg/laravel-svgrepo-com.svg',
       category: 'backend',
-      level: 'expert',
-      description: 'A PHP framework for web artisans',
+      level: 'intermediate',
+      description: 'A JavaScript library for building user interfaces',
     },
     {
       name: 'Node.js',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+      logo: '/svg/nodejs-svgrepo-com.svg',
       category: 'backend',
       level: 'intermediate',
       description: "JavaScript runtime built on Chrome's V8 JS engine",
     },
     {
-      name: 'Go',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg',
+      name: 'Flask',
+      logo: '/svg/flask-svgrepo-com.svg',
       category: 'backend',
       level: 'basic',
       description: 'An open source programming language by Google',
@@ -88,7 +88,7 @@ export default function ToolsSection() {
     },
     {
       name: 'MySQL',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      logo: '/svg/mysql-logo-svgrepo-com.svg',
       category: 'database',
       level: 'expert',
       description: 'An open-source relational database management system',
@@ -101,13 +101,6 @@ export default function ToolsSection() {
       description: 'A powerful, open source object-relational database',
     },
     {
-      name: 'MongoDB',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      category: 'database',
-      level: 'basic',
-      description: 'A NoSQL document database',
-    },
-    {
       name: 'Docker',
       logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
       category: 'devops',
@@ -117,7 +110,7 @@ export default function ToolsSection() {
     },
     {
       name: 'GitHub',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+      logo: '/svg/github-142-svgrepo-com.svg',
       category: 'devops',
       level: 'expert',
       description: 'A platform for version control and collaboration',
@@ -130,10 +123,24 @@ export default function ToolsSection() {
       description: 'A complete DevOps platform',
     },
     {
-      name: 'AWS',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+      name: 'Laragon',
+      logo: '/svg/laragon-svgrepo-com.svg',
       category: 'devops',
       level: 'basic',
+      description: 'A comprehensive cloud computing platform',
+    },
+    {
+      name: 'Tailwind CSS',
+      logo: '/svg/tailwind-svgrepo-com.svg',
+      category: 'frontend',
+      level: 'intermediate',
+      description: 'A comprehensive cloud computing platform',
+    },
+    {
+      name: 'Git',
+      logo: '/svg/git-svgrepo-com.svg',
+      category: 'devops',
+      level: 'intermediate',
       description: 'A comprehensive cloud computing platform',
     },
   ];
@@ -243,7 +250,11 @@ function ToolCard({ tool, t, isHovered, onHover, onLeave }: ToolCardProps) {
             src={tool.logo || '/placeholder.svg'}
             alt={tool.name}
             fill
-            className="object-contain"
+            className={`object-contain ${
+              ['flask', 'github'].includes(tool.name?.toLowerCase())
+                ? 'bg-white rounded-full p-2 shadow-sm'
+                : ''
+            }`}
           />
         </div>
 
@@ -263,7 +274,11 @@ function ToolCard({ tool, t, isHovered, onHover, onLeave }: ToolCardProps) {
               src={tool.logo || '/placeholder.svg'}
               alt={tool.name}
               fill
-              className="object-contain"
+              className={`object-contain ${
+                ['flask', 'github'].includes(tool.name?.toLowerCase())
+                  ? 'bg-white rounded-full p-2 shadow-sm'
+                  : ''
+              }`}
             />
           </div>
 
