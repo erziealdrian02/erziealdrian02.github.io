@@ -28,6 +28,9 @@ export function LanguageToggle() {
         <DropdownMenuItem onClick={() => setLanguage('id')}>
           Indonesia {language === 'id' && '✓'}
         </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage('ja')}>
+          日本語 {language === 'ja' && '✓'}
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

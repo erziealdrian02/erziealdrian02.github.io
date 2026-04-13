@@ -7,7 +7,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { Download, ArrowDown } from 'lucide-react';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { FlipWords } from '@/components/ui/flip-words';
-import { SpotlightBackground } from '@/components/ui/spotlight-background';
+import { DotGridBackground } from '@/components/ui/dot-grid-background';
 import Image from 'next/image';
 
 export default function HeroSection() {
@@ -63,7 +63,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden">
-      <SpotlightBackground />
+      <DotGridBackground />
       <div className="container relative z-10 mx-auto flex min-h-screen flex-col items-center justify-center px-4 py-20 sm:px-6 md:flex-row">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

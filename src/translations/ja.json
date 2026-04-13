@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "tools": "ツール",
+    "portfolio": "ポートフォリオ",
+    "experience": "経験",
+    "certificates": "資格",
+    "contact": "お問い合わせ",
+    "hire_me": "採用する"
+  },
+  "hero": {
+    "greeting": "こんにちは、",
+    "name": "Muhamad Erzie Aldrian Nugraha",
+    "roles": [
+      "Full Stack Developer",
+      "UI/UX Designer",
+      "Front-end Developer",
+      "Back-end Developer",
+      "Mobile App Developer"
+    ],
+    "download_cv": "履歴書ダウンロード",
+    "explore": "作品を見る"
+  },
+  "tools": {
+    "title": "ツールキット",
+    "subtitle": "使用している技術",
+    "mastery_levels": {
+      "basic": "初級",
+      "intermediate": "中級",
+      "expert": "上級"
+    }
+  },
+  "portfolio": {
+    "title": "ポートフォリオ",
+    "subtitle": "最近の作品をご覧ください",
+    "filters": {
+      "all": "すべて",
+      "ui_ux": "UI/UXデザイン",
+      "documentation": "ドキュメント",
+      "web_developer": "Web開発",
+      "mobile": "モバイルアプリ"
+    },
+    "view_project": "プロジェクトを見る",
+    "visit_site": "サイトを訪問",
+    "view_code": "コードを見る",
+    "view_design": "デザインを見る"
+  },
+  "experience": {
+    "title": "経験 & 学歴",
+    "subtitle": "私のキャリア",
+    "work": "職歴",
+    "education": "学歴",
+    "present": "現在",
+    "view_details": "詳細を見る"
+  },
+  "certificates": {
+    "title": "資格・認定",
+    "subtitle": "取得した資格と認定",
+    "view_certificate": "証明書を見る"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "一緒に仕事しましょう",
+    "form": {
+      "name": "氏名",
+      "email": "メールアドレス",
+      "message": "メッセージ",
+      "send": "送信する"
+    },
+    "success": "メッセージが正常に送信されました！",
+    "error": "メッセージの送信中にエラーが発生しました。"
+  },
+  "footer": {
+    "rights": "全著作権所有",
+    "made_with": "制作："
+  }
+}

@@ -3,6 +3,7 @@
 import { useLanguage } from './use-language';
 import enTranslations from '@/translations/en.json';
 import idTranslations from '@/translations/id.json';
+import jaTranslations from '@/translations/ja.json';
 
 export function useTranslation() {
   const { language } = useLanguage();
@@ -10,6 +11,7 @@ export function useTranslation() {
   const translations: Record<string, Record<string, unknown>> = {
     en: enTranslations,
     id: idTranslations,
+    ja: jaTranslations,
   };
 
   const t = (key: string) => {

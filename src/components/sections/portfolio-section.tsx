@@ -1,11 +1,9 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Dialog,
   DialogContent,
@@ -14,7 +12,7 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import { ExternalLink, Github, Figma } from 'lucide-react';
+import { ExternalLink, Github, Figma, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 
 type Project = {
@@ -31,29 +29,39 @@ type Project = {
   platform: string;
 };
 
+type FilterKey = 'all' | 'ui_ux' | 'documentation' | 'web_developer' | 'mobile';
+
+const CATEGORY_COLORS: Record<string, string> = {
+  ui_ux: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+  web_developer: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+  mobile: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+  documentation: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+};
+
+const CATEGORY_DOT: Record<string, string> = {
+  ui_ux: 'bg-purple-400',
+  web_developer: 'bg-blue-400',
+  mobile: 'bg-emerald-400',
+  documentation: 'bg-amber-400',
+};
+
 export default function PortfolioSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
   const { t } = useTranslation();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [open, setOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<FilterKey>('all');
 
   const projects: Project[] = [
     {
       id: 'project-1',
       title: 'ERP Reimbursement System',
       description:
-        'HCIS-KPN (Human Capital Information System - KPN) is a module of the ERP (Enterprise Resource Planning) system specifically designed to assist companies in managing various aspects of human resources. The project includes features such as Business Trip, Cash Advanced, Medical Reimbursement, Ticket Submission, Hotel Submission, and other administrative processes related to HR. The system aims to improve efficiency and transparency in HR management within the organization',
+        'HCIS-KPN is a module of ERP system for managing HR aspects — Business Trip, Cash Advanced, Medical Reimbursement, and more.',
       category: 'web_developer',
       image: '/images/portofolio/webdevelopment/reimburse/bg-wallpaper.png',
-      technologies: [
-        'Laravel',
-        'MySQL',
-        'Node.js & NPM/Yarn',
-        'Bootstrap',
-        'PHPUnit',
-        'Tailwind CSS',
-      ],
+      technologies: ['Laravel', 'MySQL', 'Bootstrap', 'Tailwind CSS', 'PHPUnit'],
       link: 'https://erpreimburse.neutracode.my.id/',
       gallery: [
         '/images/portofolio/webdevelopment/reimburse/login.png',
@@ -67,19 +75,10 @@ export default function PortfolioSection() {
       id: 'project-2',
       title: 'Fleet Management System',
       description:
-        'Fleet Management System is a module of an ERP (Enterprise Resource Planning) system designed to assist companies in managing their vehicle fleet efficiently. The system includes features such as vehicle management, maintenance scheduling, location tracking, and driver management. The goal is to improve operational efficiency, reduce operational costs, and ensure regulatory compliance.',
+        'ERP module to manage vehicle fleets — maintenance scheduling, location tracking, and driver management.',
       category: 'web_developer',
-      image:
-        '/images/portofolio/webdevelopment/fleetmanagement/bg-wallpaper.jpg',
-      technologies: [
-        'Laravel',
-        'MySQL',
-        'Bootstrap',
-        'Tailwind CSS',
-        'Vite',
-        'Node.js & NPM/Yarn',
-        'PHPUnit',
-      ],
+      image: '/images/portofolio/webdevelopment/fleetmanagement/bg-wallpaper.jpg',
+      technologies: ['Laravel', 'MySQL', 'Bootstrap', 'Tailwind CSS', 'Vite'],
       link: 'https://fleetmanagementsystem.neutracode.my.id/',
       gallery: [
         '/images/portofolio/webdevelopment/fleetmanagement/listtrips.png',
@@ -93,16 +92,10 @@ export default function PortfolioSection() {
       id: 'project-3',
       title: 'Weather With Us',
       description:
-        'Weather With Us is a web application designed to present weather information in an interactive and structured manner based on administrative regions in Indonesia, such as provinces, districts, sub-districts and villages. The project aims to provide accurate and easily accessible weather data for users, with informative visual displays and intuitive navigation.',
+        'Interactive weather app based on Indonesian administrative regions — province, district, village level data.',
       category: 'web_developer',
       image: '/images/portofolio/webdevelopment/weather/bg-wallpaper.png',
-      technologies: [
-        'PHP',
-        'Tailwind CSS',
-        'JavaScript',
-        'OpenWeatherMap API',
-        'HTML/CSS',
-      ],
+      technologies: ['PHP', 'Tailwind CSS', 'JavaScript', 'OpenWeatherMap API'],
       link: 'https://weatherwithus.neutracode.my.id/',
       gallery: [
         '/images/portofolio/webdevelopment/weather/weather_detail.png',
@@ -116,18 +109,10 @@ export default function PortfolioSection() {
       id: 'project-4',
       title: 'Dev on Demand',
       description:
-        'DevOnDemand-System is a web-based ERP system designed for dynamic management of outsourcing services. It supports the management of clients, projects, employees, assignments, and activities with a real-time approach as well as audit log and data export capabilities.',
+        'Web-based ERP for outsourcing service management — clients, projects, assignments, and audit logs.',
       category: 'web_developer',
       image: '/images/portofolio/webdevelopment/devondemands/bg-wallpaper.png',
-      technologies: [
-        'Laravel',
-        'Inertia.js',
-        'Vue.js',
-        'Tailwind CSS',
-        'SweetAlert2',
-        'Laravel Excel',
-        'UUID, JSON, Enum',
-      ],
+      technologies: ['Laravel', 'Inertia.js', 'Vue.js', 'Tailwind CSS'],
       github: 'https://github.com/erziealdrian02/DevOnDemand-System',
       gallery: [
         '/images/portofolio/webdevelopment/devondemands/dashboardpage.png',
@@ -141,16 +126,10 @@ export default function PortfolioSection() {
       id: 'project-5',
       title: 'WeNime',
       description:
-        'Anime Stream is a web application designed to provide users with anime streaming services. The project allows users to browse, search, and watch various anime titles online. With a user-friendly and responsive interface, the app aims to provide a convenient and accessible anime viewing experience.',
+        'Anime streaming web app — browse, search, and watch various anime titles with a responsive interface.',
       category: 'web_developer',
       image: '/images/portofolio/webdevelopment/wenime/bg-wallpaper.png',
-      technologies: [
-        'React.js',
-        'Tailwind CSS',
-        'Vite',
-        'React Router',
-        'TypeScript',
-      ],
+      technologies: ['React.js', 'Tailwind CSS', 'Vite', 'TypeScript'],
       link: 'http://wenimewatch.vercel.app/',
       gallery: [
         '/images/portofolio/webdevelopment/wenime/homepage.png',
@@ -161,9 +140,9 @@ export default function PortfolioSection() {
     },
     {
       id: 'project-6',
-      title: 'Healthcare App Design Layout',
+      title: 'Healthcare App Design',
       description:
-        'Health Care Design App adalah rancangan UI/UX untuk aplikasi mobile layanan kesehatan yang mencakup fitur seperti pencarian rumah sakit, konsultasi dokter online, pesan/inbox dengan dokter, notifikasi, profil pengguna, dan keranjang untuk pemesanan layanan. Aplikasi ini dirancang untuk mempermudah pengguna dalam mengakses layanan medis secara digital.',
+        'Mobile UI/UX for healthcare — hospital search, doctor consultation, messaging, notifications, and booking.',
       category: 'ui_ux',
       image: '/images/portofolio/uiux/healthcare/bg-wallpaper.png',
       technologies: ['Figma'],
@@ -178,9 +157,9 @@ export default function PortfolioSection() {
     },
     {
       id: 'project-7',
-      title: 'Sayuranku App Design Layout',
+      title: 'Sayuranku App Design',
       description:
-        'Sayuranku adalah aplikasi mobile e-commerce yang memudahkan pengguna memesan sayur, buah, dan kebutuhan dapur secara online. Aplikasi ini mencakup fitur autentikasi (login/register), katalog produk, detail produk, daftar favorit, keranjang belanja, checkout, pelacakan pesanan, dan pengelolaan profil pengguna — semuanya dirancang untuk memberikan pengalaman belanja yang praktis dan personal.',
+        'Mobile e-commerce UI for fresh produce — product catalog, cart, checkout, order tracking, and profile.',
       category: 'ui_ux',
       image: '/images/portofolio/uiux/sayuranku/bg-wallpaper.jpg',
       technologies: ['Figma'],
@@ -195,9 +174,9 @@ export default function PortfolioSection() {
     },
     {
       id: 'project-8',
-      title: 'Petstore App Design Layout',
+      title: 'Petstore App Design',
       description:
-        'Aplikasi ini adalah platform e-commerce mobile bernama Nekostore, yang dirancang untuk memudahkan pengguna membeli berbagai kebutuhan hewan peliharaan seperti makanan, aksesoris, dan produk perawatan. Fitur-fitur utama mencakup autentikasi pengguna (login/register), halaman beranda dengan katalog produk, detail produk, keranjang belanja, checkout, riwayat pesanan, favorit, serta profil pengguna. Desain aplikasinya mengikuti pola UI/UX modern dengan navigasi intuitif.',
+        'Nekostore — pet supply e-commerce with product catalog, cart, checkout, order history, and user profile.',
       category: 'ui_ux',
       image: '/images/portofolio/uiux/petshop/bg-wallpaper.png',
       technologies: ['Figma'],
@@ -210,78 +189,20 @@ export default function PortfolioSection() {
       ],
       platform: 'mobile',
     },
-    // {
-    //   id: 'project-2',
-    //   title: 'E-Commerce Dashboard',
-    //   description:
-    //     'A modern dashboard for e-commerce platforms with analytics and inventory management.',
-    //   category: 'ui_ux',
-    //   image: '/placeholder.svg?height=400&width=600',
-    //   technologies: ['React', 'TailwindCSS', 'Chart.js'],
-    //   link: 'https://example.com',
-    //   github: 'https://github.com/example/project',
-    //   gallery: [
-    //     '/placeholder.svg?height=400&width=600',
-    //     '/placeholder.svg?height=400&width=600',
-    //     '/placeholder.svg?height=400&width=600',
-    //   ],
-    // },
-    // {
-    //   id: 'project-3',
-    //   title: 'Mobile Banking App',
-    //   description:
-    //     'A secure and user-friendly mobile banking application with transaction history and bill payments.',
-    //   category: 'mobile',
-    //   image: '/placeholder.svg?height=400&width=600',
-    //   technologies: ['React Native', 'Redux', 'Firebase'],
-    //   gallery: [
-    //     '/placeholder.svg?height=400&width=600',
-    //     '/placeholder.svg?height=400&width=600',
-    //   ],
-    // },
-    // {
-    //   id: 'project-4',
-    //   title: 'API Documentation',
-    //   description:
-    //     'Comprehensive documentation for a RESTful API with examples and use cases.',
-    //   category: 'documentation',
-    //   image: '/placeholder.svg?height=400&width=600',
-    //   technologies: ['Swagger', 'Markdown', 'HTML/CSS'],
-    //   link: 'https://example.com',
-    //   gallery: [
-    //     '/placeholder.svg?height=400&width=600',
-    //     '/placeholder.svg?height=400&width=600',
-    //   ],
-    // },
-    // {
-    //   id: 'project-5',
-    //   title: 'Fitness Tracker App',
-    //   description:
-    //     'A mobile application for tracking workouts, nutrition, and progress.',
-    //   category: 'mobile',
-    //   image: '/placeholder.svg?height=400&width=600',
-    //   technologies: ['Flutter', 'Firebase', 'Google Fit API'],
-    //   gallery: [
-    //     '/placeholder.svg?height=400&width=600',
-    //     '/placeholder.svg?height=400&width=600',
-    //   ],
-    // },
-    // {
-    //   id: 'project-6',
-    //   title: 'Travel Website Redesign',
-    //   description:
-    //     'A complete redesign of a travel booking website with improved user experience.',
-    //   category: 'ui_ux',
-    //   image: '/placeholder.svg?height=400&width=600',
-    //   technologies: ['Figma', 'Adobe XD', 'Photoshop'],
-    //   link: 'https://example.com',
-    //   gallery: [
-    //     '/placeholder.svg?height=400&width=600',
-    //     '/placeholder.svg?height=400&width=600',
-    //     '/placeholder.svg?height=400&width=600',
-    //   ],
-    // },
   ];
+
+  const filters: { key: FilterKey; label: string }[] = [
+    { key: 'all', label: t('portfolio.filters.all') },
+    { key: 'web_developer', label: t('portfolio.filters.web_developer') },
+    { key: 'ui_ux', label: t('portfolio.filters.ui_ux') },
+    { key: 'mobile', label: t('portfolio.filters.mobile') },
+    { key: 'documentation', label: t('portfolio.filters.documentation') },
+  ];
+
+  const filtered =
+    activeFilter === 'all'
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
 
   const handleOpenProject = (project: Project) => {
     setSelectedProject(project);
@@ -289,17 +210,14 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section
-      id="portfolio"
-      ref={ref}
-      className="relative min-h-screen w-full py-20"
-    >
+    <section id="portfolio" ref={ref} className="relative w-full py-20">
       <div className="container mx-auto px-4 sm:px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <h2 className="mb-2 text-3xl font-bold sm:text-4xl md:text-5xl">
             {t('portfolio.title')}
@@ -307,60 +225,56 @@ export default function PortfolioSection() {
           <p className="text-muted-foreground">{t('portfolio.subtitle')}</p>
         </motion.div>
 
-        <Tabs defaultValue="all" className="w-full">
-          <TabsList className="mb-8 flex w-full flex-wrap justify-center gap-2">
-            <TabsTrigger value="all">{t('portfolio.filters.all')}</TabsTrigger>
-            <TabsTrigger value="ui_ux">
-              {t('portfolio.filters.ui_ux')}
-            </TabsTrigger>
-            <TabsTrigger value="documentation">
-              {t('portfolio.filters.documentation')}
-            </TabsTrigger>
-            <TabsTrigger value="web_developer">
-              {t('portfolio.filters.web_developer')}
-            </TabsTrigger>
-            <TabsTrigger value="mobile">
-              {t('portfolio.filters.mobile')}
-            </TabsTrigger>
-          </TabsList>
+        {/* Filter chips */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-8 flex flex-wrap justify-center gap-2"
+        >
+          {filters.map((f) => (
+            <button
+              key={f.key}
+              onClick={() => setActiveFilter(f.key)}
+              className={cn(
+                'relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-300 border',
+                activeFilter === f.key
+                  ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25'
+                  : 'border-border/50 text-muted-foreground hover:border-primary/40 hover:text-foreground bg-background/60 backdrop-blur-sm'
+              )}
+            >
+              {activeFilter === f.key && (
+                <motion.span
+                  layoutId="filter-pill"
+                  className="absolute inset-0 rounded-full bg-primary"
+                  style={{ zIndex: -1 }}
+                  transition={{ type: 'spring', duration: 0.4 }}
+                />
+              )}
+              {f.label}
+            </button>
+          ))}
+        </motion.div>
 
-          <TabsContent value="all" className="mt-0">
-            <ProjectGrid
-              projects={projects}
+        {/* Bento Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeFilter}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <BentoGrid
+              projects={filtered}
               onOpenProject={handleOpenProject}
+              t={t}
             />
-          </TabsContent>
-
-          <TabsContent value="ui_ux" className="mt-0">
-            <ProjectGrid
-              projects={projects.filter((p) => p.category === 'ui_ux')}
-              onOpenProject={handleOpenProject}
-            />
-          </TabsContent>
-
-          <TabsContent value="documentation" className="mt-0">
-            <ProjectGrid
-              projects={projects.filter((p) => p.category === 'documentation')}
-              onOpenProject={handleOpenProject}
-            />
-          </TabsContent>
-
-          <TabsContent value="web_developer" className="mt-0">
-            <ProjectGrid
-              projects={projects.filter((p) => p.category === 'web_developer')}
-              onOpenProject={handleOpenProject}
-            />
-          </TabsContent>
-
-          <TabsContent value="mobile" className="mt-0">
-            <ProjectGrid
-              projects={projects.filter((p) => p.category === 'mobile')}
-              onOpenProject={handleOpenProject}
-            />
-          </TabsContent>
-        </Tabs>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
+      {/* Modal — unchanged */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
           {selectedProject && (
@@ -408,9 +322,7 @@ export default function PortfolioSection() {
                       >
                         <Image
                           src={img || '/placeholder.svg'}
-                          alt={`${selectedProject.title} screenshot ${
-                            index + 1
-                          }`}
+                          alt={`${selectedProject.title} screenshot ${index + 1}`}
                           fill
                           className={
                             selectedProject.platform === 'mobile'
@@ -460,7 +372,7 @@ export default function PortfolioSection() {
                         rel="noopener noreferrer"
                       >
                         <Figma className="mr-2 h-4 w-4" />
-                        {t('portfolio.view_code')}
+                        {t('portfolio.view_design')}
                       </a>
                     </Button>
                   )}
@@ -474,64 +386,250 @@ export default function PortfolioSection() {
   );
 }
 
-interface ProjectGridProps {
+/* ─────────────────────────────────────────────
+   Bento Grid
+───────────────────────────────────────────── */
+
+interface BentoGridProps {
   projects: Project[];
-  onOpenProject: (project: Project) => void;
+  onOpenProject: (p: Project) => void;
+  t: (key: string) => string;
 }
 
-function ProjectGrid({ projects, onOpenProject }: ProjectGridProps) {
-  const { t } = useTranslation();
+function BentoGrid({ projects, onOpenProject, t }: BentoGridProps) {
+  if (projects.length === 0) {
+    return (
+      <div className="flex h-40 items-center justify-center text-muted-foreground">
+        No projects in this category yet.
+      </div>
+    );
+  }
+
+  // Determine card sizes:
+  // index 0 → featured (large), indexes 1-2 → medium, rest → compact
+  const getSize = (index: number): 'large' | 'medium' | 'compact' => {
+    if (index === 0) return 'large';
+    if (index <= 2) return 'medium';
+    return 'compact';
+  };
 
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project) => (
-        <motion.div
-          key={project.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{ y: -5 }}
-        >
-          <Card className="overflow-hidden">
-            <div className="relative aspect-video w-full overflow-hidden">
-              <Image
-                src={project.image || '/placeholder.svg'}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-            <CardContent className="p-4">
-              <div className="mb-2 flex items-center justify-between">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                <span
-                  className={cn(
-                    'rounded-full px-2 py-1 text-xs font-medium text-white bg-purple-500'
-                    // {
-                    //   'bg-purple-500': project.category === 'ui_ux',
-                    //   'bg-blue-500': project.category === 'documentation',
-                    //   'bg-green-500': project.category === 'web_developer',
-                    //   'bg-orange-500': project.category === 'mobile',
-                    // }
-                  )}
-                >
-                  {t(`portfolio.filters.${project.category}`)}
-                </span>
-              </div>
-              <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
-                {project.description}
-              </p>
-              <Button
-                onClick={() => onOpenProject(project)}
-                variant="default"
-                className="w-full"
+    <>
+      {/* Desktop: Bento Grid */}
+      <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[180px]">
+        {projects.map((project, index) => {
+          const size = getSize(index);
+          return (
+            <BentoCard
+              key={project.id}
+              project={project}
+              size={size}
+              index={index}
+              onOpen={onOpenProject}
+              t={t}
+            />
+          );
+        })}
+      </div>
+
+      {/* Mobile: Horizontal snap scroll */}
+      <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            className="flex-shrink-0 w-[78vw] snap-start"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.06 }}
+          >
+            <MobileCard project={project} onOpen={onOpenProject} t={t} />
+          </motion.div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   Bento Card (Desktop)
+───────────────────────────────────────────── */
+
+interface BentoCardProps {
+  project: Project;
+  size: 'large' | 'medium' | 'compact';
+  index: number;
+  onOpen: (p: Project) => void;
+  t: (key: string) => string;
+}
+
+function BentoCard({ project, size, index, onOpen, t }: BentoCardProps) {
+  const [hovered, setHovered] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-40px' });
+
+  const colSpan = size === 'large' ? 'md:col-span-2 lg:col-span-2' : 'col-span-1';
+  const rowSpan =
+    size === 'large'
+      ? 'row-span-2'
+      : size === 'medium'
+      ? 'row-span-2'
+      : 'row-span-1';
+
+  return (
+    <motion.div
+      ref={ref}
+      className={cn(colSpan, rowSpan, 'relative group cursor-pointer')}
+      initial={{ opacity: 0, y: 16 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+      transition={{ duration: 0.45, delay: index * 0.07, ease: 'easeOut' }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={() => onOpen(project)}
+      whileHover={{ scale: 1.012 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      {/* Card */}
+      <div
+        className={cn(
+          'relative h-full w-full overflow-hidden rounded-2xl border transition-all duration-400',
+          'border-white/8 bg-card/60 backdrop-blur-sm',
+          hovered
+            ? 'border-primary/50 shadow-xl shadow-primary/15'
+            : 'border-border/30 shadow-md shadow-black/10'
+        )}
+      >
+        {/* Gradient border glow on hover */}
+        {hovered && (
+          <div className="absolute inset-0 rounded-2xl pointer-events-none z-0">
+            <div className="absolute inset-[-1px] rounded-2xl bg-gradient-to-br from-primary/40 via-purple-500/20 to-transparent opacity-60" />
+          </div>
+        )}
+
+        {/* Image — fills entire card */}
+        <div className="absolute inset-0">
+          <Image
+            src={project.image || '/placeholder.svg'}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className={cn(
+              'object-cover transition-transform duration-500',
+              hovered ? 'scale-105' : 'scale-100'
+            )}
+            loading="lazy"
+          />
+        </div>
+
+        {/* Always-visible bottom gradient + info */}
+        <div className="absolute inset-x-0 bottom-0 z-10">
+          <div className="bg-gradient-to-t from-black/85 via-black/50 to-transparent px-4 pt-8 pb-4">
+            {/* Category tag */}
+            <div className="mb-1.5">
+              <span
+                className={cn(
+                  'inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide backdrop-blur-sm',
+                  CATEGORY_COLORS[project.category] ?? 'bg-white/10 text-white border-white/20'
+                )}
               >
-                {t('portfolio.view_project')}
-              </Button>
-            </CardContent>
-          </Card>
+                <span className={cn('h-1.5 w-1.5 rounded-full', CATEGORY_DOT[project.category])} />
+                {t(`portfolio.filters.${project.category}`)}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3
+              className={cn(
+                'font-bold text-white leading-tight',
+                size === 'large' ? 'text-xl' : size === 'medium' ? 'text-base' : 'text-sm'
+              )}
+            >
+              {project.title}
+            </h3>
+
+            {/* Description — 1 line, truncated (hidden in compact) */}
+            <p className="mt-0.5 text-xs text-white/70 line-clamp-1">
+              {project.description}
+            </p>
+          </div>
+        </div>
+
+        {/* Hover overlay — "View Project" button */}
+        <motion.div
+          className="absolute inset-0 z-20 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: hovered ? 1 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
+          <div className="relative z-10">
+            <button
+              className="flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/40 transition-transform hover:scale-105"
+            >
+              <ArrowUpRight className="h-4 w-4" />
+              {t('portfolio.view_project')}
+            </button>
+          </div>
         </motion.div>
-      ))}
+
+        {/* Tech stack pills — visible on hover, large/medium only */}
+        {size !== 'compact' && hovered && (
+          <motion.div
+            className="absolute top-3 right-3 z-20 flex flex-wrap justify-end gap-1 max-w-[60%]"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, delay: 0.05 }}
+          >
+            {project.technologies.slice(0, 3).map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full bg-black/60 border border-white/10 px-2 py-0.5 text-[10px] text-white/80 backdrop-blur-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </motion.div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   Mobile Card (Horizontal scroll)
+───────────────────────────────────────────── */
+
+interface MobileCardProps {
+  project: Project;
+  onOpen: (p: Project) => void;
+  t: (key: string) => string;
+}
+
+function MobileCard({ project, onOpen, t }: MobileCardProps) {
+  return (
+    <div
+      className="relative h-[220px] w-full overflow-hidden rounded-2xl border border-border/30 cursor-pointer active:scale-95 transition-transform"
+      onClick={() => onOpen(project)}
+    >
+      <Image
+        src={project.image || '/placeholder.svg'}
+        alt={project.title}
+        fill
+        className="object-cover"
+        loading="lazy"
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent px-4 pt-8 pb-4">
+        <span
+          className={cn(
+            'mb-1.5 inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide backdrop-blur-sm',
+            CATEGORY_COLORS[project.category] ?? 'bg-white/10 text-white border-white/20'
+          )}
+        >
+          <span className={cn('h-1.5 w-1.5 rounded-full', CATEGORY_DOT[project.category])} />
+          {t(`portfolio.filters.${project.category}`)}
+        </span>
+        <h3 className="text-sm font-bold text-white leading-tight">{project.title}</h3>
+        <p className="mt-0.5 text-xs text-white/60 line-clamp-1">{project.description}</p>
+      </div>
     </div>
   );
 }

@@ -27,8 +27,8 @@ export async function POST(request) {
       port: 465, // Changed to standard secure port
       secure: true, // true for 465
       auth: {
-        user: 'n3kob0t03@gmail.com',
-        pass: 'mjbe rceu qgqp cwpa',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
@@ -52,7 +52,7 @@ export async function POST(request) {
     // Email options (same as before)
     const mailOptions = {
       from: '"Portfolio Contact Form" <n3kob0t03@gmail.com>',
-      to: 'erzie.aldrian02@gmail.com',
+      to: process.env.EMAIL_TO,
       subject: `Email From porto - Contact Form Message`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
