@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://erziealdrian02.github.io
+Sitemap: https://erziealdrian02.github.io/sitemap.xml
