@@ -9,10 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
-      images: [
-        'https://erziealdrian02.github.io/og-image.png',
-        'https://erziealdrian02.github.io/images/profiles/me_ilustration.png',
-      ],
     },
   ];
 }
