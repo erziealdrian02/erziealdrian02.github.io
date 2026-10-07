@@ -14,6 +14,7 @@ import {
 import { cn } from '@/lib/utils';
 import { ExternalLink, Github, Figma, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import { ParallaxOrb } from '@/components/ui/parallax';
 
 type Project = {
   id: string;
@@ -58,16 +59,16 @@ export default function PortfolioSection() {
       id: 'project-1',
       title: 'ERP Reimbursement System',
       description:
-        'HCIS-KPN is a module of ERP system for managing HR aspects — Business Trip, Cash Advanced, Medical Reimbursement, and more.',
+        'HCIS-KPN is a module of ERP system for managing HR aspects - Business Trip, Cash Advanced, Medical Reimbursement, and more.',
       category: 'web_developer',
-      image: '/images/portofolio/webdevelopment/reimburse/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/reimburse/bg-wallpaper.webp',
       technologies: ['Laravel', 'MySQL', 'Bootstrap', 'Tailwind CSS', 'PHPUnit'],
       link: 'https://erpreimburse.neutracode.my.id/',
       gallery: [
-        '/images/portofolio/webdevelopment/reimburse/login.png',
-        '/images/portofolio/webdevelopment/reimburse/listca.png',
-        '/images/portofolio/webdevelopment/reimburse/listbtadmin.png',
-        '/images/portofolio/webdevelopment/reimburse/formdoc.png',
+        '/images/portofolio/webdevelopment/reimburse/login.webp',
+        '/images/portofolio/webdevelopment/reimburse/listca.webp',
+        '/images/portofolio/webdevelopment/reimburse/listbtadmin.webp',
+        '/images/portofolio/webdevelopment/reimburse/formdoc.webp',
       ],
       platform: 'web',
     },
@@ -75,16 +76,16 @@ export default function PortfolioSection() {
       id: 'project-2',
       title: 'Fleet Management System',
       description:
-        'ERP module to manage vehicle fleets — maintenance scheduling, location tracking, and driver management.',
+        'ERP module to manage vehicle fleets - maintenance scheduling, location tracking, and driver management.',
       category: 'web_developer',
-      image: '/images/portofolio/webdevelopment/fleetmanagement/bg-wallpaper.jpg',
+      image: '/images/portofolio/webdevelopment/fleetmanagement/bg-wallpaper.webp',
       technologies: ['Laravel', 'MySQL', 'Bootstrap', 'Tailwind CSS', 'Vite'],
       link: 'https://fleetmanagementsystem.neutracode.my.id/',
       gallery: [
-        '/images/portofolio/webdevelopment/fleetmanagement/listtrips.png',
-        '/images/portofolio/webdevelopment/fleetmanagement/gpsform.png',
-        '/images/portofolio/webdevelopment/fleetmanagement/listpart.png',
-        '/images/portofolio/webdevelopment/fleetmanagement/forminput.png',
+        '/images/portofolio/webdevelopment/fleetmanagement/listtrips.webp',
+        '/images/portofolio/webdevelopment/fleetmanagement/gpsform.webp',
+        '/images/portofolio/webdevelopment/fleetmanagement/listpart.webp',
+        '/images/portofolio/webdevelopment/fleetmanagement/forminput.webp',
       ],
       platform: 'web',
     },
@@ -92,9 +93,9 @@ export default function PortfolioSection() {
       id: 'project-3',
       title: 'Weather With Us',
       description:
-        'Interactive weather app based on Indonesian administrative regions — province, district, village level data.',
+        'Interactive weather app based on Indonesian administrative regions - province, district, village level data.',
       category: 'web_developer',
-      image: '/images/portofolio/webdevelopment/weather/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/weather/bg-wallpaper.webp',
       technologies: ['PHP', 'Tailwind CSS', 'JavaScript', 'OpenWeatherMap API'],
       link: 'https://weatherwithus.neutracode.my.id/',
       gallery: [
@@ -109,16 +110,16 @@ export default function PortfolioSection() {
       id: 'project-4',
       title: 'Dev on Demand',
       description:
-        'Web-based ERP for outsourcing service management — clients, projects, assignments, and audit logs.',
+        'Web-based ERP for outsourcing service management - clients, projects, assignments, and audit logs.',
       category: 'web_developer',
-      image: '/images/portofolio/webdevelopment/devondemands/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/devondemands/bg-wallpaper.webp',
       technologies: ['Laravel', 'Inertia.js', 'Vue.js', 'Tailwind CSS'],
       github: 'https://github.com/erziealdrian02/DevOnDemand-System',
       gallery: [
-        '/images/portofolio/webdevelopment/devondemands/dashboardpage.png',
-        '/images/portofolio/webdevelopment/devondemands/clientpage.png',
+        '/images/portofolio/webdevelopment/devondemands/dashboardpage.webp',
+        '/images/portofolio/webdevelopment/devondemands/clientpage.webp',
         '/images/portofolio/webdevelopment/devondemands/skillpage.png',
-        '/images/portofolio/webdevelopment/devondemands/loginpage.png',
+        '/images/portofolio/webdevelopment/devondemands/loginpage.webp',
       ],
       platform: 'web',
     },
@@ -126,14 +127,14 @@ export default function PortfolioSection() {
       id: 'project-5',
       title: 'WeNime',
       description:
-        'Anime streaming web app — browse, search, and watch various anime titles with a responsive interface.',
+        'Anime streaming web app - browse, search, and watch various anime titles with a responsive interface.',
       category: 'web_developer',
-      image: '/images/portofolio/webdevelopment/wenime/bg-wallpaper.png',
+      image: '/images/portofolio/webdevelopment/wenime/bg-wallpaper.webp',
       technologies: ['React.js', 'Tailwind CSS', 'Vite', 'TypeScript'],
       link: 'http://wenimewatch.vercel.app/',
       gallery: [
-        '/images/portofolio/webdevelopment/wenime/homepage.png',
-        '/images/portofolio/webdevelopment/wenime/DetailAnime.png',
+        '/images/portofolio/webdevelopment/wenime/homepage.webp',
+        '/images/portofolio/webdevelopment/wenime/DetailAnime.webp',
         '/images/portofolio/webdevelopment/wenime/animeList.png',
       ],
       platform: 'web',
@@ -142,15 +143,15 @@ export default function PortfolioSection() {
       id: 'project-6',
       title: 'Healthcare App Design',
       description:
-        'Mobile UI/UX for healthcare — hospital search, doctor consultation, messaging, notifications, and booking.',
+        'Mobile UI/UX for healthcare - hospital search, doctor consultation, messaging, notifications, and booking.',
       category: 'ui_ux',
-      image: '/images/portofolio/uiux/healthcare/bg-wallpaper.png',
+      image: '/images/portofolio/uiux/healthcare/bg-wallpaper.webp',
       technologies: ['Figma'],
       figma:
         'https://www.figma.com/design/1ZFCzFOG7TcQPh5knh4Cha/Health-Care-Design-App?node-id=0-1&p=f&t=iazweqrCOarjeTeQ-0',
       gallery: [
         '/images/portofolio/uiux/healthcare/Beranda.png',
-        '/images/portofolio/uiux/healthcare/Hospitals.png',
+        '/images/portofolio/uiux/healthcare/Hospitals.webp',
         '/images/portofolio/uiux/healthcare/profile.png',
       ],
       platform: 'mobile',
@@ -159,15 +160,15 @@ export default function PortfolioSection() {
       id: 'project-7',
       title: 'Sayuranku App Design',
       description:
-        'Mobile e-commerce UI for fresh produce — product catalog, cart, checkout, order tracking, and profile.',
+        'Mobile e-commerce UI for fresh produce - product catalog, cart, checkout, order tracking, and profile.',
       category: 'ui_ux',
-      image: '/images/portofolio/uiux/sayuranku/bg-wallpaper.jpg',
+      image: '/images/portofolio/uiux/sayuranku/bg-wallpaper.webp',
       technologies: ['Figma'],
       figma:
         'https://www.figma.com/design/wtbsVIpntuViOUJ2xJNI3I/Untitled?node-id=0-1&p=f&t=u1ztWLLxrjWFL27F-0',
       gallery: [
         '/images/portofolio/uiux/sayuranku/detail_pesanan_page.png',
-        '/images/portofolio/uiux/sayuranku/detail_page.png',
+        '/images/portofolio/uiux/sayuranku/detail_page.webp',
         '/images/portofolio/uiux/sayuranku/product_page.png',
       ],
       platform: 'mobile',
@@ -176,15 +177,15 @@ export default function PortfolioSection() {
       id: 'project-8',
       title: 'Petstore App Design',
       description:
-        'Nekostore — pet supply e-commerce with product catalog, cart, checkout, order history, and user profile.',
+        'Nekostore - pet supply e-commerce with product catalog, cart, checkout, order history, and user profile.',
       category: 'ui_ux',
-      image: '/images/portofolio/uiux/petshop/bg-wallpaper.png',
+      image: '/images/portofolio/uiux/petshop/bg-wallpaper.webp',
       technologies: ['Figma'],
       figma:
         'https://www.figma.com/design/ozqlWPX4Crh7iYv2cIyAwd/Remedial_Yusnita?node-id=0-1&p=f&t=4OqGNc3EBD1Q2QDv-0',
       gallery: [
         '/images/portofolio/uiux/petshop/detail_page.png',
-        '/images/portofolio/uiux/petshop/landing_page.png',
+        '/images/portofolio/uiux/petshop/landing_page.webp',
         '/images/portofolio/uiux/petshop/order_page.png',
       ],
       platform: 'mobile',
@@ -210,8 +211,18 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section id="portfolio" ref={ref} className="relative w-full py-20">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section
+      id="portfolio"
+      ref={ref}
+      className="relative w-full overflow-hidden py-20"
+    >
+      <ParallaxOrb className="-right-32 top-10 h-[30rem] w-[30rem]" distance={150} />
+      <ParallaxOrb
+        className="-left-40 bottom-0 h-[26rem] w-[26rem]"
+        color="59 130 246"
+        distance={-120}
+      />
+      <div className="container relative mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -230,17 +241,17 @@ export default function PortfolioSection() {
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-8 flex flex-wrap justify-center gap-2"
+          className="scrollbar-hide -mx-4 mb-8 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0"
         >
           {filters.map((f) => (
             <button
               key={f.key}
               onClick={() => setActiveFilter(f.key)}
               className={cn(
-                'relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-300 border',
+                'relative flex-shrink-0 rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-300',
                 activeFilter === f.key
                   ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25'
-                  : 'border-border/50 text-muted-foreground hover:border-primary/40 hover:text-foreground bg-background/60 backdrop-blur-sm'
+                  : 'border-border/50 bg-background/60 text-muted-foreground hover:border-primary/40 hover:text-foreground'
               )}
             >
               {activeFilter === f.key && (
@@ -274,13 +285,13 @@ export default function PortfolioSection() {
         </AnimatePresence>
       </div>
 
-      {/* Modal — unchanged */}
+      {/* Modal - unchanged */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
           {selectedProject && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl">
+                <DialogTitle className="pr-6 text-xl sm:text-2xl">
                   {selectedProject.title}
                 </DialogTitle>
                 <DialogDescription>
@@ -433,7 +444,7 @@ function BentoGrid({ projects, onOpenProject, t }: BentoGridProps) {
       </div>
 
       {/* Mobile: Horizontal snap scroll */}
-      <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
+      <div className="scrollbar-hide -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-4 md:hidden">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -492,7 +503,7 @@ function BentoCard({ project, size, index, onOpen, t }: BentoCardProps) {
       <div
         className={cn(
           'relative h-full w-full overflow-hidden rounded-2xl border transition-all duration-400',
-          'border-white/8 bg-card/60 backdrop-blur-sm',
+          'border-white/8 bg-card',
           hovered
             ? 'border-primary/50 shadow-xl shadow-primary/15'
             : 'border-border/30 shadow-md shadow-black/10'
@@ -505,7 +516,7 @@ function BentoCard({ project, size, index, onOpen, t }: BentoCardProps) {
           </div>
         )}
 
-        {/* Image — fills entire card */}
+        {/* Image - fills entire card */}
         <div className="absolute inset-0">
           <Image
             src={project.image || '/placeholder.svg'}
@@ -546,21 +557,21 @@ function BentoCard({ project, size, index, onOpen, t }: BentoCardProps) {
               {project.title}
             </h3>
 
-            {/* Description — 1 line, truncated (hidden in compact) */}
+            {/* Description - 1 line, truncated (hidden in compact) */}
             <p className="mt-0.5 text-xs text-white/70 line-clamp-1">
               {project.description}
             </p>
           </div>
         </div>
 
-        {/* Hover overlay — "View Project" button */}
+        {/* Hover overlay - "View Project" button */}
         <motion.div
           className="absolute inset-0 z-20 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: hovered ? 1 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10">
             <button
               className="flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/40 transition-transform hover:scale-105"
@@ -571,7 +582,7 @@ function BentoCard({ project, size, index, onOpen, t }: BentoCardProps) {
           </div>
         </motion.div>
 
-        {/* Tech stack pills — visible on hover, large/medium only */}
+        {/* Tech stack pills - visible on hover, large/medium only */}
         {size !== 'compact' && hovered && (
           <motion.div
             className="absolute top-3 right-3 z-20 flex flex-wrap justify-end gap-1 max-w-[60%]"

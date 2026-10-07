@@ -16,6 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
 import { Calendar, GraduationCap, Briefcase } from 'lucide-react';
 import Image from 'next/image';
+import { ParallaxOrb } from '@/components/ui/parallax';
 
 type Experience = {
   id: string;
@@ -39,6 +40,21 @@ export default function ExperienceSection() {
 
   const experiences: Experience[] = [
     {
+      id: 'exp-0',
+      title: 'Fullstack Developer',
+      organization: 'PT DCI Indonesia',
+      period: '2025 - Present',
+      description:
+        'Building and maintaining internal web platforms that support data center operations - admin dashboards, a visitor management system, an HSE portal, and API services - from database and REST APIs to polished, responsive UI.',
+      type: 'work',
+      logo: '/images/company/dci.png',
+      details:
+        'As a Fullstack Developer at PT DCI Indonesia, I build and maintain internal web applications that support the company’s data center operations. I work across the whole stack - designing database schemas and REST APIs, building responsive admin interfaces, and shipping features end-to-end together with the team.\n\nProjects I have worked on:\n- FUSI Admin - an internal admin dashboard together with its backend API service.\n- New VMS - a revamped Visitor Management System with a refreshed, consistent theme.\n- Portal HSE - a Health, Safety & Environment portal, including a UI revamp aligned with the new VMS theme.\n- API Management - a service for organizing and managing internal APIs.\n- Customer database and company page UI templates.\n\nKey Responsibilities:\n- Develop features end-to-end, from database design and REST APIs to the frontend UI.\n- Build reusable UI components and keep a unified design system across internal applications.\n- Revamp legacy interfaces into modern, responsive layouts.\n- Collaborate through Git-based workflows, code reviews, and feedback sessions with users.\n- Debug, optimize, and maintain applications running in production.',
+      images: [
+        '/images/company/photo-dci/dci1.webp',
+      ],
+    },
+    {
       id: 'exp-1',
       title: 'Automation Tester',
       organization: 'PT Bank Mandiri (Persero) Tbk.',
@@ -50,8 +66,10 @@ export default function ExperienceSection() {
       details:
         'As a Junior Automation Tester at PT Bank Mandiri, I was assigned to the QA team for the Livin by Mandiri application. My primary responsibility was to execute automated performance and functional testing for API endpoints using Apache JMeter.\n\nI created and maintained test scripts to simulate user traffic under various load scenarios, including stress and endurance testing. I also collaborated closely with backend engineers and DevOps to integrate test cases into the CI/CD pipeline and ensure consistent application behavior under production-like conditions.\n\nTest executions were followed by detailed analysis of TPS, latency, error rates, and memory usage. I compiled technical reports and dashboards summarizing test results, performance issues, and optimization recommendations, which were then presented to development teams and stakeholders.\n\nKey Responsibilities:\n- Designed and executed automated API tests using Apache JMeter.\n- Collaborated with QA and DevOps teams to integrate tests into CI/CD workflows.\n- Monitored test results and system performance using built-in JMeter listeners and Grafana.\n- Generated reports summarizing test metrics and suggested improvements.\n- Participated in test planning and documentation of test cases and SOPs.\n- Contributed to ensuring the performance reliability of the Livin mobile banking app.',
       images: [
-        // '/placeholder.svg?height=400&width=600',
-        // '/placeholder.svg?height=400&width=600',
+        '/images/company/photo-mandiri/mandiri1.webp',
+        '/images/company/photo-mandiri/mandiri2.webp',
+        '/images/company/photo-mandiri/mandiri3.webp',
+        '/images/company/photo-mandiri/mandiri4.webp',
       ],
     },
     {
@@ -66,10 +84,10 @@ export default function ExperienceSection() {
       details:
         'As a Full Stack Developer Intern, I was responsible for assisting the development of the company’s internal ERP system, focusing on building robust and scalable web applications using Object-Oriented Programming (OOP) principles. I collaborated closely with the team via GitHub for version control and code collaboration to ensure efficient and streamlined workflows. \n\nOne of the main projects I worked on was the development of the Human Capital Information System (HCIS), which is part of the company’s ERP suite. This project involved handling employee management modules, leave and reimbursement systems, approval workflows, and automated notifications. Throughout the project, I actively contributed to both frontend and backend development and ensured data consistency across multiple systems. \n\nIn addition to development, I was also involved in documenting the system architecture, user guides, and deployment steps to maintain clear and accessible project documentation for future use. I worked directly with end-users to demonstrate the applications, gather feedback, and make necessary adjustments based on their input. \n\nKey Responsibilities:\n- Developed internal web-based ERP systems using OOP-based PHP (Laravel).\n- Collaborated with the team using GitHub for version control and code integration.\n- Built and maintained core modules such as employee records, approval workflows, leave requests, reimbursements, and more.\n- Presented application demos to stakeholders and revised functionalities based on user feedback.\n- Documented the development process, including technical guides, module breakdowns, and user manuals.\n- Participated in planning and debugging sessions to ensure smooth and efficient system performance.',
       images: [
-        '/images/company/photo-kpn/kpn1.jpg',
-        '/images/company/photo-kpn/kpn2.jpg',
-        '/images/company/photo-kpn/kpn3.jpg',
-        '/images/company/photo-kpn/kpn4.jpg',
+        '/images/company/photo-kpn/kpn1.webp',
+        '/images/company/photo-kpn/kpn2.webp',
+        '/images/company/photo-kpn/kpn3.webp',
+        '/images/company/photo-kpn/kpn4.webp',
       ],
     },
     {
@@ -84,9 +102,9 @@ export default function ExperienceSection() {
       details:
         "I completed my Bachelor's degree in Computer Science at Universitas Indraprasta PGRI, specializing in Teknik Informatika. During my studies, I gained a strong foundation in programming, algorithms, data structures, and software engineering principles. \n\nKey Achievements:\n- Graduated with a GPA of 3.39\n- Completed a final project on developing a machine learning for detection weather in indonesia\n- Participate in various trainings bootcamp and seminars",
       images: [
-        '/images/academy/photo-unindra/un1.jpg',
-        '/images/academy/photo-unindra/un2.jpg',
-        '/images/academy/photo-unindra/un3.jpg',
+        '/images/academy/photo-unindra/un1.webp',
+        '/images/academy/photo-unindra/un2.webp',
+        '/images/academy/photo-unindra/un3.webp',
       ],
     },
     {
@@ -99,7 +117,7 @@ export default function ExperienceSection() {
       type: 'work',
       logo: '/images/company/daunbiru.jpeg',
       details:
-        'As a participant in a professional training program, I was assigned to work on the company’s internal web-based systems using the CodeIgniter framework. This opportunity allowed me to gain valuable hands-on experience in full stack web development and significantly improve my practical programming skills.\n\nDuring the program, I contributed to the development of a company project called Suportivo, which serves as a centralized platform for internal task management, user access control, and operational tracking. I was actively involved in both frontend and backend development processes, ensuring seamless integration and performance.\n\nIn addition to development tasks, I documented the entire workflow and system features — including technical architecture, module descriptions, and user instructions — to support future scalability and maintenance. I collaborated with mentors and team members for regular code reviews and participated in discussions to enhance system functionality.\n\nKey Responsibilities:\n- Developed modules for the internal company system using PHP and the CodeIgniter framework.\n- Participated in frontend and backend coding, debugging, and system integration.\n- Delivered a working prototype for a company-use application (Suportivo).\n- Maintained source code on GitHub and followed version control best practices.',
+        'As a participant in a professional training program, I was assigned to work on the company’s internal web-based systems using the CodeIgniter framework. This opportunity allowed me to gain valuable hands-on experience in full stack web development and significantly improve my practical programming skills.\n\nDuring the program, I contributed to the development of a company project called Suportivo, which serves as a centralized platform for internal task management, user access control, and operational tracking. I was actively involved in both frontend and backend development processes, ensuring seamless integration and performance.\n\nIn addition to development tasks, I documented the entire workflow and system features - including technical architecture, module descriptions, and user instructions - to support future scalability and maintenance. I collaborated with mentors and team members for regular code reviews and participated in discussions to enhance system functionality.\n\nKey Responsibilities:\n- Developed modules for the internal company system using PHP and the CodeIgniter framework.\n- Participated in frontend and backend coding, debugging, and system integration.\n- Delivered a working prototype for a company-use application (Suportivo).\n- Maintained source code on GitHub and followed version control best practices.',
       images: [
         // "/placeholder.svg?height=400&width=600",
         // "/placeholder.svg?height=400&width=600",
@@ -117,9 +135,9 @@ export default function ExperienceSection() {
       details:
         'I studied Software Engineering at SMK Fatahillah, where I gained practical skills in programming, web development, and database management. The vocational program provided me with hands-on experience and prepared me for a career in the tech industry.\n\nKey Achievements:\n- Completed various software development projects\n- Participated in regional programming competitions\n- Internship at a local software company\n- Developed a library management system as a final project',
       images: [
-        '/images/academy/photo-fatahillah/fat1.jpg',
-        '/images/academy/photo-fatahillah/fat2.jpg',
-        '/images/academy/photo-fatahillah/fat3.jpg',
+        '/images/academy/photo-fatahillah/fat1.webp',
+        '/images/academy/photo-fatahillah/fat2.webp',
+        '/images/academy/photo-fatahillah/fat3.webp',
       ],
     },
   ];
@@ -133,9 +151,15 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={ref}
-      className="relative min-h-screen w-full bg-muted/30 py-20"
+      className="relative min-h-screen w-full overflow-hidden bg-muted/30 py-20"
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      <ParallaxOrb className="-left-40 top-20 h-[32rem] w-[32rem]" distance={160} />
+      <ParallaxOrb
+        className="-right-40 bottom-10 h-[36rem] w-[36rem]"
+        color="59 130 246"
+        distance={-140}
+      />
+      <div className="container relative mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -149,14 +173,14 @@ export default function ExperienceSection() {
         </motion.div>
 
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="mb-8 flex w-full justify-center gap-2">
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="work">
-              <Briefcase className="mr-2 h-4 w-4" />
+          <TabsList className="mx-auto mb-8 flex w-full max-w-md justify-center gap-1 sm:gap-2">
+            <TabsTrigger value="all" className="flex-1 px-2 text-xs sm:text-sm">All</TabsTrigger>
+            <TabsTrigger value="work" className="flex-1 px-2 text-xs sm:text-sm">
+              <Briefcase className="mr-1.5 h-4 w-4 flex-shrink-0" />
               {t('experience.work')}
             </TabsTrigger>
-            <TabsTrigger value="education">
-              <GraduationCap className="mr-2 h-4 w-4" />
+            <TabsTrigger value="education" className="flex-1 px-2 text-xs sm:text-sm">
+              <GraduationCap className="mr-1.5 h-4 w-4 flex-shrink-0" />
               {t('experience.education')}
             </TabsTrigger>
           </TabsList>
@@ -191,10 +215,10 @@ export default function ExperienceSection() {
           {selectedExperience && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl">
+                <DialogTitle className="pr-6 text-xl sm:text-2xl">
                   {selectedExperience.title}
                 </DialogTitle>
-                <DialogDescription className="flex items-center gap-2">
+                <DialogDescription className="flex flex-wrap items-center gap-x-2 gap-y-1">
                   <span className="font-medium">
                     {selectedExperience.organization}
                   </span>
@@ -208,12 +232,13 @@ export default function ExperienceSection() {
 
               <div className="mt-4 grid gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="relative h-16 w-16 overflow-hidden rounded-full">
+                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border bg-white">
                     <Image
                       src={selectedExperience.logo || '/placeholder.svg'}
                       alt={selectedExperience.organization}
                       fill
-                      className="object-cover"
+                      sizes="64px"
+                      className="object-contain"
                     />
                   </div>
                   <div>
@@ -228,7 +253,7 @@ export default function ExperienceSection() {
 
                 <div className="grid gap-2">
                   <h3 className="text-lg font-semibold">About</h3>
-                  <div className="whitespace-pre-line text-muted-foreground">
+                  <div className="whitespace-pre-line text-sm text-muted-foreground sm:text-base">
                     {selectedExperience.details}
                   </div>
                 </div>
@@ -275,70 +300,100 @@ function Timeline({ experiences, onOpenExperience }: TimelineProps) {
 
   return (
     <div className="relative mx-auto max-w-4xl">
-      <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 transform bg-border" />
+      {/* Mobile: line on the left. Desktop: centered, alternating cards. */}
+      <div className="absolute left-5 top-0 h-full w-0.5 -translate-x-1/2 bg-gradient-to-b from-primary/60 via-border to-transparent md:left-1/2" />
 
-      <div className="space-y-12">
-        {experiences.map((experience, index) => (
-          <motion.div
-            key={experience.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={cn(
-              'relative flex flex-col items-center md:flex-row',
-              index % 2 === 0
-                ? 'md:flex-row'
-                : 'md:flex-row-reverse md:text-right'
-            )}
-          >
-            <div
-              className={cn(
-                'absolute left-1/2 top-0 flex h-10 w-10 -translate-x-1/2 transform items-center justify-center rounded-full border bg-background md:relative md:left-auto md:translate-x-0',
-                index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'
-              )}
+      <div className="space-y-6 md:space-y-12">
+        {experiences.map((experience, index) => {
+          const isCurrent = /present/i.test(experience.period);
+          const isLeft = index % 2 === 1;
+          return (
+            <motion.div
+              key={experience.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="relative flex"
             >
-              {experience.type === 'work' ? (
-                <Briefcase className="h-5 w-5 text-primary" />
-              ) : (
-                <GraduationCap className="h-5 w-5 text-primary" />
-              )}
-            </div>
+              <div
+                className={cn(
+                  'absolute left-0 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border bg-background md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2',
+                  isCurrent && 'border-primary shadow-[0_0_0_4px_rgb(var(--primary-rgb)/0.15)]'
+                )}
+              >
+                {isCurrent && (
+                  <span className="absolute inset-0 animate-ping rounded-full bg-primary/20" />
+                )}
+                {experience.type === 'work' ? (
+                  <Briefcase className="h-5 w-5 text-primary" />
+                ) : (
+                  <GraduationCap className="h-5 w-5 text-primary" />
+                )}
+              </div>
 
-            <Card
-              className={cn(
-                'mt-5 w-full md:mt-0 md:w-[calc(50%-2rem)]',
-                index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'
-              )}
-            >
-              <CardContent className="p-6">
-                <div className="mb-4 flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold">
-                      {experience.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {experience.organization}
-                    </p>
+              <Card
+                className={cn(
+                  'ml-14 w-full transition-colors hover:border-primary/40 md:ml-0 md:w-[calc(50%-2.5rem)]',
+                  isLeft ? 'md:mr-auto md:text-right' : 'md:ml-auto'
+                )}
+              >
+                <CardContent className="p-4 sm:p-6">
+                  <div
+                    className={cn(
+                      'mb-3 flex items-center gap-3',
+                      isLeft && 'md:flex-row-reverse'
+                    )}
+                  >
+                    <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded-xl border bg-white">
+                      <Image
+                        src={experience.logo || '/placeholder.svg'}
+                        alt={experience.organization}
+                        fill
+                        sizes="44px"
+                        className="object-contain p-0.5"
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-base font-semibold leading-tight sm:text-xl">
+                        {experience.title}
+                      </h3>
+                      <p className="truncate text-sm text-muted-foreground">
+                        {experience.organization}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1 whitespace-nowrap rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                    <Calendar className="h-3 w-3" />
-                    <span>{experience.period}</span>
+                  <div
+                    className={cn(
+                      'mb-3 flex flex-wrap items-center gap-2',
+                      isLeft && 'md:justify-end'
+                    )}
+                  >
+                    <div className="flex items-center gap-1 whitespace-nowrap rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                      <Calendar className="h-3 w-3" />
+                      <span>{experience.period}</span>
+                    </div>
+                    {isCurrent && (
+                      <span className="rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                        {t('experience.present')}
+                      </span>
+                    )}
                   </div>
-                </div>
-                <p className="mb-4 text-muted-foreground">
-                  {experience.description}
-                </p>
-                <Button
-                  onClick={() => onOpenExperience(experience)}
-                  variant="outline"
-                  size="sm"
-                >
-                  {t('experience.view_details')}
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+                  <p className="mb-4 text-sm text-muted-foreground sm:text-base">
+                    {experience.description}
+                  </p>
+                  <Button
+                    onClick={() => onOpenExperience(experience)}
+                    variant="outline"
+                    size="sm"
+                  >
+                    {t('experience.view_details')}
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

@@ -6,7 +6,8 @@
     "experience": "Experience",
     "certificates": "Certificates",
     "contact": "Contact",
-    "hire_me": "Hire Me"
+    "hire_me": "Hire Me",
+    "menu": "Menu"
   },
   "hero": {
     "greeting": "Hello, I'm",
@@ -28,7 +29,13 @@
       "basic": "Basic",
       "intermediate": "Intermediate",
       "expert": "Expert"
-    }
+    },
+    "rows": {
+      "frontend": "Frontend & Mobile",
+      "backend": "Backend",
+      "infra": "Database, DevOps & Design"
+    },
+    "hint": "Hover a row to slow it down"
   },
   "portfolio": {
     "title": "Portfolio",
@@ -68,7 +75,12 @@
       "send": "Send Message"
     },
     "success": "Message sent successfully!",
-    "error": "There was an error sending your message."
+    "error": "There was an error sending your message.",
+    "lanyard_hint": "Drag the badge · tap to flip it",
+    "connect": "Let's Connect",
+    "connect_desc": "Feel free to reach out to me for any questions, opportunities, or just to say hello. I'll get back to you as soon as possible.",
+    "follow": "Follow Me",
+    "send_title": "Send a Message"
   },
   "footer": {
     "rights": "All rights reserved",

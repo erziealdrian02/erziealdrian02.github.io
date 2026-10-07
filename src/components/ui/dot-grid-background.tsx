@@ -20,11 +20,23 @@ export function DotGridBackground({
   const pointerRef = useRef({ x: -9999, y: -9999 });
   const dotsRef = useRef<{ cx: number; cy: number }[]>([]);
   const rafRef = useRef<number>(0);
+  const visibleRef = useRef(true);
+  const drawRef = useRef<() => void>(() => {});
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Only redraw when something changed (pointer moved, resize, theme) instead
+  // of every animation frame.
+  const requestDraw = useCallback(() => {
+    if (rafRef.current || !visibleRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = 0;
+      drawRef.current();
+    });
   }, []);
 
   const buildGrid = useCallback(() => {
@@ -33,14 +45,14 @@ export function DotGridBackground({
     if (!canvas || !wrapper) return;
 
     const { width, height } = wrapper.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
     const ctx = canvas.getContext('2d');
-    if (ctx) ctx.scale(dpr, dpr);
+    if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     const cell = dotSize + gap;
     const cols = Math.ceil(width / cell) + 1;
@@ -58,7 +70,8 @@ export function DotGridBackground({
       }
     }
     dotsRef.current = dots;
-  }, [dotSize, gap]);
+    requestDraw();
+  }, [dotSize, gap, requestDraw]);
 
   useEffect(() => {
     if (!mounted) return;
@@ -68,13 +81,27 @@ export function DotGridBackground({
     const ro = new ResizeObserver(buildGrid);
     if (wrapperRef.current) ro.observe(wrapperRef.current);
 
-    return () => ro.disconnect();
-  }, [buildGrid, mounted]);
+    const io = new IntersectionObserver(([entry]) => {
+      visibleRef.current = entry.isIntersecting;
+      if (entry.isIntersecting) requestDraw();
+    });
+    if (wrapperRef.current) io.observe(wrapperRef.current);
+
+    return () => {
+      ro.disconnect();
+      io.disconnect();
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = 0;
+    };
+  }, [buildGrid, mounted, requestDraw]);
 
   useEffect(() => {
     if (!mounted) return;
+    // Touch devices have no hover, so the static grid is enough.
+    if (!window.matchMedia('(hover: hover)').matches) return;
 
-    const onMove = (e: MouseEvent) => {
+    const onMove = (e: PointerEvent) => {
+      if (!visibleRef.current) return;
       const canvas = canvasRef.current;
       if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
@@ -82,20 +109,22 @@ export function DotGridBackground({
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
       };
+      requestDraw();
     };
 
     const onLeave = () => {
       pointerRef.current = { x: -9999, y: -9999 };
+      requestDraw();
     };
 
-    window.addEventListener('mousemove', onMove, { passive: true });
-    window.addEventListener('mouseleave', onLeave);
+    window.addEventListener('pointermove', onMove, { passive: true });
+    document.addEventListener('pointerleave', onLeave);
 
     return () => {
-      window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('mouseleave', onLeave);
+      window.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerleave', onLeave);
     };
-  }, [mounted]);
+  }, [mounted, requestDraw]);
 
   useEffect(() => {
     if (!mounted) return;
@@ -108,8 +137,9 @@ export function DotGridBackground({
     const activeG = isDark ? 139 : 92;
     const activeB = isDark ? 250 : 246;
     const proxSq = proximity * proximity;
+    const r = dotSize / 2;
 
-    const draw = () => {
+    drawRef.current = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
@@ -118,34 +148,34 @@ export function DotGridBackground({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const { x: px, y: py } = pointerRef.current;
 
+      // Batch all idle dots into a single path / fill call.
+      ctx.beginPath();
+      for (const dot of dotsRef.current) {
+        const dx = dot.cx - px;
+        const dy = dot.cy - py;
+        if (dx * dx + dy * dy > proxSq) {
+          ctx.moveTo(dot.cx + r, dot.cy);
+          ctx.arc(dot.cx, dot.cy, r, 0, Math.PI * 2);
+        }
+      }
+      ctx.fillStyle = baseColor;
+      ctx.fill();
+
       for (const dot of dotsRef.current) {
         const dx = dot.cx - px;
         const dy = dot.cy - py;
         const dsq = dx * dx + dy * dy;
-
-        if (dsq <= proxSq) {
-          const dist = Math.sqrt(dsq);
-          const t = 1 - dist / proximity;
-          const alpha = 0.15 + t * 0.85;
-          const size = dotSize + t * 2;
-          ctx.beginPath();
-          ctx.arc(dot.cx, dot.cy, size / 2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${activeR}, ${activeG}, ${activeB}, ${alpha})`;
-          ctx.fill();
-        } else {
-          ctx.beginPath();
-          ctx.arc(dot.cx, dot.cy, dotSize / 2, 0, Math.PI * 2);
-          ctx.fillStyle = baseColor;
-          ctx.fill();
-        }
+        if (dsq > proxSq) continue;
+        const t = 1 - Math.sqrt(dsq) / proximity;
+        ctx.beginPath();
+        ctx.arc(dot.cx, dot.cy, (dotSize + t * 2) / 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${activeR}, ${activeG}, ${activeB}, ${0.15 + t * 0.85})`;
+        ctx.fill();
       }
-
-      rafRef.current = requestAnimationFrame(draw);
     };
 
-    draw();
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [mounted, resolvedTheme, dotSize, proximity]);
+    requestDraw();
+  }, [mounted, resolvedTheme, dotSize, proximity, requestDraw]);
 
   if (!mounted) return null;
 

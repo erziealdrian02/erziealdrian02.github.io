@@ -6,7 +6,8 @@
     "experience": "Pengalaman",
     "certificates": "Sertifikat",
     "contact": "Kontak",
-    "hire_me": "Pekerjakan Saya"
+    "hire_me": "Pekerjakan Saya",
+    "menu": "Menu"
   },
   "hero": {
     "greeting": "Halo, Saya",
@@ -28,7 +29,13 @@
       "basic": "Dasar",
       "intermediate": "Menengah",
       "expert": "Ahli"
-    }
+    },
+    "rows": {
+      "frontend": "Frontend & Mobile",
+      "backend": "Backend",
+      "infra": "Database, DevOps & Desain"
+    },
+    "hint": "Arahkan kursor ke baris untuk memperlambat"
   },
   "portfolio": {
     "title": "Portofolio",
@@ -68,7 +75,12 @@
       "send": "Kirim Pesan"
     },
     "success": "Pesan berhasil dikirim!",
-    "error": "Terjadi kesalahan saat mengirim pesan Anda."
+    "error": "Terjadi kesalahan saat mengirim pesan Anda.",
+    "lanyard_hint": "Tarik badge-nya · ketuk untuk membalik",
+    "connect": "Mari Terhubung",
+    "connect_desc": "Jangan ragu menghubungi saya untuk pertanyaan, peluang kerja sama, atau sekadar menyapa. Saya akan membalas secepatnya.",
+    "follow": "Ikuti Saya",
+    "send_title": "Kirim Pesan"
   },
   "footer": {
     "rights": "Semua hak dilindungi",

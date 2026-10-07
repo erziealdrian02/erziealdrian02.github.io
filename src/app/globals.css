@@ -80,7 +80,83 @@ body {
 }
 
 html {
+  position: relative;
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: clip;
+}
+
+/* Keep section headings clear of the fixed navbar when jumping to anchors */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.spotlight-orb {
+  position: absolute;
+  left: -30vmax;
+  top: -30vmax;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgb(var(--primary-rgb) / 0.18) 0%,
+    transparent 60%
+  );
+  will-change: transform;
+  animation: spotlight-orbit 18s linear infinite;
+}
+
+@keyframes spotlight-orbit {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(100vw, 0, 0);
+  }
+  50% {
+    transform: translate3d(100vw, 100%, 0);
+  }
+  75% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+/* Soft fade on marquee edges (works on any background) */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .spotlight-orb {
+    animation: none;
+  }
 }
 
 .bg-grid-small-white {

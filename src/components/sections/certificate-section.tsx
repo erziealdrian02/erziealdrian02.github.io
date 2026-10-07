@@ -19,14 +19,14 @@ export default function CertificateSection() {
     <section
       id="certificates"
       ref={ref}
-      className="relative min-h-screen w-full py-20"
+      className="relative w-full py-20 md:min-h-screen"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-10 text-center sm:mb-16"
         >
           <h2 className="mb-2 text-3xl font-bold sm:text-4xl md:text-5xl">
             {t("certificates.title")}
@@ -34,7 +34,7 @@ export default function CertificateSection() {
           <p className="text-muted-foreground">{t("certificates.subtitle")}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="scrollbar-hide -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
           {certificates.map((certificate, index) => (
             <motion.div
               key={certificate.id}
@@ -42,13 +42,15 @@ export default function CertificateSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
+              className="w-[80vw] flex-shrink-0 snap-start sm:w-auto"
             >
-              <Card className="overflow-hidden">
+              <Card className="h-full overflow-hidden">
                 <div className="relative aspect-video w-full overflow-hidden">
                   <Image
                     src={certificate.image || "/placeholder.svg"}
                     alt={certificate.title}
                     fill
+                    sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>

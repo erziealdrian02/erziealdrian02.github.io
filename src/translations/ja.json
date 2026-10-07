@@ -6,7 +6,8 @@
     "experience": "経験",
     "certificates": "資格",
     "contact": "お問い合わせ",
-    "hire_me": "採用する"
+    "hire_me": "採用する",
+    "menu": "メニュー"
   },
   "hero": {
     "greeting": "こんにちは、",
@@ -28,7 +29,13 @@
       "basic": "初級",
       "intermediate": "中級",
       "expert": "上級"
-    }
+    },
+    "rows": {
+      "frontend": "フロントエンド & モバイル",
+      "backend": "バックエンド",
+      "infra": "データベース・DevOps・デザイン"
+    },
+    "hint": "行にカーソルを合わせると減速します"
   },
   "portfolio": {
     "title": "ポートフォリオ",
@@ -68,7 +75,12 @@
       "send": "送信する"
     },
     "success": "メッセージが正常に送信されました！",
-    "error": "メッセージの送信中にエラーが発生しました。"
+    "error": "メッセージの送信中にエラーが発生しました。",
+    "lanyard_hint": "ドラッグで動かす · タップで裏返す",
+    "connect": "つながりましょう",
+    "connect_desc": "ご質問、お仕事のご相談、ご挨拶など、お気軽にご連絡ください。できるだけ早くお返事します。",
+    "follow": "フォローする",
+    "send_title": "メッセージを送る"
   },
   "footer": {
     "rights": "全著作権所有",

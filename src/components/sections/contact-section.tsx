@@ -2,7 +2,8 @@
 
 import type React from 'react';
 
-import { useState, useRef } from 'react';
+import { Component, useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, useInView } from 'framer-motion';
 import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
@@ -10,14 +11,40 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import { Github, Instagram, Linkedin, MessageSquare, Send } from 'lucide-react';
+import { Hand, Send } from 'lucide-react';
 import { SpotlightBackground } from '@/components/ui/spotlight-background';
+
+// three.js + Rapier (WASM) are heavy: load them only on the client, and only
+// once the contact section gets close to the viewport.
+const Lanyard = dynamic(() => import('@/components/ui/lanyard'), {
+  ssr: false,
+});
+
+// If WebGL is unavailable or a texture fails to load, hide the badge instead
+// of taking the whole page down.
+class LanyardBoundary extends Component<
+  { children: React.ReactNode },
+  { failed: boolean }
+> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch(error: unknown) {
+    console.warn('Lanyard disabled:', error);
+  }
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
 
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const lanyardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const lanyardNear = useInView(lanyardRef, { once: true, margin: '400px' });
+  const lanyardVisible = useInView(lanyardRef, { margin: '50px' });
   const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -162,146 +189,178 @@ export default function ContactSection() {
     >
       <SpotlightBackground />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
-        >
-          <h2 className="mb-2 text-3xl font-bold sm:text-4xl md:text-5xl">
-            {t('contact.title')}
-          </h2>
-          <p className="text-muted-foreground">{t('contact.subtitle')}</p>
-        </motion.div>
-
-        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:grid-rows-[auto_1fr] lg:gap-x-12">
+          {/* Heading - sits beside the lanyard on desktop */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            className="text-center lg:col-start-2 lg:row-start-1 lg:pt-8 lg:text-left"
           >
-            <div>
-              <h3 className="mb-4 text-2xl font-bold">Let's Connect</h3>
-              <p className="mb-8 text-muted-foreground">
-                Feel free to reach out to me for any questions, opportunities,
-                or just to say hello. I&apos;ll get back to you as soon as
-                possible.
+            <h2 className="mb-2 text-3xl font-bold sm:text-4xl md:text-5xl">
+              {t('contact.title')}
+            </h2>
+            <p className="text-muted-foreground">{t('contact.subtitle')}</p>
+          </motion.div>
+
+          {/* Lanyard badge */}
+          <motion.div
+            ref={lanyardRef}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative -mx-4 h-[420px] sm:mx-0 sm:h-[480px] lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:-mt-20 lg:h-auto lg:min-h-[680px]"
+          >
+            {lanyardNear && (
+              <LanyardBoundary>
+                <Lanyard
+                  paused={!lanyardVisible}
+                  className="[mask-image:linear-gradient(to_bottom,transparent,#000_12%)]"
+                />
+              </LanyardBoundary>
+            )}
+            <div className="pointer-events-none absolute inset-x-0 bottom-2 flex justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+                <Hand className="h-3.5 w-3.5 text-primary" />
+                {t('contact.lanyard_hint')}
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Info + form */}
+          <div className="grid gap-6 lg:col-start-2 lg:row-start-2">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="rounded-2xl border border-border/60 bg-background/70 p-5 backdrop-blur-sm sm:p-6"
+            >
+              <h3 className="mb-2 text-xl font-bold sm:text-2xl">
+                {t('contact.connect')}
+              </h3>
+              <p className="mb-5 text-sm text-muted-foreground sm:text-base">
+                {t('contact.connect_desc')}
               </p>
 
-              <div className="mb-8 grid gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
                     <Send className="h-5 w-5 text-primary" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-medium">Email</p>
                     <a
                       href="mailto:erzie.aldrian02@gmail.com"
-                      className="text-sm text-muted-foreground hover:text-primary"
+                      className="block truncate text-sm text-muted-foreground hover:text-primary"
                     >
                       erzie.aldrian02@gmail.com
                     </a>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div>
-              <h3 className="mb-4 text-xl font-bold">Follow Me</h3>
-              <div className="flex flex-wrap gap-3">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      'flex h-10 w-10 items-center justify-center rounded-full text-white transition-all duration-300 hover:scale-110',
-                      link.color
-                    )}
-                    aria-label={link.name}
-                  >
-                    <div className="flex items-center justify-center h-5 w-5">
-                      <svg
-                        className="fill-current dark:fill-slate-300"
-                        width="24"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                <div>
+                  <p className="mb-2 text-sm font-semibold sm:text-right">
+                    {t('contact.follow')}
+                  </p>
+                  <div className="flex flex-wrap gap-2.5">
+                    {socialLinks.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cn(
+                          'flex h-10 w-10 items-center justify-center rounded-full text-white transition-all duration-300 hover:scale-110',
+                          link.color
+                        )}
+                        aria-label={link.name}
                       >
-                        <title>{link.name}</title>
-                        {link.path}
-                      </svg>
-                    </div>
-                  </a>
-                ))}
+                        <div className="flex h-5 w-5 items-center justify-center">
+                          <svg
+                            className="fill-current dark:fill-slate-300"
+                            width="24"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <title>{link.name}</title>
+                            {link.path}
+                          </svg>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="rounded-lg border-2 border-primary/20 bg-background/80 p-6 backdrop-blur-sm"
-          >
-            <h3 className="mb-4 text-2xl font-bold">Send a Message</h3>
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-sm font-medium"
-                >
-                  {t('contact.form.name')}
-                </label>
-                <Input id="name" name="name" required disabled={isSubmitting} />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-medium"
-                >
-                  {t('contact.form.email')}
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm font-medium"
-                >
-                  {t('contact.form.message')}
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? (
-                  <>
-                    <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="mr-2 h-4 w-4" />
-                    {t('contact.form.send')}
-                  </>
-                )}
-              </Button>
-            </form>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="rounded-2xl border-2 border-primary/20 bg-background/80 p-5 backdrop-blur-sm sm:p-6"
+            >
+              <h3 className="mb-4 text-xl font-bold sm:text-2xl">
+                {t('contact.send_title')}
+              </h3>
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="mb-2 block text-sm font-medium"
+                    >
+                      {t('contact.form.name')}
+                    </label>
+                    <Input id="name" name="name" required disabled={isSubmitting} />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="mb-2 block text-sm font-medium"
+                    >
+                      {t('contact.form.email')}
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="mb-2 block text-sm font-medium"
+                  >
+                    {t('contact.form.message')}
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      {t('contact.form.send')}
+                    </>
+                  )}
+                </Button>
+              </form>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
