@@ -2,7 +2,7 @@
 
 <img src="public/images/profiles/me_ilustration.png" alt="Muhamad Erzie Aldrian Nugraha" width="140" />
 
-# Muhamad Erzie Aldrian Nugraha — Portfolio
+# Muhamad Erzie Aldrian Nugraha - Portfolio
 
 **Fullstack Developer · UI/UX Designer**
 

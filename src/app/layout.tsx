@@ -18,7 +18,7 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${FULL_NAME} (Erzie Aldrian) — Fullstack Developer Portfolio`,
+    default: `${FULL_NAME} (Erzie Aldrian) - Fullstack Developer Portfolio`,
     template: `%s | ${FULL_NAME}`,
   },
   description: DESCRIPTION,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: 'profile',
     url: SITE_URL,
     siteName: FULL_NAME,
-    title: `${FULL_NAME} — Fullstack Developer`,
+    title: `${FULL_NAME} - Fullstack Developer`,
     description: DESCRIPTION,
     locale: 'en_US',
     alternateLocale: ['id_ID', 'ja_JP'],
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: `${FULL_NAME} — Fullstack Developer`,
+        alt: `${FULL_NAME} - Fullstack Developer`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${FULL_NAME} — Fullstack Developer`,
+    title: `${FULL_NAME} - Fullstack Developer`,
     description: DESCRIPTION,
     images: ['/og-image.png'],
   },
